@@ -1,11 +1,16 @@
 Vue.config.debug = true // turn on debugging mode
 var PulseLoader = VueSpinner.PulseLoader
 var ScaleLoader = VueSpinner.ScaleLoader
+var ClipLoader = VueSpinner.ClipLoader
+var RiseLoader = VueSpinner.RiseLoader
+
 new Vue({
 	el: '#app',
 	components: {
 		PulseLoader,
-		ScaleLoader
+		ScaleLoader,
+		ClipLoader,
+		RiseLoader
 	},
 	data () {
 		return {
