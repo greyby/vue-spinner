@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-spinner</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="example/app.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="wrapper">
+        <h1>vue-spinner</h1>
+        <h4>vue-spinner</h4>
+
+        <p class="buttons">
+          <a href="https://github.com/greyby/vue-spinner" class="button">Source on GitHub</a>
+        </p>
+        <div id="social">
+          <li><a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="https://github.com/greyby/vue-spinner" data-via="greyby" data-related="vuejs" data-hashtags="vuejs">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+          <li><iframe src="http://ghbtns.com/github-btn.html?user=greyby&repo=vue-spinner&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+        </div>
+        <ul class="list-container">
+          <li class="spinner-list">
+            <pulse-loader :color="color" :height="height" :width="width" :margin="margin" :radius="radius"></pulse-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+          <li class="spinner-list">
+            <scale-loader></scale-loader>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="build/bundle.js"></script>
+    <!--<script src="dist/vue-spinner.js"></script>
+    <script src="example/app.js"></script>-->
+  </body>
+</html>
