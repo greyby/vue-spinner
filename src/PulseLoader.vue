@@ -64,7 +64,7 @@ export default {
             animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
     -webkit-animation-fill-mode: both;
 	          animation-fill-mode: both;
-    display:inline-block;         
+    display: inline-block;         
 }
 
 .v-spinner .v-pulse1

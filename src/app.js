@@ -1,5 +1,8 @@
 import PulseLoader from './PulseLoader.vue'
 import ScaleLoader from './ScaleLoader.vue'
+import ClipLoader from './ClipLoader.vue'
+import RiseLoader from './RiseLoader.vue'
+
 
 Vue.config.debug = true
 
@@ -7,7 +10,10 @@ new Vue({
 	el: '#app',
 	components: {
     PulseLoader,
-    ScaleLoader
+    ScaleLoader,
+    ClipLoader,
+    RiseLoader
+    
   },
   data () {
     return {
