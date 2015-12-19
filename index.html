@@ -23,10 +23,10 @@
         </div>
         <ul class="list-container">
           <li class="spinner-list">
-            <pulse-loader :color="color" :height="height" :width="width" :margin="margin" :radius="radius"></pulse-loader>
+            <pulse-loader></pulse-loader>
           </li>
           <li class="spinner-list">
-            <scale-loader></scale-loader>
+            <scale-loader :color="color" :height="height" :width="width" :margin="margin" :radius="radius"></scale-loader>
           </li>
           <li class="spinner-list">
             <scale-loader></scale-loader>
@@ -50,7 +50,6 @@
       </div>
     </div>
     <script src="example/vue.min.js"></script>
-    <script src="build/bundle.js"></script>
     <script src="dist/vue-spinner.js"></script>
     <script src="example/app.js"></script>
   </body>
