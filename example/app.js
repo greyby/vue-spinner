@@ -12,6 +12,7 @@ var SkewLoader = VueSpinner.SkewLoader
 var MoonLoader = VueSpinner.MoonLoader
 var RingLoader = VueSpinner.RingLoader
 var BounceLoader = VueSpinner.BounceLoader
+var DotLoader = VueSpinner.DotLoader
 
 new Vue({
 	el: '#app',
@@ -28,7 +29,8 @@ new Vue({
 		SkewLoader,
 		MoonLoader,
 		RingLoader,
-		BounceLoader
+		BounceLoader,
+		DotLoader
 	},
 	data () {
 		return {

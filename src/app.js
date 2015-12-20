@@ -11,6 +11,7 @@ import SkewLoader from './SkewLoader.vue'
 import MoonLoader from './MoonLoader.vue'
 import RingLoader from './RingLoader.vue'
 import BounceLoader from './BounceLoader.vue'
+import DotLoader from './DotLoader.vue'
 
 Vue.config.debug = true
 
@@ -29,7 +30,8 @@ new Vue({
     SkewLoader,
     MoonLoader,
     RingLoader,
-    BounceLoader
+    BounceLoader,
+    DotLoader
   },
   data () {
     return {
