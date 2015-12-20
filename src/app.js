@@ -6,6 +6,7 @@ import BeatLoader from './BeatLoader.vue'
 import SyncLoader from './SyncLoader.vue'
 import RotateLoader from './RotateLoader.vue'
 import FadeLoader from './FadeLoader.vue'
+import SquareLoader from './SquareLoader.vue'
 
 Vue.config.debug = true
 
@@ -19,7 +20,8 @@ new Vue({
     BeatLoader,
     SyncLoader,
     RotateLoader,
-    FadeLoader
+    FadeLoader,
+    SquareLoader
   },
   data () {
     return {

@@ -7,6 +7,7 @@ var BeatLoader = VueSpinner.BeatLoader
 var SyncLoader = VueSpinner.SyncLoader
 var RotateLoader = VueSpinner.RotateLoader
 var FadeLoader = VueSpinner.FadeLoader
+var SquareLoader = VueSpinner.SquareLoader
 
 new Vue({
 	el: '#app',
@@ -18,7 +19,8 @@ new Vue({
 		BeatLoader,
 		SyncLoader,
 		RotateLoader,
-		FadeLoader
+		FadeLoader,
+		SquareLoader
 	},
 	data () {
 		return {
