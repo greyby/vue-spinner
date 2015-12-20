@@ -8,6 +8,7 @@ var SyncLoader = VueSpinner.SyncLoader
 var RotateLoader = VueSpinner.RotateLoader
 var FadeLoader = VueSpinner.FadeLoader
 var SquareLoader = VueSpinner.SquareLoader
+var SkewLoader = VueSpinner.SkewLoader
 
 new Vue({
 	el: '#app',
@@ -20,7 +21,8 @@ new Vue({
 		SyncLoader,
 		RotateLoader,
 		FadeLoader,
-		SquareLoader
+		SquareLoader,
+		SkewLoader
 	},
 	data () {
 		return {

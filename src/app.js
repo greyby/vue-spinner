@@ -7,6 +7,7 @@ import SyncLoader from './SyncLoader.vue'
 import RotateLoader from './RotateLoader.vue'
 import FadeLoader from './FadeLoader.vue'
 import SquareLoader from './SquareLoader.vue'
+import SkewLoader from './SkewLoader.vue'
 
 Vue.config.debug = true
 
@@ -21,7 +22,8 @@ new Vue({
     SyncLoader,
     RotateLoader,
     FadeLoader,
-    SquareLoader
+    SquareLoader,
+    SkewLoader
   },
   data () {
     return {
