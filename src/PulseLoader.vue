@@ -58,7 +58,8 @@ export default {
     margin: 100px auto;
     text-align: center;
 }
-*/.v-spinner .v-pulse
+*/
+.v-spinner .v-pulse
 {
     -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
             animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);

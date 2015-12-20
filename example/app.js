@@ -3,6 +3,16 @@ var PulseLoader = VueSpinner.PulseLoader
 var ScaleLoader = VueSpinner.ScaleLoader
 var ClipLoader = VueSpinner.ClipLoader
 var RiseLoader = VueSpinner.RiseLoader
+var BeatLoader = VueSpinner.BeatLoader
+var SyncLoader = VueSpinner.SyncLoader
+var RotateLoader = VueSpinner.RotateLoader
+var FadeLoader = VueSpinner.FadeLoader
+var SquareLoader = VueSpinner.SquareLoader
+var SkewLoader = VueSpinner.SkewLoader
+var MoonLoader = VueSpinner.MoonLoader
+var RingLoader = VueSpinner.RingLoader
+var BounceLoader = VueSpinner.BounceLoader
+var DotLoader = VueSpinner.DotLoader
 
 new Vue({
 	el: '#app',
@@ -10,7 +20,17 @@ new Vue({
 		PulseLoader,
 		ScaleLoader,
 		ClipLoader,
-		RiseLoader
+		RiseLoader,
+		BeatLoader,
+		SyncLoader,
+		RotateLoader,
+		FadeLoader,
+		SquareLoader,
+		SkewLoader,
+		MoonLoader,
+		RingLoader,
+		BounceLoader,
+		DotLoader
 	},
 	data () {
 		return {
