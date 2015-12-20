@@ -8,6 +8,7 @@ import RotateLoader from './RotateLoader.vue'
 import FadeLoader from './FadeLoader.vue'
 import SquareLoader from './SquareLoader.vue'
 import SkewLoader from './SkewLoader.vue'
+import MoonLoader from './MoonLoader.vue'
 
 Vue.config.debug = true
 
@@ -23,7 +24,8 @@ new Vue({
     RotateLoader,
     FadeLoader,
     SquareLoader,
-    SkewLoader
+    SkewLoader,
+    MoonLoader
   },
   data () {
     return {

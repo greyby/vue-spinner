@@ -8,6 +8,7 @@ import RotateLoader from './RotateLoader.vue'
 import FadeLoader from './FadeLoader.vue'
 import SquareLoader from './SquareLoader.vue'
 import SkewLoader from './SkewLoader.vue'
+import MoonLoader from './MoonLoader.vue'
 
 const VueSpinner = {
   PulseLoader,
@@ -19,7 +20,8 @@ const VueSpinner = {
   RotateLoader,
   FadeLoader,
   SquareLoader,
-  SkewLoader
+  SkewLoader,
+  MoonLoader
 }
 
 module.exports = VueSpinner
