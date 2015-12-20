@@ -10,7 +10,7 @@
 <script>
 export default {
   
-  name: 'PulseLoader',
+  name: 'SyncLoader',
 
   props: {
     color: { 
