@@ -42,9 +42,6 @@ export default {
      		width: this.width,
       	margin: this.margin,
       	borderRadius: this.radius
-      	// TODO 
-      	// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
-      	// animationFillMode: "both"
       }
     }
   }
@@ -53,12 +50,8 @@ export default {
 </script>
 
 <style>
-/*.v-spinner
-{
-    margin: 100px auto;
-    text-align: center;
-}
-*/.v-spinner .v-beat
+
+.v-spinner .v-beat
 {
     -webkit-animation: v-beatStretchDelay 0.7s infinite linear;
             animation: v-beatStretchDelay 0.7s infinite linear;
