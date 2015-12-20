@@ -56,19 +56,34 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _PulseLoader = __webpack_require__(3);
+	var _PulseLoader = __webpack_require__(6);
 	
 	var _PulseLoader2 = _interopRequireDefault(_PulseLoader);
 	
-	var _ScaleLoader = __webpack_require__(10);
+	var _ScaleLoader = __webpack_require__(13);
 	
 	var _ScaleLoader2 = _interopRequireDefault(_ScaleLoader);
+	
+	var _ClipLoader = __webpack_require__(18);
+	
+	var _ClipLoader2 = _interopRequireDefault(_ClipLoader);
+	
+	var _RiseLoader = __webpack_require__(23);
+	
+	var _RiseLoader2 = _interopRequireDefault(_RiseLoader);
+	
+	var _BeatLoader = __webpack_require__(28);
+	
+	var _BeatLoader2 = _interopRequireDefault(_BeatLoader);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var VueSpinner = {
 	  PulseLoader: _PulseLoader2.default,
-	  ScaleLoader: _ScaleLoader2.default
+	  ScaleLoader: _ScaleLoader2.default,
+	  ClipLoader: _ClipLoader2.default,
+	  RiseLoader: _RiseLoader2.default,
+	  BeatLoader: _BeatLoader2.default
 	};
 	
 	module.exports = VueSpinner;
@@ -76,14 +91,17 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(4)
-	module.exports = __webpack_require__(8)
+	__webpack_require__(7)
+	module.exports = __webpack_require__(11)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(9)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(12)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -97,16 +115,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	})()}
 
 /***/ },
-/* 4 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(8);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(10)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -123,21 +141,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(9)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/.v-spinner .v-pulse\n{\n    -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n            animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display:inline-block;         \n}\n\n.v-spinner .v-pulse1\n{\n  -webkit-animation-delay: 0.12s;\n          animation-delay: 0.12s;\n}\n.v-spinner .v-pulse2\n{\n  -webkit-animation-delay: 0.24s;\n          animation-delay: 0.24s;\n}\n.v-spinner .v-pulse3\n{\n  -webkit-animation-delay: 0.36s;\n          animation-delay: 0.36s;\n}\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}", ""]);
+	exports.push([module.id, "/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/.v-spinner .v-pulse\n{\n    -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n            animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-pulse1\n{\n  -webkit-animation-delay: 0.12s;\n          animation-delay: 0.12s;\n}\n.v-spinner .v-pulse2\n{\n  -webkit-animation-delay: 0.24s;\n          animation-delay: 0.24s;\n}\n.v-spinner .v-pulse3\n{\n  -webkit-animation-delay: 0.36s;\n          animation-delay: 0.36s;\n}\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/*
@@ -193,7 +211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -447,7 +465,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -520,7 +538,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
 	//     -webkit-animation-fill-mode: both;
 	// 	          animation-fill-mode: both;
-	//     display:inline-block;        
+	//     display: inline-block;        
 	// }
 
 	// .v-spinner .v-pulse1
@@ -576,20 +594,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(11)
-	module.exports = __webpack_require__(13)
+	__webpack_require__(14)
+	module.exports = __webpack_require__(16)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(14)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(17)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -603,16 +621,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	})()}
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(12);
+	var content = __webpack_require__(15);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(10)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -629,10 +647,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(9)();
 	// imports
 	
 	
@@ -643,7 +661,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -781,10 +799,661 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(19)
+	module.exports = __webpack_require__(21)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(22)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/greyby/Workspace/javascript/vuejs/vue-spinner/src/ClipLoader.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(20);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2ed34952&file=ClipLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2ed34952&file=ClipLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	// <div class="v-spinner">
+	//     <div class="v-clip" v-bind:style="spinnerStyle">
+	//     </div>
+	//   </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	
+	  name: 'ClipLoader',
+	
+	  props: {
+	    color: {
+	      type: String,
+	      default: '#5dc596'
+	    },
+	    height: {
+	      type: String,
+	      default: '35px'
+	    },
+	    width: {
+	      type: String,
+	      default: '35px'
+	    },
+	    radius: {
+	      type: String,
+	      default: '100%'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      spinnerStyle: {
+	
+	        height: this.height,
+	        width: this.width,
+	        border: '2px solid',
+	        borderColor: this.color,
+	        borderBottomColor: 'transparent',
+	        borderRadius: this.radius,
+	        background: 'transparent !important'
+	      }
+	    };
+	  }
+	};
+	// </script>
+
+	// <style>
+	// .v-spinner
+	// {
+	// /*	  font-size: 10px;
+
+	//     width: 60px;
+	//     height: 40px;*/
+	//     /*margin: 25px auto;*/
+	//     text-align: center;
+
+	// }
+
+	// .v-spinner .v-clip
+	// {
+	//     -webkit-animation: v-clipDelay 0.75s 0s infinite linear;
+	//             animation: v-clipDelay 0.75s 0s infinite linear;
+	//     -webkit-animation-fill-mode: both;
+	// 	        animation-fill-mode: both;
+
+	//     display: inline-block;
+	// }
+
+	// @-webkit-keyframes v-clipDelay
+	// {
+	//     0%
+	//     {
+	//         -webkit-transform: rotate(0deg) scale(1);
+	//                 transform: rotate(0deg) scale(1);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: rotate(180deg) scale(0.8);
+	//                 transform: rotate(180deg) scale(0.8);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: rotate(360deg) scale(1);
+	//                 transform: rotate(360deg) scale(1);
+	//     }
+	// }
+
+	// @keyframes v-clipDelay
+	// {
+	//     0%
+	//     {
+	//         -webkit-transform: rotate(0deg) scale(1);
+	//                 transform: rotate(0deg) scale(1);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: rotate(180deg) scale(0.8);
+	//                 transform: rotate(180deg) scale(0.8);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: rotate(360deg) scale(1);
+	//                 transform: rotate(360deg) scale(1);
+	//     }
+	// }
+	// </style>
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(24)
+	module.exports = __webpack_require__(26)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(27)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/greyby/Workspace/javascript/vuejs/vue-spinner/src/RiseLoader.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(25);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f33464ea&file=RiseLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-f33464ea&file=RiseLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-rise-odd\n{\n    -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-rise-even\n{\n    -webkit-animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@-webkit-keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n\n@keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	// <div class="v-spinner">
+	//     <div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
+	//     </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
+	//     </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
+	//     </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
+	//     </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
+	//     </div>
+	//   </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	
+	  name: 'RiseLoader',
+	
+	  props: {
+	    color: {
+	      type: String,
+	      default: '#5dc596'
+	    },
+	    height: {
+	      type: String,
+	      default: '15px'
+	    },
+	    width: {
+	      type: String,
+	      default: '15px'
+	    },
+	    margin: {
+	      type: String,
+	      default: '2px'
+	    },
+	    radius: {
+	      type: String,
+	      default: '100%'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      spinnerStyle: {
+	        backgroundColor: this.color,
+	        height: this.height,
+	        width: this.width,
+	        margin: this.margin,
+	        borderRadius: this.radius
+	      }
+	    };
+	  }
+	};
+	// </script>
+
+	// <style>
+	// .v-spinner
+	// {
+	// /*	  font-size: 10px;
+
+	//     width: 60px;
+	//     height: 40px;*/
+	//     /*margin: 25px auto;*/
+	//     text-align: center;
+
+	// }
+
+	// .v-spinner .v-rise-odd
+	// {
+	//     -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
+	//             animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
+	//     -webkit-animation-fill-mode: both;
+	// 	        animation-fill-mode: both;
+
+	//     display: inline-block;
+	// }
+
+	// .v-spinner .v-rise-even
+	// {
+	//     -webkit-animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
+	//             animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
+	//     -webkit-animation-fill-mode: both;
+	//             animation-fill-mode: both;
+
+	//     display: inline-block;
+	// }
+
+	// @-webkit-keyframes v-riseOddDelay
+	// {
+	//     25
+	//     {
+	//         -webkit-transform: translateY(30px);
+	//                 transform: translateY(30px);
+	//     }
+	//     0%
+	//     {
+	//         -webkit-transform: scale(0.4);
+	//                 transform: scale(0.4);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: scale(1.1);
+	//                 transform: scale(1.1);
+	//     }
+	//     75%
+	//     {
+	//         -webkit-transform: translateY(-30px);
+	//                 transform: translateY(-30px);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: translateY(0) scale(0.75);
+	//                 transform: translateY(0) scale(0.75);
+	//     }
+	// }
+
+	// @keyframes v-riseOddDelay
+	// {
+	//     25
+	//     {
+	//         -webkit-transform: translateY(30px);
+	//                 transform: translateY(30px);
+	//     }
+	//     0%
+	//     {
+	//         -webkit-transform: scale(0.4);
+	//                 transform: scale(0.4);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: scale(1.1);
+	//                 transform: scale(1.1);
+	//     }
+	//     75%
+	//     {
+	//         -webkit-transform: translateY(-30px);
+	//                 transform: translateY(-30px);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: translateY(0) scale(0.75);
+	//                 transform: translateY(0) scale(0.75);
+	//     }
+	// }
+
+	// @-webkit-keyframes v-riseEvenDelay
+	// {
+	//     25
+	//     {
+	//         -webkit-transform: translateY(-30px);
+	//                 transform: translateY(-30px);
+	//     }
+	//     0%
+	//     {
+	//         -webkit-transform: scale(1.1);
+	//                 transform: scale(1.1);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: scale(0.4);
+	//                 transform: scale(0.4);
+	//     }
+	//     75%
+	//     {
+	//         -webkit-transform: translateY(30px);
+	//                 transform: translateY(30px);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: translateY(0) scale(1.0);
+	//                 transform: translateY(0) scale(1.0);
+	//     }
+	// }
+
+	// @keyframes v-riseEvenDelay
+	// {
+	//     25
+	//     {
+	//         -webkit-transform: translateY(-30px);
+	//                 transform: translateY(-30px);
+	//     }
+	//     0%
+	//     {
+	//         -webkit-transform: scale(1.1);
+	//                 transform: scale(1.1);
+	//     }
+	//     50%
+	//     {
+	//         -webkit-transform: scale(0.4);
+	//                 transform: scale(0.4);
+	//     }
+	//     75%
+	//     {
+	//         -webkit-transform: translateY(30px);
+	//                 transform: translateY(30px);
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: translateY(0) scale(1.0);
+	//                 transform: translateY(0) scale(1.0);
+	//     }
+	// }
+	// </style>
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(29)
+	module.exports = __webpack_require__(31)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(32)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/greyby/Workspace/javascript/vuejs/vue-spinner/src/BeatLoader.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(30);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-45341b90&file=BeatLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-45341b90&file=BeatLoader.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(9)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/.v-spinner .v-beat\n{\n    -webkit-animation: v-beatStretchDelay 0.7s infinite linear;\n            animation: v-beatStretchDelay 0.7s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-beat-odd\n{\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n.v-spinner .v-beat-even\n{\n  -webkit-animation-delay: 0.35s;\n          animation-delay: 0.35s;\n}\n\n@-webkit-keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	// <div class="v-spinner">
+	//     <div class="v-beat v-beat-odd" v-bind:style="spinnerStyle">
+	//     </div><div class="v-beat v-beat-even" v-bind:style="spinnerStyle">
+	//     </div><div class="v-beat v-beat-odd" v-bind:style="spinnerStyle">
+	//     </div>
+	//   </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	
+	  name: 'BeatLoader',
+	
+	  props: {
+	    color: {
+	      type: String,
+	      default: '#5dc596'
+	    },
+	    height: {
+	      type: String,
+	      default: '15px'
+	    },
+	    width: {
+	      type: String,
+	      default: '15px'
+	    },
+	    margin: {
+	      type: String,
+	      default: '2px'
+	    },
+	    radius: {
+	      type: String,
+	      default: '100%'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      spinnerStyle: {
+	        backgroundColor: this.color,
+	        height: this.height,
+	        width: this.width,
+	        margin: this.margin,
+	        borderRadius: this.radius
+	        // TODO
+	        // animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
+	        // animationFillMode: "both"
+	      }
+	    };
+	  }
+	};
+	// </script>
+
+	// <style>
+	// /*.v-spinner
+	// {
+	//     margin: 100px auto;
+	//     text-align: center;
+	// }
+	// */.v-spinner .v-beat
+	// {
+	//     -webkit-animation: v-beatStretchDelay 0.7s infinite linear;
+	//             animation: v-beatStretchDelay 0.7s infinite linear;
+	//     -webkit-animation-fill-mode: both;
+	// 	          animation-fill-mode: both;
+	//     display: inline-block;        
+	// }
+
+	// .v-spinner .v-beat-odd
+	// {
+	//   animation-delay: 0s;
+	// }
+	// .v-spinner .v-beat-even
+	// {
+	//   animation-delay: 0.35s;
+	// }
+
+	// @-webkit-keyframes v-beatStretchDelay
+	// {
+	//     50%
+	//     {
+	//         -webkit-transform: scale(0.75);
+	//                 transform: scale(0.75);
+	//         -webkit-opacity: 0.2;            
+	//                 opacity: 0.2;
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: scale(1);
+	//                 transform: scale(1);
+	//         -webkit-opacity: 1;            
+	//                 opacity: 1;
+	//     }
+	// }
+
+	// @keyframes v-beatStretchDelay
+	// {
+	//     50%
+	//     {
+	//         -webkit-transform: scale(0.75);
+	//                 transform: scale(0.75);
+	//         -webkit-opacity: 0.2;            
+	//                 opacity: 0.2;
+	//     }
+	//     100%
+	//     {
+	//         -webkit-transform: scale(1);
+	//                 transform: scale(1);
+	//         -webkit-opacity: 1;            
+	//                 opacity: 1;
+	//     }
+	// }
+	// </style>
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ }
 /******/ ])
