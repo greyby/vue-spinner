@@ -4,6 +4,7 @@ var ScaleLoader = VueSpinner.ScaleLoader
 var ClipLoader = VueSpinner.ClipLoader
 var RiseLoader = VueSpinner.RiseLoader
 var BeatLoader = VueSpinner.BeatLoader
+var SyncLoader = VueSpinner.SyncLoader
 
 new Vue({
 	el: '#app',
@@ -12,7 +13,8 @@ new Vue({
 		ScaleLoader,
 		ClipLoader,
 		RiseLoader,
-		BeatLoader
+		BeatLoader,
+		SyncLoader
 	},
 	data () {
 		return {

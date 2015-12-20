@@ -3,6 +3,7 @@ import ScaleLoader from './ScaleLoader.vue'
 import ClipLoader from './ClipLoader.vue'
 import RiseLoader from './RiseLoader.vue'
 import BeatLoader from './BeatLoader.vue'
+import SyncLoader from './SyncLoader.vue'
 
 
 Vue.config.debug = true
@@ -14,7 +15,8 @@ new Vue({
     ScaleLoader,
     ClipLoader,
     RiseLoader,
-    BeatLoader
+    BeatLoader,
+    SyncLoader
     
   },
   data () {
