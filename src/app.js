@@ -4,7 +4,7 @@ import ClipLoader from './ClipLoader.vue'
 import RiseLoader from './RiseLoader.vue'
 import BeatLoader from './BeatLoader.vue'
 import SyncLoader from './SyncLoader.vue'
-
+import RotateLoader from './RotateLoader.vue'
 
 Vue.config.debug = true
 
@@ -16,12 +16,11 @@ new Vue({
     ClipLoader,
     RiseLoader,
     BeatLoader,
-    SyncLoader
-    
+    SyncLoader,
+    RotateLoader
   },
   data () {
     return {
-
    		color: '#5dc596',
       height: '15px',
       width: '15px',

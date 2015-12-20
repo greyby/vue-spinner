@@ -5,6 +5,7 @@ var ClipLoader = VueSpinner.ClipLoader
 var RiseLoader = VueSpinner.RiseLoader
 var BeatLoader = VueSpinner.BeatLoader
 var SyncLoader = VueSpinner.SyncLoader
+var RotateLoader = VueSpinner.RotateLoader
 
 new Vue({
 	el: '#app',
@@ -14,7 +15,8 @@ new Vue({
 		ClipLoader,
 		RiseLoader,
 		BeatLoader,
-		SyncLoader
+		SyncLoader,
+		RotateLoader
 	},
 	data () {
 		return {
