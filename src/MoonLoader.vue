@@ -62,8 +62,8 @@ export default {
 .v-spinner .v-moon1
 {
 
-    -webkit-animation: v-moonStretchDelay 6s 0s infinite linear;
-            animation: v-moonStretchDelay 6s 0s infinite linear;
+    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
+            animation: v-moonStretchDelay 0.6s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
     position: relative;
