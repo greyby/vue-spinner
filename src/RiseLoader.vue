@@ -1,10 +1,10 @@
 <template>
 <div class="v-spinner">
-    <div class="v-rise v-rise-odd v-rise1" v-bind:style="spinnerStyle">
-    </div><div class="v-rise v-rise-even v-rise2" v-bind:style="spinnerStyle">
-    </div><div class="v-rise v-rise-odd v-rise3" v-bind:style="spinnerStyle">
-    </div><div class="v-rise v-rise-even v-rise4" v-bind:style="spinnerStyle">
-    </div><div class="v-rise v-rise-odd v-rise5" v-bind:style="spinnerStyle">
+    <div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
+    </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
+    </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
+    </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
+    </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
     </div>
   </div>
 </template>
@@ -44,9 +44,6 @@ export default {
      		width: this.width,
       	margin: this.margin,
       	borderRadius: this.radius
-      	// TODO 
-      	// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
-      	// animationFillMode: "both"
       }
     }
   }
@@ -71,7 +68,7 @@ export default {
     -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
             animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);
     -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
+	        animation-fill-mode: both;
 
     display: inline-block;
 }
@@ -86,75 +83,17 @@ export default {
     display: inline-block;
 }
 
-@-webkit-keyframes v-riseEvenDelay
-{
-    0%
-    {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-    25%
-    {
-        -webkit-transform: translateY(-30px);
-                transform: translateY(-30px);
-    }
-    50%
-    {
-        -webkit-transform: scale(0.4);
-                transform: scale(0.4);
-    }
-    75%
-    {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
-    }
-    100%
-    {
-        -webkit-transform: translateY(0) scale(1.0);
-                transform: translateY(0) scale(1.0);
-    }
-}
-
-@keyframes v-riseEvenDelay
-{
-    0%
-    {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-    25%
-    {
-        -webkit-transform: translateY(-30px);
-                transform: translateY(-30px);
-    }
-    50%
-    {
-        -webkit-transform: scale(0.4);
-                transform: scale(0.4);
-    }
-    75%
-    {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
-    }
-    100%
-    {
-        -webkit-transform: translateY(0) scale(1.0);
-                transform: translateY(0) scale(1.0);
-    }
-}
-
 @-webkit-keyframes v-riseOddDelay
 {
+    25
+    {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
     0%
     {
         -webkit-transform: scale(0.4);
                 transform: scale(0.4);
-    }
-    25%
-    {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
     }
     50%
     {
@@ -175,15 +114,15 @@ export default {
 
 @keyframes v-riseOddDelay
 {
+    25
+    {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
     0%
     {
         -webkit-transform: scale(0.4);
                 transform: scale(0.4);
-    }
-    25%
-    {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
     }
     50%
     {
@@ -199,6 +138,64 @@ export default {
     {
         -webkit-transform: translateY(0) scale(0.75);
                 transform: translateY(0) scale(0.75);
+    }
+}
+
+@-webkit-keyframes v-riseEvenDelay
+{
+    25
+    {
+        -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+    }
+    0%
+    {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    50%
+    {
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+    }
+    75%
+    {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0) scale(1.0);
+                transform: translateY(0) scale(1.0);
+    }
+}
+
+@keyframes v-riseEvenDelay
+{
+    25
+    {
+        -webkit-transform: translateY(-30px);
+                transform: translateY(-30px);
+    }
+    0%
+    {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    50%
+    {
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+    }
+    75%
+    {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0) scale(1.0);
+                transform: translateY(0) scale(1.0);
     }
 }
 </style>
