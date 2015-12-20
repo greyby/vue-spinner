@@ -5,6 +5,7 @@ import RiseLoader from './RiseLoader.vue'
 import BeatLoader from './BeatLoader.vue'
 import SyncLoader from './SyncLoader.vue'
 import RotateLoader from './RotateLoader.vue'
+import FadeLoader from './FadeLoader.vue'
 
 const VueSpinner = {
   PulseLoader,
@@ -13,7 +14,8 @@ const VueSpinner = {
   RiseLoader,
   BeatLoader,
   SyncLoader,
-  RotateLoader
+  RotateLoader,
+  FadeLoader
 }
 
 module.exports = VueSpinner
