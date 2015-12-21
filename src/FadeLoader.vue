@@ -1,5 +1,5 @@
 <template>
-  <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+  <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0, left: '50%', top: '50%', margin: 0}">
   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
     <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
     </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
