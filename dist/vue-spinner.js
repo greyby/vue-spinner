@@ -1962,7 +1962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0, left: '50%', top: '50%', margin: 0}">
 	//   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
 	//     <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
 	//     </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
@@ -2130,7 +2130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 56 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0, left: '50%', top: '50%', margin: 0}\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 57 */
@@ -2539,7 +2539,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-moon\n{\n          \n}\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 6s 0s infinite linear;\n            animation: v-moonStretchDelay 6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n\n    background-color: #5dc596;\n    opacity: 0.8;\n    position: absolute;\n    top: 25.714285714285715px;\n}\n\n.v-spinner .v-moon3\n{\n    border: 8.571428571428571px solid #5dc596;\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner .v-moon\n{\n          \n}\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n\n    background-color: #5dc596;\n    opacity: 0.8;\n    position: absolute;\n    top: 25.714285714285715px;\n}\n\n.v-spinner .v-moon3\n{\n    border: 8.571428571428571px solid #5dc596;\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
 	
 	// exports
 
@@ -2590,7 +2590,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      spinnerStyle: {
 	        height: this.size + 'px',
 	        width: this.size + 'px',
-	        borderRadius: this.radius
+	        borderRadius: this.radius,
+	        margin: '0 auto'
 	      }
 	    };
 	  },
@@ -2618,8 +2619,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	// .v-spinner .v-moon1
 	// {
 
-	//     -webkit-animation: v-moonStretchDelay 6s 0s infinite linear;
-	//             animation: v-moonStretchDelay 6s 0s infinite linear;
+	//     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
+	//             animation: v-moonStretchDelay 0.6s 0s infinite linear;
 	//     -webkit-animation-fill-mode: forwards;
 	//             animation-fill-mode: forwards;
 	//     position: relative;
@@ -3028,7 +3029,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return {
 	        height: this.size,
 	        width: this.size,
-	        position: 'relative'
+	        position: 'relative',
+	        margin: '0 auto'
 	      };
 	    }
 	  }
@@ -3218,7 +3220,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return {
 	        height: this.size + 'px',
 	        width: this.size + 'px',
-	        position: 'relative'
+	        position: 'relative',
+	        margin: '0 auto'
 	      };
 	    }
 	  }
