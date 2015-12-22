@@ -1962,7 +1962,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0, left: '50%', top: '50%', margin: 0}">
+	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
 	//   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
 	//     <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
 	//     </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
@@ -2130,7 +2130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 56 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0, left: '50%', top: '50%', margin: 0}\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 57 */
@@ -2590,8 +2590,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      spinnerStyle: {
 	        height: this.size + 'px',
 	        width: this.size + 'px',
-	        borderRadius: this.radius,
-	        margin: '0 auto'
+	        borderRadius: this.radius
 	      }
 	    };
 	  },
@@ -2726,7 +2725,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-ring\n{\n          \n}\n\n.v-spinner .v-ring1\n{\n\n    -webkit-animation: v-ringStretchDelay 2s 0s infinite linear;\n            animation: v-ringStretchDelay 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring2\n{\n\n    -webkit-animation: v-ringRightRotate 2s 0s infinite linear;\n            animation: v-ringRightRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n\n    -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;\n            animation: v-ringLeftRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@-webkit-keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@-webkit-keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner .v-ring\n{         \n}\n\n.v-spinner .v-ring1\n{      \n}\n\n.v-spinner .v-ring2\n{\n\n    -webkit-animation: v-ringRightRotate 2s 0s infinite linear;\n            animation: v-ringRightRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;  \n    position: absolute;          \n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n\n    -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;\n            animation: v-ringLeftRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@-webkit-keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@-webkit-keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}", ""]);
 	
 	// exports
 
@@ -2784,8 +2783,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    spinnerBasicStyle: function spinnerBasicStyle() {
 	      return {
-	        height: this.size,
-	        width: this.size,
+	        height: this.size + 'px',
+	        width: this.size + 'px',
 	        position: 'relative'
 	      };
 	    }
@@ -2797,21 +2796,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <style>
 
 	// .v-spinner .v-ring
-	// {
-
+	// {        
 	// }
 
 	// .v-spinner .v-ring1
-	// {
-
-	//     -webkit-animation: v-ringStretchDelay 2s 0s infinite linear;
-	//             animation: v-ringStretchDelay 2s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     perspective: 800px;           
-	//     position: absolute;
-	//     top: 0;
-	//     left: 0;
+	// {     
 	// }
 
 	// .v-spinner .v-ring2
@@ -2821,8 +2810,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             animation: v-ringRightRotate 2s 0s infinite linear;
 	//     -webkit-animation-fill-mode: forwards;
 	//             animation-fill-mode: forwards;
-	//     perspective: 800px;           
-	//     position: absolute;
+	//     perspective: 800px; 
+	//     position: absolute;         
 	//     top: 0;
 	//     left: 0;
 	// }
@@ -3029,8 +3018,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return {
 	        height: this.size,
 	        width: this.size,
-	        position: 'relative',
-	        margin: '0 auto'
+	        position: 'relative'
 	      };
 	    }
 	  }
@@ -3220,8 +3208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return {
 	        height: this.size + 'px',
 	        width: this.size + 'px',
-	        position: 'relative',
-	        margin: '0 auto'
+	        position: 'relative'
 	      };
 	    }
 	  }
