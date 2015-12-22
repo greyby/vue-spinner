@@ -1,15 +1,15 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
 *,
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
-}
-
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -90,8 +90,7 @@ ul {
 }
 
 #wrapper {
-    position: relative;
-    width: 70%;
+    width: 960px;
     margin: 0 auto;
     min-height: 80px;
     text-align: center;
@@ -119,16 +118,33 @@ ul {
 
 
 .spinner-list {
-  /*padding: 5px;*/
-  width: 200px;
+
+/*  width: 200px;
   height: 150px;
-  /*margin-top: 10px;*/
-  
   line-height: 150px;
   color: white;
   font-weight: bold;
   font-size: 3em;
-  text-align: center;
+  text-align: center;*/
+
+
+
+  display: -webkit-flex;
+  display: flex;
+
+  webkit-flex: 0 1 auto;
+         flex: 0 1 auto;
+
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  
+  width: 200px;
+  height: 200px;
+  webkit-align-items: center;
+         align-items: center;
+  webkit-justify-content: center;
+         justify-content: center;          
+ 
 }
 
 @media screen and(max-width: 700px) {

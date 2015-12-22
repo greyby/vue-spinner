@@ -42,8 +42,8 @@ export default {
     },
     spinnerBasicStyle () {
       return {
-        height: this.size,
-        width: this.size,
+        height: this.size + 'px',
+        width: this.size + 'px',
         position: 'relative'
       }
     }
@@ -55,21 +55,11 @@ export default {
 <style>
 
 .v-spinner .v-ring
-{
-          
+{         
 }
 
 .v-spinner .v-ring1
-{
-
-    -webkit-animation: v-ringStretchDelay 2s 0s infinite linear;
-            animation: v-ringStretchDelay 2s 0s infinite linear;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    perspective: 800px;            
-    position: absolute;
-    top: 0;
-    left: 0;
+{      
 }
 
 .v-spinner .v-ring2
@@ -79,8 +69,8 @@ export default {
             animation: v-ringRightRotate 2s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-    perspective: 800px;            
-    position: absolute;
+    perspective: 800px;  
+    position: absolute;          
     top: 0;
     left: 0;
 }
