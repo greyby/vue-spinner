@@ -15,11 +15,7 @@ export default {
       type: String,
       default: '#5dc596'
     },
-  	height: {
-      type: String,
-      default: '35px'
-    },
-  	width: {
+  	size: {
       type: String,
       default: '35px'
     },
@@ -31,9 +27,8 @@ export default {
   data () {
     return {
       spinnerStyle: {
-      	
-      	height: this.height,
-     	width: this.width,
+      	height: this.size,
+     	  width: this.size,
         border: '2px solid',
       	borderColor: this.color,
         borderBottomColor: 'transparent',
@@ -63,7 +58,7 @@ export default {
     -webkit-animation: v-clipDelay 0.75s 0s infinite linear;
             animation: v-clipDelay 0.75s 0s infinite linear;
     -webkit-animation-fill-mode: both;
-	        animation-fill-mode: both;
+	          animation-fill-mode: both;
 
     display: inline-block;
 }
