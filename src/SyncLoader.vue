@@ -1,8 +1,8 @@
 <template>
 <div class="v-spinner">
-    <div class="v-sync v-sync1" v-bind:style="spinnerStyle">
-    </div><div class="v-sync v-sync2" v-bind:style="spinnerStyle">
-    </div><div class="v-sync v-sync3" v-bind:style="spinnerStyle">
+    <div class="v-sync v-sync1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+    </div><div class="v-sync v-sync2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+    </div><div class="v-sync v-sync3" v-bind:style="[spinnerStyle,spinnerDelay3]">
     </div>
   </div>
 </template>
@@ -41,7 +41,22 @@ export default {
       	height: this.height,
      		width: this.width,
       	margin: this.margin,
-      	borderRadius: this.radius
+      	borderRadius: this.radius,
+        display: 'inline-block',
+        animationName: 'v-syncStretchDelay',
+        animationDuration: '0.6s',
+        animationIterationCount: 'infinite',
+        animationTimingFunction: 'ease-in-out',
+        animationFillMode: 'both'
+      },
+      spinnerDelay1: {
+        animationDelay: '0.07s'
+      },
+      spinnerDelay2: {
+        animationDelay: '0.14s'
+      },
+      spinnerDelay3: {
+        animationDelay: '0.21s'
       }
     }
   }
@@ -50,28 +65,6 @@ export default {
 </script>
 
 <style>
-
-.v-spinner .v-sync
-{
-    -webkit-animation: v-syncStretchDelay 0.6s infinite ease-in-out;
-            animation: v-syncStretchDelay 0.6s infinite ease-in-out;
-    -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
-    display: inline-block;         
-}
-
-.v-spinner .v-sync1
-{
-  animation-delay: 0.07s;
-}
-.v-spinner .v-sync2
-{
-  animation-delay: 0.14s;
-}
-.v-spinner .v-sync3
-{
-  animation-delay: 0.21s;
-}
 
 @-webkit-keyframes v-syncStretchDelay
 {

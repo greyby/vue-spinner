@@ -1,8 +1,8 @@
 <template>
 <div class="v-spinner">
-    <div class="v-pulse v-pulse1" v-bind:style="spinnerStyle">
-    </div><div class="v-pulse v-pulse2" v-bind:style="spinnerStyle">
-    </div><div class="v-pulse v-pulse3" v-bind:style="spinnerStyle">
+    <div class="v-pulse v-pulse1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+    </div><div class="v-pulse v-pulse2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+    </div><div class="v-pulse v-pulse3" v-bind:style="[spinnerStyle,spinnerDelay3]">
     </div>
   </div>
 </template>
@@ -41,10 +41,25 @@ export default {
       	height: this.height,
      		width: this.width,
       	margin: this.margin,
-      	borderRadius: this.radius
+      	borderRadius: this.radius,
+        display: 'inline-block',
+        animationName: 'v-pulseStretchDelay',
+        animationDuration: '0.75s',
+        animationIterationCount: 'infinite',
+        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
+        animationFillMode: 'both'
       	// TODO 
       	// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
       	// animationFillMode: "both"
+      },
+      spinnerDelay1: {
+        animationDelay: '0.12s'
+      },
+      spinnerDelay2: {
+        animationDelay: '0.24s'
+      },
+      spinnerDelay3: {
+        animationDelay: '0.36s'
       }
     }
   }
@@ -59,27 +74,6 @@ export default {
     text-align: center;
 }
 */
-.v-spinner .v-pulse
-{
-    -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
-            animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
-    -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
-    display: inline-block;         
-}
-
-.v-spinner .v-pulse1
-{
-  animation-delay: 0.12s;
-}
-.v-spinner .v-pulse2
-{
-  animation-delay: 0.24s;
-}
-.v-spinner .v-pulse3
-{
-  animation-delay: 0.36s;
-}
 
 @-webkit-keyframes v-pulseStretchDelay
 {

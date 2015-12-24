@@ -24,20 +24,19 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-      	height: this.size,
-     	  width: this.size,
-        border: '2px solid',
-      	borderColor: this.color,
-        borderBottomColor: 'transparent',
-      	borderRadius: this.radius,
+  computed: {
+    spinnerStyle () {
+      return {
+        height: this.size,
+        width: this.size,
+        borderWidth: '2px',
+        borderStyle: 'solid',
+        borderColor: this.color + ' ' + this.color + ' transparent',
+        borderRadius: this.radius,
         background: 'transparent !important'
       }
     }
   }
-
 }
 </script>
 

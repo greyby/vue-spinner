@@ -15,6 +15,10 @@ npm run dev
 
 ## Usage
 
+## TODO
+
+
+
 ## License
 
  vue-spinner is licensed under [The MIT License](LICENSE).
