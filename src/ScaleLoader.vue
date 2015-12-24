@@ -1,10 +1,10 @@
 <template>
 <div class="v-spinner">
-    <div class="v-scale v-scale1" v-bind:style="spinnerStyle">
-    </div><div class="v-scale v-scale2" v-bind:style="spinnerStyle">
-    </div><div class="v-scale v-scale3" v-bind:style="spinnerStyle">
-    </div><div class="v-scale v-scale4" v-bind:style="spinnerStyle">
-    </div><div class="v-scale v-scale5" v-bind:style="spinnerStyle">
+    <div class="v-scale v-scale1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+    </div><div class="v-scale v-scale2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+    </div><div class="v-scale v-scale3" v-bind:style="[spinnerStyle,spinnerDelay3]">
+    </div><div class="v-scale v-scale4" v-bind:style="[spinnerStyle,spinnerDelay4]">
+    </div><div class="v-scale v-scale5" v-bind:style="[spinnerStyle,spinnerDelay5]">
     </div>
   </div>
 </template>
@@ -43,10 +43,31 @@ export default {
       	height: this.height,
      		width: this.width,
       	margin: this.margin,
-      	borderRadius: this.radius
+      	borderRadius: this.radius,
+        display: 'inline-block',
+        animationName: 'v-scaleStretchDelay',
+        animationDuration: '1s',
+        animationIterationCount: 'infinite',
+        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
+        animationFillMode: 'both'
       	// TODO 
       	// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
       	// animationFillMode: "both"
+      },
+      spinnerDelay1: {
+        animationDelay: '0.1s'
+      },
+      spinnerDelay2: {
+        animationDelay: '0.2s'
+      },
+      spinnerDelay3: {
+        animationDelay: '0.3s'
+      },
+      spinnerDelay4: {
+        animationDelay: '0.4s'
+      },
+      spinnerDelay5: {
+        animationDelay: '0.5s'
       }
     }
   }
@@ -66,36 +87,6 @@ export default {
  
 }
 
-.v-spinner .v-scale
-{
-    -webkit-animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
-            animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
-    -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
-
-    display: inline-block;
-}
-
-.v-spinner .v-scale1
-{
-  animation-delay: 0.1s;
-}
-.v-spinner .v-scale2
-{
-  animation-delay: 0.2s;
-}
-.v-spinner .v-scale3
-{
-  animation-delay: 0.3s;
-}
-.v-spinner .v-scale4
-{
-  animation-delay: 0.4s;
-}
-.v-spinner .v-scale5
-{
-  animation-delay: 0.5s;
-}
 
 @-webkit-keyframes v-scaleStretchDelay
 {

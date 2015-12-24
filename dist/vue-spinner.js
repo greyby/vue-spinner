@@ -151,11 +151,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(16)
-	module.exports = __webpack_require__(20)
-	
+	__vue_script__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(21)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(21)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -164,7 +166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -203,7 +205,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n.v-spinner .v-pulse\n{\n    -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n            animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-pulse1\n{\n  -webkit-animation-delay: 0.12s;\n          animation-delay: 0.12s;\n}\n.v-spinner .v-pulse2\n{\n  -webkit-animation-delay: 0.24s;\n          animation-delay: 0.24s;\n}\n.v-spinner .v-pulse3\n{\n  -webkit-animation-delay: 0.36s;\n          animation-delay: 0.36s;\n}\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}", ""]);
+	exports.push([module.id, "/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}", ""]);
 	
 	// exports
 
@@ -529,9 +531,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	// <template>
 	// <div class="v-spinner">
-	//     <div class="v-pulse v-pulse1" v-bind:style="spinnerStyle">
-	//     </div><div class="v-pulse v-pulse2" v-bind:style="spinnerStyle">
-	//     </div><div class="v-pulse v-pulse3" v-bind:style="spinnerStyle">
+	//     <div class="v-pulse v-pulse1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+	//     </div><div class="v-pulse v-pulse2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+	//     </div><div class="v-pulse v-pulse3" v-bind:style="[spinnerStyle,spinnerDelay3]">
 	//     </div>
 	//   </div>
 	// </template>
@@ -570,10 +572,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	        height: this.height,
 	        width: this.width,
 	        margin: this.margin,
-	        borderRadius: this.radius
+	        borderRadius: this.radius,
+	        display: 'inline-block',
+	        animationName: 'v-pulseStretchDelay',
+	        animationDuration: '0.75s',
+	        animationIterationCount: 'infinite',
+	        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
+	        animationFillMode: 'both'
 	        // TODO
 	        // animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
 	        // animationFillMode: "both"
+	      },
+	      spinnerDelay1: {
+	        animationDelay: '0.12s'
+	      },
+	      spinnerDelay2: {
+	        animationDelay: '0.24s'
+	      },
+	      spinnerDelay3: {
+	        animationDelay: '0.36s'
 	      }
 	    };
 	  }
@@ -587,27 +604,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     text-align: center;
 	// }
 	// */
-	// .v-spinner .v-pulse
-	// {
-	//     -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
-	//             animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
-	//     -webkit-animation-fill-mode: both;
-	// 	          animation-fill-mode: both;
-	//     display: inline-block;        
-	// }
-
-	// .v-spinner .v-pulse1
-	// {
-	//   animation-delay: 0.12s;
-	// }
-	// .v-spinner .v-pulse2
-	// {
-	//   animation-delay: 0.24s;
-	// }
-	// .v-spinner .v-pulse3
-	// {
-	//   animation-delay: 0.36s;
-	// }
 
 	// @-webkit-keyframes v-pulseStretchDelay
 	// {
@@ -652,17 +648,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(23)
-	module.exports = __webpack_require__(25)
-	
+	__vue_script__ = __webpack_require__(25)
+	__vue_template__ = __webpack_require__(26)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(26)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -671,7 +669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -710,7 +708,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-scale\n{\n    -webkit-animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);\n            animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-scale1\n{\n  -webkit-animation-delay: 0.1s;\n          animation-delay: 0.1s;\n}\n.v-spinner .v-scale2\n{\n  -webkit-animation-delay: 0.2s;\n          animation-delay: 0.2s;\n}\n.v-spinner .v-scale3\n{\n  -webkit-animation-delay: 0.3s;\n          animation-delay: 0.3s;\n}\n.v-spinner .v-scale4\n{\n  -webkit-animation-delay: 0.4s;\n          animation-delay: 0.4s;\n}\n.v-spinner .v-scale5\n{\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n\n@-webkit-keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n\n@-webkit-keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}", ""]);
 	
 	// exports
 
@@ -726,11 +724,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	// <template>
 	// <div class="v-spinner">
-	//     <div class="v-scale v-scale1" v-bind:style="spinnerStyle">
-	//     </div><div class="v-scale v-scale2" v-bind:style="spinnerStyle">
-	//     </div><div class="v-scale v-scale3" v-bind:style="spinnerStyle">
-	//     </div><div class="v-scale v-scale4" v-bind:style="spinnerStyle">
-	//     </div><div class="v-scale v-scale5" v-bind:style="spinnerStyle">
+	//     <div class="v-scale v-scale1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+	//     </div><div class="v-scale v-scale2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+	//     </div><div class="v-scale v-scale3" v-bind:style="[spinnerStyle,spinnerDelay3]">
+	//     </div><div class="v-scale v-scale4" v-bind:style="[spinnerStyle,spinnerDelay4]">
+	//     </div><div class="v-scale v-scale5" v-bind:style="[spinnerStyle,spinnerDelay5]">
 	//     </div>
 	//   </div>
 	// </template>
@@ -769,10 +767,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        height: this.height,
 	        width: this.width,
 	        margin: this.margin,
-	        borderRadius: this.radius
+	        borderRadius: this.radius,
+	        display: 'inline-block',
+	        animationName: 'v-scaleStretchDelay',
+	        animationDuration: '1s',
+	        animationIterationCount: 'infinite',
+	        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
+	        animationFillMode: 'both'
 	        // TODO
 	        // animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
 	        // animationFillMode: "both"
+	      },
+	      spinnerDelay1: {
+	        animationDelay: '0.1s'
+	      },
+	      spinnerDelay2: {
+	        animationDelay: '0.2s'
+	      },
+	      spinnerDelay3: {
+	        animationDelay: '0.3s'
+	      },
+	      spinnerDelay4: {
+	        animationDelay: '0.4s'
+	      },
+	      spinnerDelay5: {
+	        animationDelay: '0.5s'
 	      }
 	    };
 	  }
@@ -789,37 +808,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     /*margin: 25px auto;*/
 	//     text-align: center;
 
-	// }
-
-	// .v-spinner .v-scale
-	// {
-	//     -webkit-animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
-	//             animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
-	//     -webkit-animation-fill-mode: both;
-	// 	          animation-fill-mode: both;
-
-	//     display: inline-block;
-	// }
-
-	// .v-spinner .v-scale1
-	// {
-	//   animation-delay: 0.1s;
-	// }
-	// .v-spinner .v-scale2
-	// {
-	//   animation-delay: 0.2s;
-	// }
-	// .v-spinner .v-scale3
-	// {
-	//   animation-delay: 0.3s;
-	// }
-	// .v-spinner .v-scale4
-	// {
-	//   animation-delay: 0.4s;
-	// }
-	// .v-spinner .v-scale5
-	// {
-	//   animation-delay: 0.5s;
 	// }
 
 	// @-webkit-keyframes v-scaleStretchDelay
@@ -857,17 +845,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 26 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(28)
-	module.exports = __webpack_require__(30)
-	
+	__vue_script__ = __webpack_require__(30)
+	__vue_template__ = __webpack_require__(31)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(31)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -876,7 +866,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -915,7 +905,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}", ""]);
 	
 	// exports
 
@@ -946,11 +936,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '35px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '35px'
 	    },
@@ -959,19 +945,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      default: '100%'
 	    }
 	  },
-	  data: function data() {
-	    return {
-	      spinnerStyle: {
-	
-	        height: this.height,
-	        width: this.width,
-	        border: '2px solid',
-	        borderColor: this.color,
-	        borderBottomColor: 'transparent',
+	  computed: {
+	    spinnerStyle: function spinnerStyle() {
+	      return {
+	        height: this.size,
+	        width: this.size,
+	        borderWidth: '2px',
+	        borderStyle: 'solid',
+	        borderColor: this.color + ' ' + this.color + ' transparent',
 	        borderRadius: this.radius,
 	        background: 'transparent !important'
-	      }
-	    };
+	      };
+	    }
 	  }
 	};
 	// </script>
@@ -993,7 +978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     -webkit-animation: v-clipDelay 0.75s 0s infinite linear;
 	//             animation: v-clipDelay 0.75s 0s infinite linear;
 	//     -webkit-animation-fill-mode: both;
-	// 	        animation-fill-mode: both;
+	// 	          animation-fill-mode: both;
 
 	//     display: inline-block;
 	// }
@@ -1047,11 +1032,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(33)
-	module.exports = __webpack_require__(35)
-	
+	__vue_script__ = __webpack_require__(35)
+	__vue_template__ = __webpack_require__(36)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(36)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1060,7 +1047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -1324,11 +1311,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(38)
-	module.exports = __webpack_require__(40)
-	
+	__vue_script__ = __webpack_require__(40)
+	__vue_template__ = __webpack_require__(41)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(41)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1337,7 +1326,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -1507,11 +1496,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(43)
-	module.exports = __webpack_require__(45)
-	
+	__vue_script__ = __webpack_require__(45)
+	__vue_template__ = __webpack_require__(46)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(46)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1520,7 +1511,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -1559,7 +1550,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-sync\n{\n    -webkit-animation: v-syncStretchDelay 0.6s infinite ease-in-out;\n            animation: v-syncStretchDelay 0.6s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-sync1\n{\n  -webkit-animation-delay: 0.07s;\n          animation-delay: 0.07s;\n}\n.v-spinner .v-sync2\n{\n  -webkit-animation-delay: 0.14s;\n          animation-delay: 0.14s;\n}\n.v-spinner .v-sync3\n{\n  -webkit-animation-delay: 0.21s;\n          animation-delay: 0.21s;\n}\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}", ""]);
+	exports.push([module.id, "@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}", ""]);
 	
 	// exports
 
@@ -1575,9 +1566,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	// <template>
 	// <div class="v-spinner">
-	//     <div class="v-sync v-sync1" v-bind:style="spinnerStyle">
-	//     </div><div class="v-sync v-sync2" v-bind:style="spinnerStyle">
-	//     </div><div class="v-sync v-sync3" v-bind:style="spinnerStyle">
+	//     <div class="v-sync v-sync1" v-bind:style="[spinnerStyle,spinnerDelay1]">
+	//     </div><div class="v-sync v-sync2" v-bind:style="[spinnerStyle,spinnerDelay2]">
+	//     </div><div class="v-sync v-sync3" v-bind:style="[spinnerStyle,spinnerDelay3]">
 	//     </div>
 	//   </div>
 	// </template>
@@ -1616,7 +1607,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        height: this.height,
 	        width: this.width,
 	        margin: this.margin,
-	        borderRadius: this.radius
+	        borderRadius: this.radius,
+	        display: 'inline-block',
+	        animationName: 'v-syncStretchDelay',
+	        animationDuration: '0.6s',
+	        animationIterationCount: 'infinite',
+	        animationTimingFunction: 'ease-in-out',
+	        animationFillMode: 'both'
+	      },
+	      spinnerDelay1: {
+	        animationDelay: '0.07s'
+	      },
+	      spinnerDelay2: {
+	        animationDelay: '0.14s'
+	      },
+	      spinnerDelay3: {
+	        animationDelay: '0.21s'
 	      }
 	    };
 	  }
@@ -1624,28 +1630,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </script>
 
 	// <style>
-
-	// .v-spinner .v-sync
-	// {
-	//     -webkit-animation: v-syncStretchDelay 0.6s infinite ease-in-out;
-	//             animation: v-syncStretchDelay 0.6s infinite ease-in-out;
-	//     -webkit-animation-fill-mode: both;
-	// 	          animation-fill-mode: both;
-	//     display: inline-block;        
-	// }
-
-	// .v-spinner .v-sync1
-	// {
-	//   animation-delay: 0.07s;
-	// }
-	// .v-spinner .v-sync2
-	// {
-	//   animation-delay: 0.14s;
-	// }
-	// .v-spinner .v-sync3
-	// {
-	//   animation-delay: 0.21s;
-	// }
 
 	// @-webkit-keyframes v-syncStretchDelay
 	// {
@@ -1690,17 +1674,19 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 46 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(48)
-	module.exports = __webpack_require__(50)
-	
+	__vue_script__ = __webpack_require__(50)
+	__vue_template__ = __webpack_require__(51)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(51)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1709,7 +1695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -1895,11 +1881,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(53)
-	module.exports = __webpack_require__(55)
-	
+	__vue_script__ = __webpack_require__(55)
+	__vue_template__ = __webpack_require__(56)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(56)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -1908,7 +1896,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -2136,11 +2124,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(58)
-	module.exports = __webpack_require__(60)
-	
+	__vue_script__ = __webpack_require__(60)
+	__vue_template__ = __webpack_require__(61)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(61)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2149,7 +2139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -2311,11 +2301,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(63)
-	module.exports = __webpack_require__(65)
-	
+	__vue_script__ = __webpack_require__(65)
+	__vue_template__ = __webpack_require__(66)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(66)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2324,7 +2316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -2487,11 +2479,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(68)
-	module.exports = __webpack_require__(70)
-	
+	__vue_script__ = __webpack_require__(70)
+	__vue_template__ = __webpack_require__(71)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2500,7 +2494,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -2673,11 +2667,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(73)
-	module.exports = __webpack_require__(75)
-	
+	__vue_script__ = __webpack_require__(75)
+	__vue_template__ = __webpack_require__(76)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(76)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2686,7 +2682,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -2900,11 +2896,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(78)
-	module.exports = __webpack_require__(80)
-	
+	__vue_script__ = __webpack_require__(80)
+	__vue_template__ = __webpack_require__(81)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(81)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -2913,7 +2911,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
@@ -3097,11 +3095,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
 	__webpack_require__(83)
-	module.exports = __webpack_require__(85)
-	
+	__vue_script__ = __webpack_require__(85)
+	__vue_template__ = __webpack_require__(86)
+	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(86)
+	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -3110,7 +3110,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
-	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
 
