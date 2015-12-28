@@ -1,6 +1,6 @@
 {
   "name": "vue-spinner",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Spinners of Vue Components",
   "main": "src/app.js",
   "scripts": {
