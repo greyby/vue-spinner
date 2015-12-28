@@ -1,13 +1,15 @@
 Vue.config.debug = true // turn on debugging mode
 var PulseLoader = VueSpinner.PulseLoader
-var ScaleLoader = VueSpinner.ScaleLoader
+var GridLoader = VueSpinner.GridLoader
 var ClipLoader = VueSpinner.ClipLoader
 var RiseLoader = VueSpinner.RiseLoader
 var BeatLoader = VueSpinner.BeatLoader
 var SyncLoader = VueSpinner.SyncLoader
 var RotateLoader = VueSpinner.RotateLoader
 var FadeLoader = VueSpinner.FadeLoader
+var PacmanLoader = VueSpinner.PacmanLoader
 var SquareLoader = VueSpinner.SquareLoader
+var ScaleLoader = VueSpinner.ScaleLoader
 var SkewLoader = VueSpinner.SkewLoader
 var MoonLoader = VueSpinner.MoonLoader
 var RingLoader = VueSpinner.RingLoader
@@ -18,19 +20,21 @@ new Vue({
 	el: '#app',
 	components: {
 		PulseLoader,
-		ScaleLoader,
-		ClipLoader,
-		RiseLoader,
-		BeatLoader,
-		SyncLoader,
-		RotateLoader,
-		FadeLoader,
-		SquareLoader,
-		SkewLoader,
-		MoonLoader,
-		RingLoader,
-		BounceLoader,
-		DotLoader
+    GridLoader,
+    ClipLoader,
+    RiseLoader,
+    BeatLoader,
+    SyncLoader,
+    RotateLoader,
+    FadeLoader,
+    PacmanLoader,
+    SquareLoader,
+    ScaleLoader,
+    SkewLoader,
+    MoonLoader,
+    RingLoader,
+    BounceLoader,
+    DotLoader
 	},
 	data () {
 		return {

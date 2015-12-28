@@ -6,7 +6,45 @@ A collection of loading spinners with Vue.js. Just convert yuanyan's React.js pr
 
 ## Installation
 
-## Building
+### NPM
+```bash
+$ npm install vue-spinner
+```
+
+### CommonJS
+```js
+var PulseLoader = require('vue-spinner/src/PulseLoader.vue');
+
+new Vue({
+  components: {
+    'PulseLoader': PulseLoader
+  }
+})
+```
+
+### ES6
+```js
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+
+new Vue({
+  components: {
+    PulseLoader
+  }
+})
+```
+
+### Browser globals
+The `dist` folder contains `vue-spinner.js` and `vue-spinner.min.js` with all components exported in the <code>window.VueSpinner</code> object. These bundles are also available on NPM packages.
+
+```html
+<script src="path/to/vue.js"></script>
+<script src="path/to/vue-spinner.js"></script>
+<script>
+  var PulseLoader = VueStrap.PulseLoader
+</script>
+```
+
+## Local setup
 
 ```
 npm install
@@ -14,6 +52,9 @@ npm run dev
 ```
 
 ## Usage
+
+```html
+<pulse-loader></pulse-loader>
 
 ## TODO
 
