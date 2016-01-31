@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-sync v-sync1" v-bind:style="[spinnerStyle,spinnerDelay1]">
     </div><div class="v-sync v-sync2" v-bind:style="[spinnerStyle,spinnerDelay2]">
     </div><div class="v-sync v-sync3" v-bind:style="[spinnerStyle,spinnerDelay3]">
@@ -13,15 +13,15 @@ export default {
   name: 'SyncLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
-    height: {
-      type: String,
-      default: '15px'
-    },
-    width: {
+    size: {
       type: String,
       default: '15px'
     },
@@ -38,8 +38,8 @@ export default {
     return {
       spinnerStyle: {
       	backgroundColor: this.color,
-      	height: this.height,
-     		width: this.width,
+      	height: this.size,
+     		width: this.size,
       	margin: this.margin,
       	borderRadius: this.radius,
         display: 'inline-block',

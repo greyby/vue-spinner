@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
     </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
     </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
@@ -15,15 +15,15 @@ export default {
   name: 'RiseLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
   	color: { 
       type: String,
       default: '#5dc596'
     },
-  	height: {
-      type: String,
-      default: '15px'
-    },
-  	width: {
+  	size: {
       type: String,
       default: '15px'
     },
@@ -40,8 +40,8 @@ export default {
     return {
       spinnerStyle: {
       	backgroundColor: this.color,
-      	height: this.height,
-     		width: this.width,
+      	height: this.size,
+     	width: this.size,
       	margin: this.margin,
       	borderRadius: this.radius
       }

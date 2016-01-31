@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-ring v-ring1" v-bind:style="spinnerBasicStyle">
     <div class="v-ring v-ring2" v-bind:style="spinnerStyle">
     </div><div class="v-ring v-ring3" v-bind:style="spinnerStyle">
@@ -13,13 +13,17 @@ export default {
   name: 'RingLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
     size: {
       type: String,
-      default: '60'
+      default: '60px'
     },
     margin: {
       type: String,
@@ -33,17 +37,17 @@ export default {
   computed: {
     spinnerStyle () {
       return {
-        height: this.size + 'px',
-        width: this.size + 'px',
-        border: this.size/10 + 'px solid' + this.color,
+        height: this.size,
+        width: this.size,
+        border: parseFloat(this.size)/10 + 'px solid' + this.color,
         opacity: 0.4,
         borderRadius: this.radius
       }
     },
     spinnerBasicStyle () {
       return {
-        height: this.size + 'px',
-        width: this.size + 'px',
+        height: this.size,
+        width: this.size,
         position: 'relative'
       }
     }

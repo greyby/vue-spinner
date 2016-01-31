@@ -41,8 +41,7 @@ new Vue({
   data () {
     return {
    		color: '#5dc596',
-      height: '15px',
-      width: '15px',
+      size: '15px',
       margin: '2px',
       radius: '100%'
     }

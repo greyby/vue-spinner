@@ -542,7 +542,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-pulse v-pulse1" v-bind:style="[spinnerStyle,spinnerDelay1]">
 	//     </div><div class="v-pulse v-pulse2" v-bind:style="[spinnerStyle,spinnerDelay2]">
 	//     </div><div class="v-pulse v-pulse3" v-bind:style="[spinnerStyle,spinnerDelay3]">
@@ -556,15 +556,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'PulseLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '15px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '15px'
 	    },
@@ -581,8 +581,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        height: this.height,
-	        width: this.width,
+	        width: this.size,
+	        height: this.size,
 	        margin: this.margin,
 	        borderRadius: this.radius,
 	        display: 'inline-block',
@@ -591,9 +591,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        animationIterationCount: 'infinite',
 	        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
 	        animationFillMode: 'both'
-	        // TODO
-	        // animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
-	        // animationFillMode: "both"
 	      },
 	      spinnerDelay1: {
 	        animationDelay: '0.12s'
@@ -660,7 +657,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 24 */
@@ -735,7 +732,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//   <div class="v-spinner" v-bind:style="containerStyle">
+	//   <div class="v-spinner" v-bind:style="containerStyle" v-show="loading">
 	//     <div class="v-grid v-grid1" v-bind:style="[spinnerStyle,animationStyle,animationStyle1]">
 	//     </div><div class="v-grid v-grid2" v-bind:style="[spinnerStyle,animationStyle,animationStyle2]">
 	//     </div><div class="v-grid v-grid3" v-bind:style="[spinnerStyle,animationStyle,animationStyle3]">
@@ -755,17 +752,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'GridLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
 	    size: {
 	      type: String,
-	      default: '15'
+	      default: '15px'
 	    },
 	    margin: {
 	      type: String,
-	      default: '2'
+	      default: '2px'
 	    },
 	    radius: {
 	      type: String,
@@ -776,9 +777,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        width: this.size + 'px',
-	        height: this.size + 'px',
-	        margin: this.margin + 'px',
+	        width: this.size,
+	        height: this.size,
+	        margin: this.margin,
 	        borderRadius: this.radius
 	      }
 	    };
@@ -850,7 +851,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    containerStyle: function containerStyle() {
 	      return {
-	        width: this.size * 3 + this.margin * 6 + 'px',
+	        width: parseFloat(this.size) * 3 + parseFloat(this.margin) * 6 + 'px',
 	        fontSize: 0
 	      };
 	    }
@@ -921,7 +922,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 28 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\" v-bind:style=\"containerStyle\">\n    <div class=\"v-grid v-grid1\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle1]\">\n    </div><div class=\"v-grid v-grid2\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle2]\">\n    </div><div class=\"v-grid v-grid3\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle3]\">\n    </div><div class=\"v-grid v-grid4\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle4]\">\n    </div><div class=\"v-grid v-grid5\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle5]\">\n    </div><div class=\"v-grid v-grid6\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle6]\">\n    </div><div class=\"v-grid v-grid7\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle7]\">\n    </div><div class=\"v-grid v-grid8\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle8]\">\n    </div><div class=\"v-grid v-grid9\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle9]\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-bind:style=\"containerStyle\" v-show=\"loading\">\n    <div class=\"v-grid v-grid1\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle1]\">\n    </div><div class=\"v-grid v-grid2\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle2]\">\n    </div><div class=\"v-grid v-grid3\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle3]\">\n    </div><div class=\"v-grid v-grid4\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle4]\">\n    </div><div class=\"v-grid v-grid5\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle5]\">\n    </div><div class=\"v-grid v-grid6\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle6]\">\n    </div><div class=\"v-grid v-grid7\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle7]\">\n    </div><div class=\"v-grid v-grid8\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle8]\">\n    </div><div class=\"v-grid v-grid9\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle9]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 29 */
@@ -996,7 +997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-clip" v-bind:style="spinnerStyle">
 	//     </div>
 	//   </div>
@@ -1008,6 +1009,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'ClipLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -1102,7 +1107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 33 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 34 */
@@ -1177,7 +1182,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
 	//     </div><div class="v-rise v-rise-even" v-bind:style="spinnerStyle">
 	//     </div><div class="v-rise v-rise-odd" v-bind:style="spinnerStyle">
@@ -1193,15 +1198,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'RiseLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '15px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '15px'
 	    },
@@ -1218,8 +1223,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        height: this.height,
-	        width: this.width,
+	        height: this.size,
+	        width: this.size,
 	        margin: this.margin,
 	        borderRadius: this.radius
 	      }
@@ -1381,7 +1386,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 38 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 39 */
@@ -1456,7 +1461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-beat v-beat-odd" v-bind:style="spinnerStyle">
 	//     </div><div class="v-beat v-beat-even" v-bind:style="spinnerStyle">
 	//     </div><div class="v-beat v-beat-odd" v-bind:style="spinnerStyle">
@@ -1470,15 +1475,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'BeatLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '15px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '15px'
 	    },
@@ -1495,8 +1500,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        height: this.height,
-	        width: this.width,
+	        height: this.size,
+	        width: this.size,
 	        margin: this.margin,
 	        borderRadius: this.radius
 	      }
@@ -1566,7 +1571,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 43 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 44 */
@@ -1641,7 +1646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-sync v-sync1" v-bind:style="[spinnerStyle,spinnerDelay1]">
 	//     </div><div class="v-sync v-sync2" v-bind:style="[spinnerStyle,spinnerDelay2]">
 	//     </div><div class="v-sync v-sync3" v-bind:style="[spinnerStyle,spinnerDelay3]">
@@ -1655,15 +1660,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'SyncLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '15px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '15px'
 	    },
@@ -1680,8 +1685,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        height: this.height,
-	        width: this.width,
+	        height: this.size,
+	        width: this.size,
 	        margin: this.margin,
 	        borderRadius: this.radius,
 	        display: 'inline-block',
@@ -1750,7 +1755,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 48 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 49 */
@@ -1810,7 +1815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-rotate\n{\n          \n}\n\n.v-spinner .v-rotate1\n{\n\n    -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n            animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@-webkit-keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner .v-rotate1\n{\n    -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n            animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@-webkit-keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
 	
 	// exports
 
@@ -1825,7 +1830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-rotate v-rotate1" v-bind:style="spinnerStyle">
 	//     <div class="v-rotate v-rotate2" v-bind:style="spinnerStyle">
 	//     </div><div class="v-rotate v-rotate3" v-bind:style="spinnerStyle">
@@ -1839,15 +1844,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'RotateLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
-	    height: {
-	      type: String,
-	      default: '15px'
-	    },
-	    width: {
+	    size: {
 	      type: String,
 	      default: '15px'
 	    },
@@ -1864,8 +1869,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      spinnerStyle: {
 	        backgroundColor: this.color,
-	        height: this.height,
-	        width: this.width,
+	        height: this.size,
+	        width: this.size,
 	        margin: this.margin,
 	        borderRadius: this.radius
 	      }
@@ -1876,14 +1881,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// <style>
 
-	// .v-spinner .v-rotate
-	// {
-
-	// }
-
 	// .v-spinner .v-rotate1
 	// {
-
 	//     -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);
 	//             animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);
 	//     -webkit-animation-fill-mode: both;
@@ -1951,7 +1950,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 53 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-rotate v-rotate1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-rotate v-rotate2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rotate v-rotate3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rotate v-rotate1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-rotate v-rotate2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rotate v-rotate3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
 
 /***/ },
 /* 54 */
@@ -2011,7 +2010,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-fade\n{\n    -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n            animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    position: absolute;               \n}\n\n.v-spinner .v-fade1\n{\n  -webkit-animation-delay: 0.12s;\n          animation-delay: 0.12s;\n  top: 20px;\n  left: 0;\n}\n\n.v-spinner .v-fade2\n{\n  -webkit-animation-delay: 0.24s;\n          animation-delay: 0.24s;\n  top: 13.636363636363637px;\n  left: 13.636363636363637px;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n\n}\n\n.v-spinner .v-fade3\n{\n  -webkit-animation-delay: 0.36s;\n          animation-delay: 0.36s;\n  top: 0;\n  left: 20px;\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.v-spinner .v-fade4\n{\n  -webkit-animation-delay: 0.48s;\n          animation-delay: 0.48s;\n  top: -13.636363636363637px;\n  left: 13.636363636363637px;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n}\n\n.v-spinner .v-fade5\n{\n  -webkit-animation-delay: 0.60s;\n          animation-delay: 0.60s;\n  top: -20px;\n  left: 0;\n}\n\n.v-spinner .v-fade6\n{\n  -webkit-animation-delay: 0.72s;\n          animation-delay: 0.72s;\n  top: -13.636363636363637px;\n  left: -13.636363636363637px;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n}\n\n.v-spinner .v-fade7\n{\n  -webkit-animation-delay: 0.84s;\n          animation-delay: 0.84s;\n  top: 0;\n  left: -20px;\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.v-spinner .v-fade8\n{\n  -webkit-animation-delay: 0.96s;\n          animation-delay: 0.96s;\n  top: 13.636363636363637px;\n  left: -13.636363636363637px;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n}\n\n@-webkit-keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner .v-fade\n{\n    -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n            animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    position: absolute;               \n}\n\n@-webkit-keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}", ""]);
 	
 	// exports
 
@@ -2026,16 +2025,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+	//   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
 	//   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
-	//     <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade3" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade4" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade5" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade6" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade7" v-bind:style="spinnerStyle">
-	//     </div><div class="v-fade v-fade8" v-bind:style="spinnerStyle">
+	//     <div class="v-fade v-fade1" v-bind:style="[spinnerStyle,animationStyle1]">
+	//     </div><div class="v-fade v-fade2" v-bind:style="[spinnerStyle,animationStyle2]">
+	//     </div><div class="v-fade v-fade3" v-bind:style="[spinnerStyle,animationStyle3]">
+	//     </div><div class="v-fade v-fade4" v-bind:style="[spinnerStyle,animationStyle4]">
+	//     </div><div class="v-fade v-fade5" v-bind:style="[spinnerStyle,animationStyle5]">
+	//     </div><div class="v-fade v-fade6" v-bind:style="[spinnerStyle,animationStyle6]">
+	//     </div><div class="v-fade v-fade7" v-bind:style="[spinnerStyle,animationStyle7]">
+	//     </div><div class="v-fade v-fade8" v-bind:style="[spinnerStyle,animationStyle8]">
 	//     </div>
 	//   </div>
 	// </template>
@@ -2046,6 +2045,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'FadeLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -2075,9 +2078,85 @@ return /******/ (function(modules) { // webpackBootstrap
 	        width: this.width,
 	        margin: this.margin,
 	        borderRadius: this.radius
-	      }
+	      },
+	      radius: '20px'
 	    };
+	  },
+	
+	  computed: {
+	    ngRadius: function ngRadius() {
+	      return '-' + this.radius;
+	    },
+	    quarter: function quarter() {
+	      return parseFloat(this.radius) / 2 + parseFloat(this.radius) / 5.5 + 'px';
+	    },
+	    ngQuarter: function ngQuarter() {
+	      return '-' + this.quarter;
+	    },
+	    animationStyle1: function animationStyle1() {
+	      return {
+	        top: this.radius,
+	        left: 0,
+	        animationDelay: '0.12s'
+	      };
+	    },
+	    animationStyle2: function animationStyle2() {
+	      return {
+	        top: this.quarter,
+	        left: this.quarter,
+	        animationDelay: '0.24s',
+	        transform: 'rotate(-45deg)'
+	      };
+	    },
+	    animationStyle3: function animationStyle3() {
+	      return {
+	        top: 0,
+	        left: this.radius,
+	        animationDelay: '0.36s',
+	        transform: 'rotate(90deg)'
+	      };
+	    },
+	    animationStyle4: function animationStyle4() {
+	      return {
+	        top: this.ngQuarter,
+	        left: this.quarter,
+	        animationDelay: '0.48s',
+	        transform: 'rotate(45deg)'
+	      };
+	    },
+	    animationStyle5: function animationStyle5() {
+	      return {
+	        top: this.ngRadius,
+	        left: 0,
+	        animationDelay: '0.60s'
+	      };
+	    },
+	    animationStyle6: function animationStyle6() {
+	      return {
+	        top: this.ngQuarter,
+	        left: this.ngQuarter,
+	        animationDelay: '0.72s',
+	        transform: 'rotate(-45deg)'
+	      };
+	    },
+	    animationStyle7: function animationStyle7() {
+	      return {
+	        top: 0,
+	        left: this.ngRadius,
+	        animationDelay: '0.84s',
+	        transform: 'rotate(90deg)'
+	      };
+	    },
+	    animationStyle8: function animationStyle8() {
+	      return {
+	        top: this.quarter,
+	        left: this.ngQuarter,
+	        animationDelay: '0.96s',
+	        transform: 'rotate(45deg)'
+	      };
+	    }
 	  }
+	
 	};
 	// </script>
 
@@ -2090,75 +2169,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     -webkit-animation-fill-mode: both;
 	// 	          animation-fill-mode: both;
 	//     position: absolute;              
-	// }
-
-	// .v-spinner .v-fade1
-	// {
-	//   animation-delay: 0.12s;
-	//   top: 20px;
-	//   left: 0;
-	// }
-
-	// .v-spinner .v-fade2
-	// {
-	//   animation-delay: 0.24s;
-	//   top: 13.636363636363637px;
-	//   left: 13.636363636363637px;
-	//   -webkit-transform: rotate(-45deg);
-	//           transform: rotate(-45deg);
-
-	// }
-
-	// .v-spinner .v-fade3
-	// {
-	//   animation-delay: 0.36s;
-	//   top: 0;
-	//   left: 20px;
-	//   -webkit-transform: rotate(90deg);
-	//           transform: rotate(90deg);
-	// }
-
-	// .v-spinner .v-fade4
-	// {
-	//   animation-delay: 0.48s;
-	//   top: -13.636363636363637px;
-	//   left: 13.636363636363637px;
-	//   -webkit-transform: rotate(45deg);
-	//           transform: rotate(45deg);
-	// }
-
-	// .v-spinner .v-fade5
-	// {
-	//   animation-delay: 0.60s;
-	//   top: -20px;
-	//   left: 0;
-	// }
-
-	// .v-spinner .v-fade6
-	// {
-	//   animation-delay: 0.72s;
-	//   top: -13.636363636363637px;
-	//   left: -13.636363636363637px;
-	//   -webkit-transform: rotate(-45deg);
-	//           transform: rotate(-45deg);
-	// }
-
-	// .v-spinner .v-fade7
-	// {
-	//   animation-delay: 0.84s;
-	//   top: 0;
-	//   left: -20px;
-	//   -webkit-transform: rotate(90deg);
-	//           transform: rotate(90deg);
-	// }
-
-	// .v-spinner .v-fade8
-	// {
-	//   animation-delay: 0.96s;
-	//   top: 13.636363636363637px;
-	//   left: -13.636363636363637px;
-	//   -webkit-transform: rotate(45deg);
-	//           transform: rotate(45deg);
 	// }
 
 	// @-webkit-keyframes v-fadeStretchDelay
@@ -2194,7 +2204,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 58 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"[spinnerStyle,animationStyle1]\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"[spinnerStyle,animationStyle2]\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"[spinnerStyle,animationStyle4]\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"[spinnerStyle,animationStyle5]\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"[spinnerStyle,animationStyle6]\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"[spinnerStyle,animationStyle7]\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"[spinnerStyle,animationStyle8]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 59 */
@@ -2254,7 +2264,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner\n{\n    text-align: center;\n}\n\n\n@-webkit-keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner\n{\n    text-align: center;\n}\n\n/*TODO computed transform */\n@-webkit-keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}", ""]);
 	
 	// exports
 
@@ -2269,7 +2279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+	// <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
 	//     <div class="v-pacman v-pacman1" v-bind:style="spinnerStyle1">
 	//     </div><div class="v-pacman v-pacman2" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay2]">
 	//     </div><div class="v-pacman v-pacman3" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay3]">
@@ -2285,13 +2295,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'PacmanLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
 	    size: {
 	      type: String,
-	      default: '25'
+	      default: '25px'
 	    },
 	    margin: {
 	      type: String,
@@ -2330,10 +2344,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    },
 	    border1: function border1() {
-	      return this.size + 'px solid transparent';
+	      return this.size + ' solid transparent';
 	    },
 	    border2: function border2() {
-	      return this.size + 'px solid ' + this.color;
+	      return this.size + ' solid ' + this.color;
 	    },
 	    spinnerStyle1: function spinnerStyle1() {
 	      return {
@@ -2343,14 +2357,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        borderRight: this.border1,
 	        borderBottom: this.border2,
 	        borderLeft: this.border2,
-	        borderRadius: this.size + 'px'
+	        borderRadius: this.size
 	      };
 	    },
 	    animationStyle: function animationStyle() {
 	      return {
 	        width: '10px',
 	        height: '10px',
-	        transform: 'translate(0, ' + -this.size / 4 + 'px)',
+	        transform: 'translate(0, ' + -parseFloat(this.size) / 4 + 'px)',
 	        position: 'absolute',
 	        top: '25px',
 	        left: '100px',
@@ -2372,6 +2386,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     text-align: center;
 	// }
 
+	// /*TODO computed transform */
 	// @-webkit-keyframes v-pacmanStretchDelay
 	// {
 	//     75%
@@ -2405,7 +2420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 63 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\">\n    <div class=\"v-pacman v-pacman1\" v-bind:style=\"spinnerStyle1\">\n    </div><div class=\"v-pacman v-pacman2\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay2]\">\n    </div><div class=\"v-pacman v-pacman3\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay3]\">\n    </div><div class=\"v-pacman v-pacman4\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay4]\">\n    </div><div class=\"v-pacman v-pacman5\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay5]\">\n    </div>\n</div>";
+	module.exports = "<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n    <div class=\"v-pacman v-pacman1\" v-bind:style=\"spinnerStyle1\">\n    </div><div class=\"v-pacman v-pacman2\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay2]\">\n    </div><div class=\"v-pacman v-pacman3\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay3]\">\n    </div><div class=\"v-pacman v-pacman4\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay4]\">\n    </div><div class=\"v-pacman v-pacman5\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay5]\">\n    </div>\n</div>";
 
 /***/ },
 /* 64 */
@@ -2480,7 +2495,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-square" v-bind:style="spinnerStyle">
 	//     </div>
 	//   </div>
@@ -2492,6 +2507,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'SquareLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -2582,7 +2601,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 68 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-square\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-square\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 69 */
@@ -2657,7 +2676,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-scale v-scale1" v-bind:style="[spinnerStyle,spinnerDelay1]">
 	//     </div><div class="v-scale v-scale2" v-bind:style="[spinnerStyle,spinnerDelay2]">
 	//     </div><div class="v-scale v-scale3" v-bind:style="[spinnerStyle,spinnerDelay3]">
@@ -2673,6 +2692,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'ScaleLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -2779,7 +2802,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 73 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>";
 
 /***/ },
 /* 74 */
@@ -2854,7 +2877,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-skew" v-bind:style="spinnerStyle">
 	//     </div>
 	//   </div>
@@ -2866,6 +2889,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'SkewLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -2957,7 +2984,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-skew\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-skew\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>";
 
 /***/ },
 /* 79 */
@@ -3017,7 +3044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".v-spinner .v-moon\n{\n          \n}\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n\n    background-color: #5dc596;\n    opacity: 0.8;\n    position: absolute;\n    top: 25.714285714285715px;\n}\n\n.v-spinner .v-moon3\n{\n    border: 8.571428571428571px solid #5dc596;\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
+	exports.push([module.id, ".v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}", ""]);
 	
 	// exports
 
@@ -3032,10 +3059,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-moon v-moon1" v-bind:style="spinnerStyle">
-	//     <div class="v-moon v-moon2" v-bind:style="spinnerMoonStyle">
-	//     </div><div class="v-moon v-moon3" v-bind:style="spinnerStyle">
+	//     <div class="v-moon v-moon2" v-bind:style="[spinnerMoonStyle,animationStyle2]">
+	//     </div><div class="v-moon v-moon3" v-bind:style="[spinnerStyle,animationStyle3]">
 	//     </div></div>
 	//   </div>
 	// </template>
@@ -3046,13 +3073,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'MoonLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
 	    size: {
 	      type: String,
-	      default: '60'
+	      default: '60px'
 	    },
 	    margin: {
 	      type: String,
@@ -3066,19 +3097,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	  data: function data() {
 	    return {
 	      spinnerStyle: {
-	        height: this.size + 'px',
-	        width: this.size + 'px',
+	        height: this.size,
+	        width: this.size,
 	        borderRadius: this.radius
 	      }
 	    };
 	  },
 	
 	  computed: {
+	    moonSize: function moonSize() {
+	      return parseFloat(this.size) / 7;
+	    },
 	    spinnerMoonStyle: function spinnerMoonStyle() {
 	      return {
-	        height: this.size / 7 + 'px',
-	        width: this.size / 7 + 'px',
+	        height: this.moonSize + 'px',
+	        width: this.moonSize + 'px',
 	        borderRadius: this.radius
+	      };
+	    },
+	    animationStyle2: function animationStyle2() {
+	      return {
+	        top: parseFloat(this.size) / 2 - this.moonSize / 2 + 'px',
+	        backgroundColor: this.color
+	      };
+	    },
+	    animationStyle3: function animationStyle3() {
+	      return {
+	        border: this.moonSize + 'px solid ' + this.color
 	      };
 	    }
 	  }
@@ -3087,11 +3132,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </script>
 
 	// <style>
-
-	// .v-spinner .v-moon
-	// {
-
-	// }
 
 	// .v-spinner .v-moon1
 	// {
@@ -3109,16 +3149,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             animation: v-moonStretchDelay 0.6s 0s infinite linear;
 	//     -webkit-animation-fill-mode: forwards;
 	//             animation-fill-mode: forwards;
-
-	//     background-color: #5dc596;
 	//     opacity: 0.8;
 	//     position: absolute;
-	//     top: 25.714285714285715px;
 	// }
 
 	// .v-spinner .v-moon3
 	// {
-	//     border: 8.571428571428571px solid #5dc596;
 	//     opacity: 0.1;
 	// }
 
@@ -3145,7 +3181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 83 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"spinnerMoonStyle\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>";
 
 /***/ },
 /* 84 */
@@ -3220,7 +3256,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-ring v-ring1" v-bind:style="spinnerBasicStyle">
 	//     <div class="v-ring v-ring2" v-bind:style="spinnerStyle">
 	//     </div><div class="v-ring v-ring3" v-bind:style="spinnerStyle">
@@ -3234,13 +3270,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'RingLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
 	    size: {
 	      type: String,
-	      default: '60'
+	      default: '60px'
 	    },
 	    margin: {
 	      type: String,
@@ -3254,17 +3294,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  computed: {
 	    spinnerStyle: function spinnerStyle() {
 	      return {
-	        height: this.size + 'px',
-	        width: this.size + 'px',
-	        border: this.size / 10 + 'px solid' + this.color,
+	        height: this.size,
+	        width: this.size,
+	        border: parseFloat(this.size) / 10 + 'px solid' + this.color,
 	        opacity: 0.4,
 	        borderRadius: this.radius
 	      };
 	    },
 	    spinnerBasicStyle: function spinnerBasicStyle() {
 	      return {
-	        height: this.size + 'px',
-	        width: this.size + 'px',
+	        height: this.size,
+	        width: this.size,
 	        position: 'relative'
 	      };
 	    }
@@ -3374,7 +3414,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 88 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-ring v-ring1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-ring v-ring2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-ring v-ring3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-ring v-ring1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-ring v-ring2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-ring v-ring3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
 
 /***/ },
 /* 89 */
@@ -3449,7 +3489,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-bounce v-bounce1" v-bind:style="spinnerBasicStyle">
 	//     <div class="v-bounce v-bounce2" v-bind:style="spinnerStyle">
 	//     </div><div class="v-bounce v-bounce3" v-bind:style="spinnerStyle">
@@ -3463,6 +3503,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'BounceLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
@@ -3573,7 +3617,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 93 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-bounce v-bounce1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-bounce v-bounce2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-bounce v-bounce3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-bounce v-bounce1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-bounce v-bounce2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-bounce v-bounce3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
 
 /***/ },
 /* 94 */
@@ -3648,7 +3692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	// <div class="v-spinner">
+	// <div class="v-spinner" v-show="loading">
 	//     <div class="v-dot v-dot1" v-bind:style="spinnerBasicStyle">
 	//     <div class="v-dot v-dot2" v-bind:style="spinnerStyle">
 	//     </div><div class="v-dot v-dot3" v-bind:style="spinnerStyle">
@@ -3662,13 +3706,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'DotLoader',
 	
 	  props: {
+	    loading: {
+	      type: Boolean,
+	      default: true
+	    },
 	    color: {
 	      type: String,
 	      default: '#5dc596'
 	    },
 	    size: {
 	      type: String,
-	      default: '60'
+	      default: '60px'
 	    },
 	    margin: {
 	      type: String,
@@ -3683,15 +3731,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    spinnerStyle: function spinnerStyle() {
 	      return {
 	        backgroundColor: this.color,
-	        height: this.size / 2 + 'px',
-	        width: this.size / 2 + 'px',
+	        height: parseFloat(this.size) / 2 + 'px',
+	        width: parseFloat(this.size) / 2 + 'px',
 	        borderRadius: this.radius
 	      };
 	    },
 	    spinnerBasicStyle: function spinnerBasicStyle() {
 	      return {
-	        height: this.size + 'px',
-	        width: this.size + 'px',
+	        height: this.size,
+	        width: this.size,
 	        position: 'relative'
 	      };
 	    }
@@ -3792,7 +3840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 98 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"v-spinner\">\n    <div class=\"v-dot v-dot1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-dot v-dot2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-dot v-dot3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
+	module.exports = "<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-dot v-dot1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-dot v-dot2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-dot v-dot3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>";
 
 /***/ }
 /******/ ])

@@ -1,5 +1,5 @@
 <template>
-  <div class="v-spinner" v-bind:style="containerStyle">
+  <div class="v-spinner" v-bind:style="containerStyle" v-show="loading">
     <div class="v-grid v-grid1" v-bind:style="[spinnerStyle,animationStyle,animationStyle1]">
     </div><div class="v-grid v-grid2" v-bind:style="[spinnerStyle,animationStyle,animationStyle2]">
     </div><div class="v-grid v-grid3" v-bind:style="[spinnerStyle,animationStyle,animationStyle3]">
@@ -19,17 +19,21 @@ export default {
   name: 'GridLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
     size: {
       type: String,
-      default: '15'
+      default: '15px'
     },
     margin: {
       type: String,
-      default: '2'
+      default: '2px'
     },
     radius: {
       type: String,
@@ -40,9 +44,9 @@ export default {
     return {
       spinnerStyle: {
         backgroundColor: this.color,
-        width: this.size + 'px',
-        height: this.size + 'px',
-        margin: this.margin + 'px',
+        width: this.size,
+        height: this.size,
+        margin: this.margin,
         borderRadius: this.radius
       }
     }
@@ -113,7 +117,7 @@ export default {
     },
     containerStyle () {
       return {
-        width: this.size * 3 + this.margin * 6 + 'px',
+        width: parseFloat(this.size) * 3 + parseFloat(this.margin) * 6 + 'px',
         fontSize: 0
       }
     }

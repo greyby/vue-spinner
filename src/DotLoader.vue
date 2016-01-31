@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-dot v-dot1" v-bind:style="spinnerBasicStyle">
     <div class="v-dot v-dot2" v-bind:style="spinnerStyle">
     </div><div class="v-dot v-dot3" v-bind:style="spinnerStyle">
@@ -13,13 +13,17 @@ export default {
   name: 'DotLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
     size: {
       type: String,
-      default: '60'
+      default: '60px'
     },
     margin: {
       type: String,
@@ -34,15 +38,15 @@ export default {
     spinnerStyle () {
       return {
         backgroundColor: this.color,
-        height: this.size/2 + 'px',
-        width: this.size/2 + 'px',
+        height: parseFloat(this.size)/2 + 'px',
+        width: parseFloat(this.size)/2 + 'px',
         borderRadius: this.radius
       }
     },
     spinnerBasicStyle () {
       return {
-        height: this.size + 'px',
-        width: this.size + 'px',
+        height: this.size,
+        width: this.size,
         position: 'relative'
       }
     }
