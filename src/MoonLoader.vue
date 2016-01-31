@@ -1,8 +1,8 @@
 <template>
 <div class="v-spinner" v-show="loading">
     <div class="v-moon v-moon1" v-bind:style="spinnerStyle">
-    <div class="v-moon v-moon2" v-bind:style="spinnerMoonStyle">
-    </div><div class="v-moon v-moon3" v-bind:style="spinnerStyle">
+    <div class="v-moon v-moon2" v-bind:style="[spinnerMoonStyle,animationStyle2]">
+    </div><div class="v-moon v-moon3" v-bind:style="[spinnerStyle,animationStyle3]">
     </div></div>
   </div>
 </template>
@@ -44,11 +44,25 @@ export default {
     }
   },
   computed: {
+    moonSize() {
+      return parseFloat(this.size)/7
+    },
     spinnerMoonStyle () {
       return {
-        height: parseFloat(this.size)/7  + 'px',
-        width: parseFloat(this.size)/7  + 'px',
+        height: this.moonSize  + 'px',
+        width: this.moonSize  + 'px',
         borderRadius: this.radius
+      }
+    },
+    animationStyle2 () {
+      return {
+        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',
+        backgroundColor: this.color
+      }
+    },
+    animationStyle3 () {
+      return {
+        border: this.moonSize + 'px solid ' + this.color
       }
     }
   }
@@ -57,11 +71,6 @@ export default {
 </script>
 
 <style>
-
-.v-spinner .v-moon
-{
-          
-}
 
 .v-spinner .v-moon1
 {
@@ -79,16 +88,12 @@ export default {
             animation: v-moonStretchDelay 0.6s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-
-    background-color: #5dc596;
     opacity: 0.8;
     position: absolute;
-    top: 25.714285714285715px;
 }
 
 .v-spinner .v-moon3
 {
-    border: 8.571428571428571px solid #5dc596;
     opacity: 0.1;
 }
 

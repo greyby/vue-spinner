@@ -105,7 +105,7 @@ export default {
     text-align: center;
 }
 
-
+/*TODO computed transform */
 @-webkit-keyframes v-pacmanStretchDelay
 {
     75%

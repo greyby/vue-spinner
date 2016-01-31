@@ -1,14 +1,14 @@
 <template>
   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
-    <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade3" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade4" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade5" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade6" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade7" v-bind:style="spinnerStyle">
-    </div><div class="v-fade v-fade8" v-bind:style="spinnerStyle">
+    <div class="v-fade v-fade1" v-bind:style="[spinnerStyle,animationStyle1]">
+    </div><div class="v-fade v-fade2" v-bind:style="[spinnerStyle,animationStyle2]">
+    </div><div class="v-fade v-fade3" v-bind:style="[spinnerStyle,animationStyle3]">
+    </div><div class="v-fade v-fade4" v-bind:style="[spinnerStyle,animationStyle4]">
+    </div><div class="v-fade v-fade5" v-bind:style="[spinnerStyle,animationStyle5]">
+    </div><div class="v-fade v-fade6" v-bind:style="[spinnerStyle,animationStyle6]">
+    </div><div class="v-fade v-fade7" v-bind:style="[spinnerStyle,animationStyle7]">
+    </div><div class="v-fade v-fade8" v-bind:style="[spinnerStyle,animationStyle8]">
     </div>
   </div>
 </template>
@@ -52,6 +52,80 @@ export default {
      		width: this.width,
       	margin: this.margin,
       	borderRadius: this.radius
+      },
+      radius: '20px'
+    }
+  },
+  computed: {
+    ngRadius () {
+      return '-' + this.radius
+    },
+    quarter () {
+      return (parseFloat(this.radius)/2 + parseFloat(this.radius)/5.5) + 'px'
+    },
+    ngQuarter () {
+      return '-' + this.quarter
+    },
+    animationStyle1 () {
+      return {
+        top: this.radius,
+        left: 0,
+        animationDelay: '0.12s'
+      }
+    },
+    animationStyle2 () {
+      return {
+        top: this.quarter,
+        left: this.quarter,
+        animationDelay: '0.24s',
+        transform: 'rotate(-45deg)'
+      }
+    },
+    animationStyle3 () {
+      return {
+        top: 0,
+        left: this.radius,
+        animationDelay: '0.36s',
+        transform: 'rotate(90deg)'
+      }
+    },
+    animationStyle4 () {
+      return {
+        top: this.ngQuarter,
+        left: this.quarter,
+        animationDelay: '0.48s',
+        transform: 'rotate(45deg)'
+      }
+    },
+    animationStyle5 () {
+      return {
+        top: this.ngRadius,
+        left: 0,
+        animationDelay: '0.60s'
+      }
+    },
+    animationStyle6 () {
+      return {
+        top: this.ngQuarter,
+        left: this.ngQuarter,
+        animationDelay: '0.72s',
+        transform: 'rotate(-45deg)'
+      }
+    },
+    animationStyle7 () {
+      return {
+        top: 0,
+        left: this.ngRadius,
+        animationDelay: '0.84s',
+        transform: 'rotate(90deg)'
+      }
+    },
+    animationStyle8 () {
+      return {
+        top: this.quarter,
+        left: this.ngQuarter,
+        animationDelay: '0.96s',
+        transform: 'rotate(45deg)'
       }
     }
   }
@@ -68,75 +142,6 @@ export default {
     -webkit-animation-fill-mode: both;
 	          animation-fill-mode: both;
     position: absolute;               
-}
-
-.v-spinner .v-fade1
-{
-  animation-delay: 0.12s;
-  top: 20px;
-  left: 0;
-}
-
-.v-spinner .v-fade2
-{
-  animation-delay: 0.24s;
-  top: 13.636363636363637px;
-  left: 13.636363636363637px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-
-}
-
-.v-spinner .v-fade3
-{
-  animation-delay: 0.36s;
-  top: 0;
-  left: 20px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.v-spinner .v-fade4
-{
-  animation-delay: 0.48s;
-  top: -13.636363636363637px;
-  left: 13.636363636363637px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.v-spinner .v-fade5
-{
-  animation-delay: 0.60s;
-  top: -20px;
-  left: 0;
-}
-
-.v-spinner .v-fade6
-{
-  animation-delay: 0.72s;
-  top: -13.636363636363637px;
-  left: -13.636363636363637px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.v-spinner .v-fade7
-{
-  animation-delay: 0.84s;
-  top: 0;
-  left: -20px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.v-spinner .v-fade8
-{
-  animation-delay: 0.96s;
-  top: 13.636363636363637px;
-  left: -13.636363636363637px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
 }
 
 @-webkit-keyframes v-fadeStretchDelay
