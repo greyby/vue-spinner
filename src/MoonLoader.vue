@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-moon v-moon1" v-bind:style="spinnerStyle">
     <div class="v-moon v-moon2" v-bind:style="spinnerMoonStyle">
     </div><div class="v-moon v-moon3" v-bind:style="spinnerStyle">
@@ -13,13 +13,17 @@ export default {
   name: 'MoonLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
     size: {
       type: String,
-      default: '60'
+      default: '60px'
     },
     margin: {
       type: String,
@@ -33,8 +37,8 @@ export default {
   data () {
     return {
       spinnerStyle: {
-        height: this.size + 'px',
-        width: this.size + 'px',
+        height: this.size,
+        width: this.size,
         borderRadius: this.radius
       }
     }
@@ -42,8 +46,8 @@ export default {
   computed: {
     spinnerMoonStyle () {
       return {
-        height: this.size/7  + 'px',
-        width: this.size/7  + 'px',
+        height: parseFloat(this.size)/7  + 'px',
+        width: parseFloat(this.size)/7  + 'px',
         borderRadius: this.radius
       }
     }

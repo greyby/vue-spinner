@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-clip" v-bind:style="spinnerStyle">
     </div>
   </div>
@@ -11,6 +11,10 @@ export default {
   name: 'ClipLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
   	color: { 
       type: String,
       default: '#5dc596'

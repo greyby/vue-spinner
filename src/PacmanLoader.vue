@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+<div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
     <div class="v-pacman v-pacman1" v-bind:style="spinnerStyle1">
     </div><div class="v-pacman v-pacman2" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay2]">
     </div><div class="v-pacman v-pacman3" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay3]">
@@ -15,13 +15,17 @@ export default {
   name: 'PacmanLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
     size: {
       type: String,
-      default: '25'
+      default: '25px'
     },
     margin: {
       type: String,
@@ -59,10 +63,10 @@ export default {
       }
     },
     border1 () {
-      return this.size + 'px solid transparent'
+      return this.size + ' solid transparent'
     },
     border2 () {
-      return this.size + 'px solid ' + this.color
+      return this.size + ' solid ' + this.color
     },
     spinnerStyle1 () {
       return {
@@ -72,14 +76,14 @@ export default {
         borderRight: this.border1,
         borderBottom: this.border2,
         borderLeft: this.border2,
-        borderRadius: this.size + 'px'
+        borderRadius: this.size
       }
     },
     animationStyle () {
       return {
         width: '10px',
         height: '10px',
-        transform: 'translate(0, '+ -this.size/4 + 'px)',
+        transform: 'translate(0, '+ -parseFloat(this.size)/4 + 'px)',
         position: 'absolute',
         top: '25px',
         left: '100px',

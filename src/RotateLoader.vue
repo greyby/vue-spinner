@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-rotate v-rotate1" v-bind:style="spinnerStyle">
     <div class="v-rotate v-rotate2" v-bind:style="spinnerStyle">
     </div><div class="v-rotate v-rotate3" v-bind:style="spinnerStyle">
@@ -13,15 +13,15 @@ export default {
   name: 'RotateLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
     },
-    height: {
-      type: String,
-      default: '15px'
-    },
-    width: {
+    size: {
       type: String,
       default: '15px'
     },
@@ -38,8 +38,8 @@ export default {
     return {
       spinnerStyle: {
       	backgroundColor: this.color,
-      	height: this.height,
-     		width: this.width,
+      	height: this.size,
+     		width: this.size,
       	margin: this.margin,
       	borderRadius: this.radius
       }
@@ -51,14 +51,8 @@ export default {
 
 <style>
 
-.v-spinner .v-rotate
-{
-          
-}
-
 .v-spinner .v-rotate1
 {
-
     -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);
             animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);
     -webkit-animation-fill-mode: both;

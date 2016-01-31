@@ -1,5 +1,5 @@
 <template>
-<div class="v-spinner">
+<div class="v-spinner" v-show="loading">
     <div class="v-bounce v-bounce1" v-bind:style="spinnerBasicStyle">
     <div class="v-bounce v-bounce2" v-bind:style="spinnerStyle">
     </div><div class="v-bounce v-bounce3" v-bind:style="spinnerStyle">
@@ -13,6 +13,10 @@ export default {
   name: 'BounceLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'

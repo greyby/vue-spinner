@@ -1,5 +1,5 @@
 <template>
-  <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}">
+  <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
   <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
     <div class="v-fade v-fade1" v-bind:style="spinnerStyle">
     </div><div class="v-fade v-fade2" v-bind:style="spinnerStyle">
@@ -19,6 +19,10 @@ export default {
   name: 'FadeLoader',
 
   props: {
+    loading: {
+      type: Boolean,
+      default: true
+    },
     color: { 
       type: String,
       default: '#5dc596'
