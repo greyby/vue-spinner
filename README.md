@@ -54,23 +54,25 @@ npm run dev
 ## Usage
 
 ```html
-<pulse-loader></pulse-loader>
-<grid-loader></grid-loader>
-<clip-loader></clip-loader>
-<rise-loader></rise-loader>
-<beat-loader></beat-loader>
-<sync-loader></sync-loader>
-<rotate-loader></rotate-loader>
-<fade-loader></fade-loader>
-<pacman-loader></pacman-loader>
-<square-loader></square-loader>
-<scale-loader></scale-loader>
-<skew-loader></skew-loader>
-<moon-loader></moon-loader>
-<ring-loader></ring-loader>
-<bounce-loader></bounce-loader>          
-<dot-loader></dot-loader>
+<pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
+<grid-loader :loading="loading" :color="color" :size="size"></grid-loader>
+<clip-loader :loading="loading" :color="color" :size="size"></clip-loader>
+<rise-loader :loading="loading" :color="color" :size="size"></rise-loader>
+<beat-loader :loading="loading" :color="color" :size="size"></beat-loader>
+<sync-loader :loading="loading" :color="color" :size="size"></sync-loader>
+<rotate-loader :loading="loading" :color="color" :size="size"></rotate-loader>
+<fade-loader :loading="loading" :color="color" :height="height" :width="width"></fade-loader>
+<pacman-loader :loading="loading" :color="color" :size="size"></pacman-loader>
+<square-loader :loading="loading" :color="color" :size="size"></square-loader>
+<scale-loader :loading="loading" :color="color" :height="height" :width="width"></scale-loader>
+<skew-loader :loading="loading" :color="color" :size="size"></skew-loader>
+<moon-loader :loading="loading" :color="color" :size="size"></moon-loader>
+<ring-loader :loading="loading" :color="color" :size="size"></ring-loader>
+<bounce-loader :loading="loading" :color="color" :size="size"></bounce-loader>          
+<dot-loader :loading="loading" :color="color" :size="size"></dot-loader>
 ```
+
+You can customize the color and size with setting the props. All props have default value. You can control the spinner show/hidden with setting the loading prop.
 
 ## TODO
 
