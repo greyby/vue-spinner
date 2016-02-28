@@ -38,9 +38,11 @@ If you use browserify + vueify, you may need to import vue-spinner like this:
 
 ```js
 var PulseLoader= require('vue-spinner/dist/vue-spinner.min').PulseLoader;
+```
 
 ```js
 import { PulseLoader } from 'vue-spinner/dist/vue-spinner.min.js'
+```
 
 [explain here](https://github.com/greyby/vue-spinner/issues/2)
 
