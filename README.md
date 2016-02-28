@@ -33,6 +33,17 @@ new Vue({
 })
 ```
 
+### For browserify
+If you use browserify + vueify, you may need to import vue-spinner like this:
+
+```js
+var PulseLoader= require('vue-spinner/dist/vue-spinner.min').PulseLoader;
+
+```js
+import { PulseLoader } from 'vue-spinner/dist/vue-spinner.min.js'
+
+[explain here](https://github.com/greyby/vue-spinner/issues/2)
+
 ### Browser globals
 The `dist` folder contains `vue-spinner.js` and `vue-spinner.min.js` with all components exported in the <code>window.VueSpinner</code> object. These bundles are also available on NPM packages.
 
