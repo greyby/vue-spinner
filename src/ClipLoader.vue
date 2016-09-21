@@ -37,7 +37,7 @@ export default {
         borderStyle: 'solid',
         borderColor: this.color + ' ' + this.color + ' transparent',
         borderRadius: this.radius,
-        background: 'transparent !important'
+        background: 'transparent'
       }
     }
   }
