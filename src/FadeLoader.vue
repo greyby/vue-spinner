@@ -41,7 +41,7 @@ export default {
     },
     radius: {
       type: String,
-      default: '2px'
+      default: '20px'
     }
   },
   data () {
@@ -52,8 +52,7 @@ export default {
      		width: this.width,
       	margin: this.margin,
       	borderRadius: this.radius
-      },
-      radius: '20px'
+      }
     }
   },
   computed: {
