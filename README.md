@@ -32,6 +32,10 @@ new Vue({
   }
 })
 ```
+Or: 
+```js
+Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue'));
+```
 
 ### For browserify
 If you use browserify + vueify, you may need to import vue-spinner like this:
