@@ -53,7 +53,7 @@ The `dist` folder contains `vue-spinner.js` and `vue-spinner.min.js` with all co
 <script src="path/to/vue.js"></script>
 <script src="path/to/vue-spinner.js"></script>
 <script>
-  var PulseLoader = VueStrap.PulseLoader
+  var PulseLoader = VueSpinner.PulseLoader
 </script>
 ```
 
