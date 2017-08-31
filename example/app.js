@@ -39,10 +39,9 @@ new Vue({
 	data () {
 		return {
 			color: '#3AB982',
-      height: '35px',
-      width: '4px',
+      size: '15px',
       margin: '2px',
-      radius: '2px'
+      radius: '100%'
 		}
 	}
 })
