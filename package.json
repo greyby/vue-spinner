@@ -1,6 +1,6 @@
 {
   "name": "vue-spinner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Spinners of Vue Components",
   "keywords": [
     "spinner",
@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
     "build": "NODE_ENV=production webpack --progress --hide-modules",
-    "dist": "webpack --progress --hide-modules --config  webpack.build.js && NODE_ENV=production webpack --progress --hide-modules --config  webpack.build.min.js"                              
+    "dist": "webpack --progress --hide-modules --config  webpack.build.js && NODE_ENV=production webpack --progress --hide-modules --config  webpack.build.min.js"
   },
   "repository": {
     "type": "git",
