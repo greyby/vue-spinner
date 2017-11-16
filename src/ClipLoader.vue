@@ -23,6 +23,10 @@ export default {
       type: String,
       default: '35px'
     },
+    borderWidth: {
+      type: String,
+      default: '2px'
+    },
     radius: {
       type: String,
       default: '100%'
@@ -33,7 +37,7 @@ export default {
       return {
         height: this.size,
         width: this.size,
-        borderWidth: '2px',
+        borderWidth: this.borderWidth,
         borderStyle: 'solid',
         borderColor: this.color + ' ' + this.color + ' transparent',
         borderRadius: this.radius,
