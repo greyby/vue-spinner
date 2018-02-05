@@ -15,7 +15,7 @@ $ npm install vue-spinner
 
 ### CommonJS
 ```js
-var PulseLoader = require('vue-spinner/src/PulseLoader.vue');
+var PulseLoader = require('vue-spinner/src/PulseLoader');
 
 new Vue({
   components: {
@@ -26,7 +26,7 @@ new Vue({
 
 ### ES6
 ```js
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+import PulseLoader from 'vue-spinner/src/PulseLoader'
 
 new Vue({
   components: {
@@ -36,7 +36,7 @@ new Vue({
 ```
 Or: 
 ```js
-Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue'));
+Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader'));
 ```
 
 ### For browserify
