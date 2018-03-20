@@ -116,6 +116,14 @@ ul {
 
 }
 
+.loader-title {
+    padding-top: 20px;
+}
+
+.fade-title {
+    padding-top: 50px;
+}
+
 
 .spinner-list {
 
@@ -132,18 +140,18 @@ ul {
   display: -webkit-flex;
   display: flex;
 
-  webkit-flex: 0 1 auto;
-         flex: 0 1 auto;
+  -webkit-flex: 0 1 auto;
+          flex: 0 1 auto;
 
-  -webkit-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
   
   width: 200px;
   height: 200px;
-  webkit-align-items: center;
-         align-items: center;
-  webkit-justify-content: center;
-         justify-content: center;          
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;          
  
 }
 

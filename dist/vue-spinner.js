@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -143,9 +143,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = VueSpinner;
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(2)
@@ -158,7 +158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/PulseLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/PulseLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -166,9 +166,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -182,8 +182,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-453f872c&file=PulseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PulseLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-453f872c&file=PulseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PulseLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4277bdc7&file=PulseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PulseLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4277bdc7&file=PulseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PulseLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -192,23 +192,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n", "", {"version":3,"sources":["/./src/PulseLoader.vue.style"],"names":[],"mappings":";AAmEA;;;;;EAKA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;CACA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;CACA","file":"PulseLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'PulseLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \twidth: this.size,\n        height: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-pulseStretchDelay',\n        animationDuration: '0.75s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.12s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.24s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.36s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n", "", {"version":3,"sources":["/./src/PulseLoader.vue.style"],"names":[],"mappings":";AAmEA;;;;;EAKA;;AAqBA;;IAEA;;;QAIA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;IACA;;QAGA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;CACA","file":"PulseLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'PulseLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \twidth: this.size,\n        height: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-pulseStretchDelay',\n        animationDuration: '0.75s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.12s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.24s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.36s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n/*.v-spinner\n{\n    margin: 100px auto;\n    text-align: center;\n}\n*/\n\n@-webkit-keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n\n@keyframes v-pulseStretchDelay\n{\n    0%,\n    80%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n    45%\n    {\n        -webkit-transform: scale(0.1);\n                transform: scale(0.1);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -262,9 +262,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -514,9 +514,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -636,15 +636,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-pulse v-pulse1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-pulse v-pulse2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-pulse v-pulse3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(9)
@@ -657,7 +657,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/GridLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/GridLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -665,9 +665,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -681,8 +681,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c536acea&file=GridLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./GridLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c536acea&file=GridLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./GridLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-66d9088e&file=GridLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./GridLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-66d9088e&file=GridLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./GridLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -691,23 +691,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n@-webkit-keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/GridLoader.vue.style"],"names":[],"mappings":";AA2IA;;IAEA;;QAEA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA","file":"GridLoader.vue","sourcesContent":["<template>\n  <div class=\"v-spinner\" v-bind:style=\"containerStyle\" v-show=\"loading\">\n    <div class=\"v-grid v-grid1\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle1]\">\n    </div><div class=\"v-grid v-grid2\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle2]\">\n    </div><div class=\"v-grid v-grid3\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle3]\">\n    </div><div class=\"v-grid v-grid4\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle4]\">\n    </div><div class=\"v-grid v-grid5\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle5]\">\n    </div><div class=\"v-grid v-grid6\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle6]\">\n    </div><div class=\"v-grid v-grid7\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle7]\">\n    </div><div class=\"v-grid v-grid8\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle8]\">\n    </div><div class=\"v-grid v-grid9\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle9]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'GridLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        backgroundColor: this.color,\n        width: this.size,\n        height: this.size,\n        margin: this.margin,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    animationStyle () {\n      return {\n        animationName: 'v-gridStretchDelay',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease',\n        animationFillMode: 'both',\n        display: 'inline-block'\n      }\n    },\n    animationStyle1 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle2 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle3 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle4 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle5 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle6 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle7 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle8 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle9 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    containerStyle () {\n      return {\n        width: parseFloat(this.size) * 3 + parseFloat(this.margin) * 6 + 'px',\n        fontSize: 0\n      }\n    }\n  },\n  methods: {\n    random (value) {\n      return Math.random() * value\n    },\n    delay () {\n      return ((this.random(100) / 100) - 0.2) + 's'\n    },\n    duration () {\n      return ((this.random(100) / 100) + 0.6) + 's'\n    },\n  }\n}\n</script>\n\n<style>\n@-webkit-keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n@keyframes v-gridStretchDelay\n{\n    0%\n    {\n        transform: scale(1);\n    }\n    50%\n    {\n        transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/GridLoader.vue.style"],"names":[],"mappings":";AAkKA;;IAEA;;QAGA,oBAAA;KACA;IACA;;QAGA,sBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAGA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA","file":"GridLoader.vue","sourcesContent":["<template>\n  <div class=\"v-spinner\" v-bind:style=\"containerStyle\" v-show=\"loading\">\n    <div class=\"v-grid v-grid1\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle1]\">\n    </div><div class=\"v-grid v-grid2\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle2]\">\n    </div><div class=\"v-grid v-grid3\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle3]\">\n    </div><div class=\"v-grid v-grid4\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle4]\">\n    </div><div class=\"v-grid v-grid5\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle5]\">\n    </div><div class=\"v-grid v-grid6\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle6]\">\n    </div><div class=\"v-grid v-grid7\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle7]\">\n    </div><div class=\"v-grid v-grid8\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle8]\">\n    </div><div class=\"v-grid v-grid9\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle9]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'GridLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        backgroundColor: this.color,\n        width: this.size,\n        height: this.size,\n        margin: this.margin,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    animationStyle () {\n      return {\n        animationName: 'v-gridStretchDelay',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease',\n        animationFillMode: 'both',\n        display: 'inline-block'\n      }\n    },\n    animationStyle1 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle2 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle3 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle4 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle5 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle6 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle7 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle8 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    animationStyle9 () {\n      return {\n        animationDelay: this.delay(),\n        animationDuration: this.duration()\n      }\n    },\n    containerStyle () {\n      return {\n        width: parseFloat(this.size) * 3 + parseFloat(this.margin) * 6 + 'px',\n        fontSize: 0\n      }\n    }\n  },\n  methods: {\n    random (value) {\n      return Math.random() * value\n    },\n    delay () {\n      return ((this.random(100) / 100) - 0.2) + 's'\n    },\n    duration () {\n      return ((this.random(100) / 100) + 0.6) + 's'\n    },\n  }\n}\n</script>\n\n<style>\n@-webkit-keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-gridStretchDelay\n{\n    0%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.5);\n                transform: scale(0.5);\n        -webkit-opacity: 0.7;             \n                opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -850,67 +850,68 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.random(100) / 100 + 0.6 + 's';
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  // @-webkit-keyframes v-gridStretchDelay
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: scale(1);
+	  //                 transform: scale(1);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: scale(0.5);
+	  //                 transform: scale(0.5);
+	  //         -webkit-opacity: 0.7;             
+	  //                 opacity: 0.7;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(1);
+	  //                 transform: scale(1);
+	  //         -webkit-opacity: 1;             
+	  //                 opacity: 1;
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-gridStretchDelay
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: scale(1);
+	  //                 transform: scale(1);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: scale(0.5);
+	  //                 transform: scale(0.5);
+	  //         -webkit-opacity: 0.7;             
+	  //                 opacity: 0.7;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(1);
+	  //                 transform: scale(1);
+	  //         -webkit-opacity: 1;             
+	  //                 opacity: 1;
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
+	
 	};
-	// </script>
-	//
-	// <style>
-	// @-webkit-keyframes v-gridStretchDelay
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: scale(1);
-	//                 transform: scale(1);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: scale(0.5);
-	//                 transform: scale(0.5);
-	//         -webkit-opacity: 0.7;             
-	//                 opacity: 0.7;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: scale(1);
-	//                 transform: scale(1);
-	//         -webkit-opacity: 1;             
-	//                 opacity: 1;
-	//     }
-	// }
-	//
-	// @keyframes v-gridStretchDelay
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: scale(1);
-	//                 transform: scale(1);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: scale(0.5);
-	//                 transform: scale(0.5);
-	//         -webkit-opacity: 0.7;             
-	//                 opacity: 0.7;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: scale(1);
-	//                 transform: scale(1);
-	//         -webkit-opacity: 1;             
-	//                 opacity: 1;
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n  <div class=\"v-spinner\" v-bind:style=\"containerStyle\" v-show=\"loading\">\n    <div class=\"v-grid v-grid1\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle1]\">\n    </div><div class=\"v-grid v-grid2\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle2]\">\n    </div><div class=\"v-grid v-grid3\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle3]\">\n    </div><div class=\"v-grid v-grid4\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle4]\">\n    </div><div class=\"v-grid v-grid5\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle5]\">\n    </div><div class=\"v-grid v-grid6\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle6]\">\n    </div><div class=\"v-grid v-grid7\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle7]\">\n    </div><div class=\"v-grid v-grid8\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle8]\">\n    </div><div class=\"v-grid v-grid9\" v-bind:style=\"[spinnerStyle,animationStyle,animationStyle9]\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(14)
@@ -923,7 +924,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/ClipLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/ClipLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -931,9 +932,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -947,8 +948,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7993bd15&file=ClipLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7993bd15&file=ClipLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-43081c18&file=ClipLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-43081c18&file=ClipLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ClipLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -957,23 +958,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n", "", {"version":3,"sources":["/./src/ClipLoader.vue.style"],"names":[],"mappings":";AA+CA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;AAEA;;IAEA,wDAAA;YACA,gDAAA;IACA,kCAAA;WACA,0BAAA;;IAEA,sBAAA;CACA;;AAEA;;IAEA;;QAEA,yCAAA;gBACA,iCAAA;KACA;IACA;;QAEA,6CAAA;gBACA,qCAAA;KACA;IACA;;QAEA,2CAAA;gBACA,mCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,yCAAA;gBACA,iCAAA;KACA;IACA;;QAEA,6CAAA;gBACA,qCAAA;KACA;IACA;;QAEA,2CAAA;gBACA,mCAAA;KACA;CACA","file":"ClipLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'ClipLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '35px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        borderWidth: '2px',\n        borderStyle: 'solid',\n        borderColor: this.color + ' ' + this.color + ' transparent',\n        borderRadius: this.radius,\n        background: 'transparent'\n      }\n    }\n  }\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    animation: v-clipDelay 0.75s 0s infinite linear;\n\t   animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        transform: rotate(360deg) scale(1);\n    }\n}\n", "", {"version":3,"sources":["/./src/ClipLoader.vue.style"],"names":[],"mappings":";AA+CA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;AAEA;;IAGA,gDAAA;IAEA,0BAAA;;IAEA,sBAAA;CACA;;AAqBA;;IAEA;;QAGA,iCAAA;KACA;IACA;;QAGA,qCAAA;KACA;IACA;;QAGA,mCAAA;KACA;CACA","file":"ClipLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'ClipLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '35px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        borderWidth: '2px',\n        borderStyle: 'solid',\n        borderColor: this.color + ' ' + this.color + ' transparent',\n        borderRadius: this.radius,\n        background: 'transparent'\n      }\n    }\n  }\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-clip\n{\n    -webkit-animation: v-clipDelay 0.75s 0s infinite linear;\n            animation: v-clipDelay 0.75s 0s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n\n@keyframes v-clipDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg) scale(1);\n                transform: rotate(0deg) scale(1);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg) scale(0.8);\n                transform: rotate(180deg) scale(0.8);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg) scale(1);\n                transform: rotate(360deg) scale(1);\n    }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -1023,81 +1024,82 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  // .v-spinner
+	  // {
+	  // /*	  font-size: 10px; 
+	  //
+	  //     width: 60px;
+	  //     height: 40px;*/
+	  //     /*margin: 25px auto;*/
+	  //     text-align: center;
+	  //
+	  // }
+	  //
+	  // .v-spinner .v-clip
+	  // {
+	  //     -webkit-animation: v-clipDelay 0.75s 0s infinite linear;
+	  //             animation: v-clipDelay 0.75s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: both;
+	  // 	          animation-fill-mode: both;
+	  //
+	  //     display: inline-block;
+	  // }
+	  //
+	  // @-webkit-keyframes v-clipDelay
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotate(0deg) scale(1);
+	  //                 transform: rotate(0deg) scale(1);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: rotate(180deg) scale(0.8);
+	  //                 transform: rotate(180deg) scale(0.8);
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg) scale(1);
+	  //                 transform: rotate(360deg) scale(1);
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-clipDelay
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotate(0deg) scale(1);
+	  //                 transform: rotate(0deg) scale(1);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: rotate(180deg) scale(0.8);
+	  //                 transform: rotate(180deg) scale(0.8);
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg) scale(1);
+	  //                 transform: rotate(360deg) scale(1);
+	  //     }
+	  // }
+	  // </style>
+	  //
+	  /* generated by vue-loader */
+	
 	};
-	// </script>
-	//
-	// <style>
-	// .v-spinner
-	// {
-	// /*	  font-size: 10px; 
-	//
-	//     width: 60px;
-	//     height: 40px;*/
-	//     /*margin: 25px auto;*/
-	//     text-align: center;
-	//
-	// }
-	//
-	// .v-spinner .v-clip
-	// {
-	//     -webkit-animation: v-clipDelay 0.75s 0s infinite linear;
-	//             animation: v-clipDelay 0.75s 0s infinite linear;
-	//     -webkit-animation-fill-mode: both;
-	// 	          animation-fill-mode: both;
-	//
-	//     display: inline-block;
-	// }
-	//
-	// @-webkit-keyframes v-clipDelay
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotate(0deg) scale(1);
-	//                 transform: rotate(0deg) scale(1);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: rotate(180deg) scale(0.8);
-	//                 transform: rotate(180deg) scale(0.8);
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg) scale(1);
-	//                 transform: rotate(360deg) scale(1);
-	//     }
-	// }
-	//
-	// @keyframes v-clipDelay
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotate(0deg) scale(1);
-	//                 transform: rotate(0deg) scale(1);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: rotate(180deg) scale(0.8);
-	//                 transform: rotate(180deg) scale(0.8);
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg) scale(1);
-	//                 transform: rotate(360deg) scale(1);
-	//     }
-	// }
-	// </style>
-	//
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-clip\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(19)
@@ -1110,7 +1112,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/RiseLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/RiseLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1118,9 +1120,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -1134,8 +1136,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5db37d64&file=RiseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5db37d64&file=RiseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-cacabf5e&file=RiseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-cacabf5e&file=RiseLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RiseLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1144,23 +1146,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-rise-odd\n{\n    -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-rise-even\n{\n    -webkit-animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@-webkit-keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n\n@keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n", "", {"version":3,"sources":["/./src/RiseLoader.vue.style"],"names":[],"mappings":";AAsDA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;AAEA;;IAEA,6EAAA;YACA,qEAAA;IACA,kCAAA;SACA,0BAAA;;IAEA,sBAAA;CACA;;AAEA;;IAEA,8EAAA;YACA,sEAAA;IACA,kCAAA;YACA,0BAAA;;IAEA,sBAAA;CACA;;AAEA;;IAEA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,6CAAA;gBACA,qCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,6CAAA;gBACA,qCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,4CAAA;gBACA,oCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;IACA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,4CAAA;gBACA,oCAAA;KACA;CACA","file":"RiseLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RiseLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '15px'\n    },\n  \tmargin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-rise-odd\n{\n    -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-rise-even\n{\n    -webkit-animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@-webkit-keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n\n@keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-rise-odd\n{\n    animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n\t   animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-rise-even\n{\n    animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@keyframes v-riseOddDelay\n{\n    25\n    {\n        transform: translateY(30px);\n    }\n    0%\n    {\n        transform: scale(0.4);\n    }\n    50%\n    {\n        transform: scale(1.1);\n    }\n    75%\n    {\n        transform: translateY(-30px);\n    }\n    100%\n    {\n        transform: translateY(0) scale(0.75);\n    }\n}\n\n@keyframes v-riseEvenDelay\n{\n    25\n    {\n        transform: translateY(-30px);\n    }\n    0%\n    {\n        transform: scale(1.1);\n    }\n    50%\n    {\n        transform: scale(0.4);\n    }\n    75%\n    {\n        transform: translateY(30px);\n    }\n    100%\n    {\n        transform: translateY(0) scale(1.0);\n    }\n}\n", "", {"version":3,"sources":["/./src/RiseLoader.vue.style"],"names":[],"mappings":";AAsDA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;AAEA;;IAGA,qEAAA;IAEA,0BAAA;;IAEA,sBAAA;CACA;;AAEA;;IAGA,sEAAA;IAEA,0BAAA;;IAEA,sBAAA;CACA;;AA+BA;;IAEA;;QAGA,4BAAA;KACA;IACA;;QAGA,sBAAA;KACA;IACA;;QAGA,sBAAA;KACA;IACA;;QAGA,6BAAA;KACA;IACA;;QAGA,qCAAA;KACA;CACA;;AA+BA;;IAEA;;QAGA,6BAAA;KACA;IACA;;QAGA,sBAAA;KACA;IACA;;QAGA,sBAAA;KACA;IACA;;QAGA,4BAAA;KACA;IACA;;QAGA,oCAAA;KACA;CACA","file":"RiseLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RiseLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '15px'\n    },\n  \tmargin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n.v-spinner .v-rise-odd\n{\n    -webkit-animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseOddDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n\t        animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n.v-spinner .v-rise-even\n{\n    -webkit-animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n            animation: v-riseEvenDelay 1s 0s infinite cubic-bezier(.15,.46,.9,.6);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n\n    display: inline-block;\n}\n\n@-webkit-keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@keyframes v-riseOddDelay\n{\n    25\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    75%\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(0.75);\n                transform: translateY(0) scale(0.75);\n    }\n}\n\n@-webkit-keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n\n@keyframes v-riseEvenDelay\n{\n    25\n    {\n        -webkit-transform: translateY(-30px);\n                transform: translateY(-30px);\n    }\n    0%\n    {\n        -webkit-transform: scale(1.1);\n                transform: scale(1.1);\n    }\n    50%\n    {\n        -webkit-transform: scale(0.4);\n                transform: scale(0.4);\n    }\n    75%\n    {\n        -webkit-transform: translateY(30px);\n                transform: translateY(30px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0) scale(1.0);\n                transform: translateY(0) scale(1.0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -1369,15 +1371,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rise v-rise-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(24)
@@ -1390,7 +1392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/BeatLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/BeatLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1398,9 +1400,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -1414,8 +1416,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-282665fb&file=BeatLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-282665fb&file=BeatLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cca7604&file=BeatLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cca7604&file=BeatLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BeatLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1424,23 +1426,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-beat\n{\n    -webkit-animation: v-beatStretchDelay 0.7s infinite linear;\n            animation: v-beatStretchDelay 0.7s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-beat-odd\n{\n  -webkit-animation-delay: 0s;\n          animation-delay: 0s;\n}\n.v-spinner .v-beat-even\n{\n  -webkit-animation-delay: 0.35s;\n          animation-delay: 0.35s;\n}\n\n@-webkit-keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/BeatLoader.vue.style"],"names":[],"mappings":";;AAqDA;;IAEA,2DAAA;YACA,mDAAA;IACA,kCAAA;WACA,0BAAA;IACA,sBAAA;CACA;;AAEA;;EAEA,4BAAA;UAAA,oBAAA;CACA;AACA;;EAEA,+BAAA;UAAA,uBAAA;CACA;;AAEA;;IAEA;;QAEA,+BAAA;gBACA,uBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,+BAAA;gBACA,uBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,4BAAA;gBACA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA","file":"BeatLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'BeatLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-beat\n{\n    -webkit-animation: v-beatStretchDelay 0.7s infinite linear;\n            animation: v-beatStretchDelay 0.7s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-beat-odd\n{\n  animation-delay: 0s;\n}\n.v-spinner .v-beat-even\n{\n  animation-delay: 0.35s;\n}\n\n@-webkit-keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-beat\n{\n    animation: v-beatStretchDelay 0.7s infinite linear;\n\t   animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-beat-odd\n{\n  animation-delay: 0s;\n}\n.v-spinner .v-beat-even\n{\n  animation-delay: 0.35s;\n}\n\n@keyframes v-beatStretchDelay\n{\n    50%\n    {\n        transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/BeatLoader.vue.style"],"names":[],"mappings":";;AAqDA;;IAGA,mDAAA;IAEA,0BAAA;IACA,sBAAA;CACA;;AAEA;;EAEA,oBAAA;CACA;AACA;;EAEA,uBAAA;CACA;;AAoBA;;IAEA;;QAGA,uBAAA;QACA,qBAAA;gBACA,aAAA;KACA;IACA;;QAGA,oBAAA;QACA,mBAAA;gBACA,WAAA;KACA;CACA","file":"BeatLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'BeatLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-beat\n{\n    -webkit-animation: v-beatStretchDelay 0.7s infinite linear;\n            animation: v-beatStretchDelay 0.7s infinite linear;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;         \n}\n\n.v-spinner .v-beat-odd\n{\n  animation-delay: 0s;\n}\n.v-spinner .v-beat-even\n{\n  animation-delay: 0.35s;\n}\n\n@-webkit-keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-beatStretchDelay\n{\n    50%\n    {\n        -webkit-transform: scale(0.75);\n                transform: scale(0.75);\n        -webkit-opacity: 0.2;             \n                opacity: 0.2;\n    }\n    100%\n    {\n        -webkit-transform: scale(1);\n                transform: scale(1);\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -1555,15 +1557,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-even\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-beat v-beat-odd\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(29)
@@ -1576,7 +1578,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/SyncLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/SyncLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1584,9 +1586,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -1600,8 +1602,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4af2d2a0&file=SyncLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SyncLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4af2d2a0&file=SyncLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SyncLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-146731a3&file=SyncLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SyncLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-146731a3&file=SyncLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SyncLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1610,23 +1612,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SyncLoader.vue.style"],"names":[],"mappings":";;AAoEA;;IAEA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,iCAAA;gBACA,yBAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,oCAAA;gBACA,4BAAA;KACA;IACA;;QAEA,qCAAA;gBACA,6BAAA;KACA;IACA;;QAEA,iCAAA;gBACA,yBAAA;KACA;CACA","file":"SyncLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SyncLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-syncStretchDelay',\n        animationDuration: '0.6s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease-in-out',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.07s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.14s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.21s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        transform: translateY(10px);\n    }\n    66%\n    {\n        transform: translateY(-10px);\n    }\n    100%\n    {\n        transform: translateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SyncLoader.vue.style"],"names":[],"mappings":";;AAuFA;;IAEA;;QAGA,4BAAA;KACA;IACA;;QAGA,6BAAA;KACA;IACA;;QAGA,yBAAA;KACA;CACA","file":"SyncLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SyncLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-syncStretchDelay',\n        animationDuration: '0.6s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease-in-out',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.07s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.14s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.21s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -1740,15 +1742,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(34)
@@ -1761,7 +1763,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/RotateLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/RotateLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1769,9 +1771,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -1785,8 +1787,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-16962240&file=RotateLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RotateLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-16962240&file=RotateLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RotateLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-328d9923&file=RotateLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RotateLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-328d9923&file=RotateLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RotateLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1795,23 +1797,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-rotate1\n{\n    -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n            animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@-webkit-keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n", "", {"version":3,"sources":["/./src/RotateLoader.vue.style"],"names":[],"mappings":";;AAqDA;;IAEA,qFAAA;YACA,6EAAA;IACA,kCAAA;YACA,0BAAA;IACA,sBAAA;IACA,mBAAA;CACA;;AAEA;;EAEA,aAAA;EACA,mBAAA;EACA,OAAA;EACA,YAAA;CACA;;AAEA;;EAEA,aAAA;EACA,mBAAA;EACA,OAAA;EACA,WAAA;CACA;;AAEA;;IAEA;;QAEA,gCAAA;gBACA,wBAAA;KACA;IACA;;QAEA,kCAAA;gBACA,0BAAA;KACA;IACA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,gCAAA;gBACA,wBAAA;KACA;IACA;;QAEA,kCAAA;gBACA,0BAAA;KACA;IACA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA","file":"RotateLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rotate v-rotate1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-rotate v-rotate2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rotate v-rotate3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RotateLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-rotate1\n{\n    -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n            animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@-webkit-keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-rotate1\n{\n    animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        transform: rotate(0deg);\n    }\n    50%\n    {\n        transform: rotate(180deg);\n    }\n    100%\n    {\n        transform: rotate(360deg);\n    }\n}\n", "", {"version":3,"sources":["/./src/RotateLoader.vue.style"],"names":[],"mappings":";;AAqDA;;IAGA,6EAAA;IAEA,0BAAA;IACA,sBAAA;IACA,mBAAA;CACA;;AAEA;;EAEA,aAAA;EACA,mBAAA;EACA,OAAA;EACA,YAAA;CACA;;AAEA;;EAEA,aAAA;EACA,mBAAA;EACA,OAAA;EACA,WAAA;CACA;;AAqBA;;IAEA;;QAGA,wBAAA;KACA;IACA;;QAGA,0BAAA;KACA;IACA;;QAGA,0BAAA;KACA;CACA","file":"RotateLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rotate v-rotate1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-rotate v-rotate2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rotate v-rotate3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RotateLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-rotate1\n{\n    -webkit-animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n            animation: v-rotateStretchDelay 1s 0s infinite cubic-bezier(.7,-.13,.22,.86);\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    position: relative;\n}\n\n.v-spinner .v-rotate2\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: -28px;\n}\n\n.v-spinner .v-rotate3\n{\n  opacity: 0.8;\n  position: absolute;\n  top: 0;\n  left: 25px;\n}\n\n@-webkit-keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-rotateStretchDelay\n{\n    0%\n    {\n        -webkit-transform: rotate(0deg);\n                transform: rotate(0deg);\n    }\n    50%\n    {\n        -webkit-transform: rotate(180deg);\n                transform: rotate(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -1936,15 +1938,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-rotate v-rotate1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-rotate v-rotate2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-rotate v-rotate3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(39)
@@ -1957,7 +1959,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/FadeLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/FadeLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1965,9 +1967,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -1981,8 +1983,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-533fe941&file=FadeLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./FadeLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-533fe941&file=FadeLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./FadeLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cb44844&file=FadeLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./FadeLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1cb44844&file=FadeLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./FadeLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1991,23 +1993,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 40 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-fade\n{\n    -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n            animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    position: absolute;               \n}\n\n@-webkit-keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/FadeLoader.vue.style"],"names":[],"mappings":";;AAwIA;;IAEA,gEAAA;YACA,wDAAA;IACA,kCAAA;WACA,0BAAA;IACA,mBAAA;CACA;;AAEA;;IAEA;;QAEA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,mBAAA;gBACA,WAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,mBAAA;gBACA,WAAA;KACA;CACA","file":"FadeLoader.vue","sourcesContent":["<template>\n  <div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"[spinnerStyle,animationStyle1]\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"[spinnerStyle,animationStyle2]\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"[spinnerStyle,animationStyle4]\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"[spinnerStyle,animationStyle5]\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"[spinnerStyle,animationStyle6]\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"[spinnerStyle,animationStyle7]\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"[spinnerStyle,animationStyle8]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'FadeLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    height: {\n      type: String,\n      default: '15px'\n    },\n    width: {\n      type: String,\n      default: '5px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '20px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.height,\n     \t\twidth: this.width,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    ngRadius () {\n      return '-' + this.radius\n    },\n    quarter () {\n      return (parseFloat(this.radius)/2 + parseFloat(this.radius)/5.5) + 'px'\n    },\n    ngQuarter () {\n      return '-' + this.quarter\n    },\n    animationStyle1 () {\n      return {\n        top: this.radius,\n        left: 0,\n        animationDelay: '0.12s'\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: this.quarter,\n        left: this.quarter,\n        animationDelay: '0.24s',\n        transform: 'rotate(-45deg)'\n      }\n    },\n    animationStyle3 () {\n      return {\n        top: 0,\n        left: this.radius,\n        animationDelay: '0.36s',\n        transform: 'rotate(90deg)'\n      }\n    },\n    animationStyle4 () {\n      return {\n        top: this.ngQuarter,\n        left: this.quarter,\n        animationDelay: '0.48s',\n        transform: 'rotate(45deg)'\n      }\n    },\n    animationStyle5 () {\n      return {\n        top: this.ngRadius,\n        left: 0,\n        animationDelay: '0.60s'\n      }\n    },\n    animationStyle6 () {\n      return {\n        top: this.ngQuarter,\n        left: this.ngQuarter,\n        animationDelay: '0.72s',\n        transform: 'rotate(-45deg)'\n      }\n    },\n    animationStyle7 () {\n      return {\n        top: 0,\n        left: this.ngRadius,\n        animationDelay: '0.84s',\n        transform: 'rotate(90deg)'\n      }\n    },\n    animationStyle8 () {\n      return {\n        top: this.quarter,\n        left: this.ngQuarter,\n        animationDelay: '0.96s',\n        transform: 'rotate(45deg)'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-fade\n{\n    -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n            animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    position: absolute;               \n}\n\n@-webkit-keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-fade\n{\n    animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n\t   animation-fill-mode: both;\n    position: absolute;               \n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n", "", {"version":3,"sources":["/./src/FadeLoader.vue.style"],"names":[],"mappings":";;AAwIA;;IAGA,wDAAA;IAEA,0BAAA;IACA,mBAAA;CACA;;AAgBA;;IAEA;;QAEA,qBAAA;gBACA,aAAA;KACA;IACA;;QAEA,mBAAA;gBACA,WAAA;KACA;CACA","file":"FadeLoader.vue","sourcesContent":["<template>\n  <div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"[spinnerStyle,animationStyle1]\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"[spinnerStyle,animationStyle2]\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"[spinnerStyle,animationStyle4]\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"[spinnerStyle,animationStyle5]\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"[spinnerStyle,animationStyle6]\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"[spinnerStyle,animationStyle7]\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"[spinnerStyle,animationStyle8]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'FadeLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    height: {\n      type: String,\n      default: '15px'\n    },\n    width: {\n      type: String,\n      default: '5px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '20px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.height,\n     \t\twidth: this.width,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    ngRadius () {\n      return '-' + this.radius\n    },\n    quarter () {\n      return (parseFloat(this.radius)/2 + parseFloat(this.radius)/5.5) + 'px'\n    },\n    ngQuarter () {\n      return '-' + this.quarter\n    },\n    animationStyle1 () {\n      return {\n        top: this.radius,\n        left: 0,\n        animationDelay: '0.12s'\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: this.quarter,\n        left: this.quarter,\n        animationDelay: '0.24s',\n        transform: 'rotate(-45deg)'\n      }\n    },\n    animationStyle3 () {\n      return {\n        top: 0,\n        left: this.radius,\n        animationDelay: '0.36s',\n        transform: 'rotate(90deg)'\n      }\n    },\n    animationStyle4 () {\n      return {\n        top: this.ngQuarter,\n        left: this.quarter,\n        animationDelay: '0.48s',\n        transform: 'rotate(45deg)'\n      }\n    },\n    animationStyle5 () {\n      return {\n        top: this.ngRadius,\n        left: 0,\n        animationDelay: '0.60s'\n      }\n    },\n    animationStyle6 () {\n      return {\n        top: this.ngQuarter,\n        left: this.ngQuarter,\n        animationDelay: '0.72s',\n        transform: 'rotate(-45deg)'\n      }\n    },\n    animationStyle7 () {\n      return {\n        top: 0,\n        left: this.ngRadius,\n        animationDelay: '0.84s',\n        transform: 'rotate(90deg)'\n      }\n    },\n    animationStyle8 () {\n      return {\n        top: this.quarter,\n        left: this.ngQuarter,\n        animationDelay: '0.96s',\n        transform: 'rotate(45deg)'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-fade\n{\n    -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n            animation: v-fadeStretchDelay 1.2s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    position: absolute;               \n}\n\n@-webkit-keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n\n@keyframes v-fadeStretchDelay\n{\n    50%\n    {\n        -webkit-opacity: 0.3;             \n                opacity: 0.3;\n    }\n    100%\n    {\n        -webkit-opacity: 1;             \n                opacity: 1;\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 41 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2145,60 +2147,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  //
+	  // .v-spinner .v-fade
+	  // {
+	  //     -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
+	  //             animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
+	  //     -webkit-animation-fill-mode: both;
+	  // 	          animation-fill-mode: both;
+	  //     position: absolute;               
+	  // }
+	  //
+	  // @-webkit-keyframes v-fadeStretchDelay
+	  // {
+	  //     50%
+	  //     {
+	  //         -webkit-opacity: 0.3;             
+	  //                 opacity: 0.3;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-opacity: 1;             
+	  //                 opacity: 1;
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-fadeStretchDelay
+	  // {
+	  //     50%
+	  //     {
+	  //         -webkit-opacity: 0.3;             
+	  //                 opacity: 0.3;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-opacity: 1;             
+	  //                 opacity: 1;
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	//
-	// .v-spinner .v-fade
-	// {
-	//     -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
-	//             animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
-	//     -webkit-animation-fill-mode: both;
-	// 	          animation-fill-mode: both;
-	//     position: absolute;               
-	// }
-	//
-	// @-webkit-keyframes v-fadeStretchDelay
-	// {
-	//     50%
-	//     {
-	//         -webkit-opacity: 0.3;             
-	//                 opacity: 0.3;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-opacity: 1;             
-	//                 opacity: 1;
-	//     }
-	// }
-	//
-	// @keyframes v-fadeStretchDelay
-	// {
-	//     50%
-	//     {
-	//         -webkit-opacity: 0.3;             
-	//                 opacity: 0.3;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-opacity: 1;             
-	//                 opacity: 1;
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 42 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n  <div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n  <!-- <div class=\"v-spinner\" v-bind:style=\"containerStyle\"> -->\n    <div class=\"v-fade v-fade1\" v-bind:style=\"[spinnerStyle,animationStyle1]\">\n    </div><div class=\"v-fade v-fade2\" v-bind:style=\"[spinnerStyle,animationStyle2]\">\n    </div><div class=\"v-fade v-fade3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div><div class=\"v-fade v-fade4\" v-bind:style=\"[spinnerStyle,animationStyle4]\">\n    </div><div class=\"v-fade v-fade5\" v-bind:style=\"[spinnerStyle,animationStyle5]\">\n    </div><div class=\"v-fade v-fade6\" v-bind:style=\"[spinnerStyle,animationStyle6]\">\n    </div><div class=\"v-fade v-fade7\" v-bind:style=\"[spinnerStyle,animationStyle7]\">\n    </div><div class=\"v-fade v-fade8\" v-bind:style=\"[spinnerStyle,animationStyle8]\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 43 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(44)
@@ -2211,7 +2213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/PacmanLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/PacmanLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2219,9 +2221,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 44 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -2235,8 +2237,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1fd650cd&file=PacmanLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PacmanLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1fd650cd&file=PacmanLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PacmanLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5daefb10&file=PacmanLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PacmanLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5daefb10&file=PacmanLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./PacmanLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2245,23 +2247,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 45 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n/*TODO computed transform */\n@-webkit-keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n", "", {"version":3,"sources":["/./src/PacmanLoader.vue.style"],"names":[],"mappings":";AAsGA;;IAEA,mBAAA;CACA;;AAEA,4BAAA;AACA;;IAEA;;QAEA,qBAAA;QACA,aAAA;KACA;IACA;;QAEA,8CAAA;gBACA,sCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,qBAAA;QACA,aAAA;KACA;IACA;;QAEA,8CAAA;gBACA,sCAAA;KACA;CACA","file":"PacmanLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n    <div class=\"v-pacman v-pacman1\" v-bind:style=\"spinnerStyle1\">\n    </div><div class=\"v-pacman v-pacman2\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay2]\">\n    </div><div class=\"v-pacman v-pacman3\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay3]\">\n    </div><div class=\"v-pacman v-pacman4\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay4]\">\n    </div><div class=\"v-pacman v-pacman5\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay5]\">\n    </div>\n</div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'PacmanLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '25px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerDelay2: {\n        animationDelay: '0.25s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.50s'\n      },\n      spinnerDelay4: {\n        animationDelay: '0.75s'\n      },\n      spinnerDelay5: {\n        animationDelay: '1s'\n      }\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        backgroundColor: this.color,\n        width: this.size,\n        height: this.size,\n        margin: this.margin,\n        borderRadius: this.radius,\n      }\n    },\n    border1 () {\n      return this.size + ' solid transparent'\n    },\n    border2 () {\n      return this.size + ' solid ' + this.color\n    },\n    spinnerStyle1 () {\n      return {\n        width: 0,\n        height: 0,\n        borderTop: this.border2,\n        borderRight: this.border1,\n        borderBottom: this.border2,\n        borderLeft: this.border2,\n        borderRadius: this.size\n      }\n    },\n    animationStyle () {\n      return {\n        width: '10px',\n        height: '10px',\n        transform: 'translate(0, '+ -parseFloat(this.size)/4 + 'px)',\n        position: 'absolute',\n        top: '25px',\n        left: '100px',\n        animationName: 'v-pacmanStretchDelay',\n        animationDuration: '1s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'linear',\n        animationFillMode: 'both'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n/*TODO computed transform */\n@-webkit-keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n/*TODO computed transform */\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        transform: translate(-100px, -6.25px);\n    }\n}\n", "", {"version":3,"sources":["/./src/PacmanLoader.vue.style"],"names":[],"mappings":";AAsGA;;IAEA,mBAAA;CACA;;AAEA,4BAAA;;AAeA;;IAEA;;QAEA,qBAAA;QACA,aAAA;KACA;IACA;;QAGA,sCAAA;KACA;CACA","file":"PacmanLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n    <div class=\"v-pacman v-pacman1\" v-bind:style=\"spinnerStyle1\">\n    </div><div class=\"v-pacman v-pacman2\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay2]\">\n    </div><div class=\"v-pacman v-pacman3\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay3]\">\n    </div><div class=\"v-pacman v-pacman4\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay4]\">\n    </div><div class=\"v-pacman v-pacman5\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay5]\">\n    </div>\n</div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'PacmanLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '25px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerDelay2: {\n        animationDelay: '0.25s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.50s'\n      },\n      spinnerDelay4: {\n        animationDelay: '0.75s'\n      },\n      spinnerDelay5: {\n        animationDelay: '1s'\n      }\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        backgroundColor: this.color,\n        width: this.size,\n        height: this.size,\n        margin: this.margin,\n        borderRadius: this.radius,\n      }\n    },\n    border1 () {\n      return this.size + ' solid transparent'\n    },\n    border2 () {\n      return this.size + ' solid ' + this.color\n    },\n    spinnerStyle1 () {\n      return {\n        width: 0,\n        height: 0,\n        borderTop: this.border2,\n        borderRight: this.border1,\n        borderBottom: this.border2,\n        borderLeft: this.border2,\n        borderRadius: this.size\n      }\n    },\n    animationStyle () {\n      return {\n        width: '10px',\n        height: '10px',\n        transform: 'translate(0, '+ -parseFloat(this.size)/4 + 'px)',\n        position: 'absolute',\n        top: '25px',\n        left: '100px',\n        animationName: 'v-pacmanStretchDelay',\n        animationDuration: '1s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'linear',\n        animationFillMode: 'both'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n/*TODO computed transform */\n@-webkit-keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n\n@keyframes v-pacmanStretchDelay\n{\n    75%\n    {\n        -webkit-opacity: 0.7;             \n        opacity: 0.7;\n    }\n    100%\n    {\n        -webkit-transform: translate(-100px, -6.25px);\n                transform: translate(-100px, -6.25px);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 46 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2366,56 +2368,56 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  // .v-spinner
+	  // {
+	  //     text-align: center;
+	  // }
+	  //
+	  // /*TODO computed transform */
+	  // @-webkit-keyframes v-pacmanStretchDelay
+	  // {
+	  //     75%
+	  //     {
+	  //         -webkit-opacity: 0.7;             
+	  //         opacity: 0.7;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: translate(-100px, -6.25px);
+	  //                 transform: translate(-100px, -6.25px);
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-pacmanStretchDelay
+	  // {
+	  //     75%
+	  //     {
+	  //         -webkit-opacity: 0.7;             
+	  //         opacity: 0.7;
+	  //     }
+	  //     100%
+	  //     {
+	  //         -webkit-transform: translate(-100px, -6.25px);
+	  //                 transform: translate(-100px, -6.25px);
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	// .v-spinner
-	// {
-	//     text-align: center;
-	// }
-	//
-	// /*TODO computed transform */
-	// @-webkit-keyframes v-pacmanStretchDelay
-	// {
-	//     75%
-	//     {
-	//         -webkit-opacity: 0.7;             
-	//         opacity: 0.7;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: translate(-100px, -6.25px);
-	//                 transform: translate(-100px, -6.25px);
-	//     }
-	// }
-	//
-	// @keyframes v-pacmanStretchDelay
-	// {
-	//     75%
-	//     {
-	//         -webkit-opacity: 0.7;             
-	//         opacity: 0.7;
-	//     }
-	//     100%
-	//     {
-	//         -webkit-transform: translate(-100px, -6.25px);
-	//                 transform: translate(-100px, -6.25px);
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 47 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-bind:style=\"{position: 'relative', fontSize: 0}\" v-show=\"loading\">\n    <div class=\"v-pacman v-pacman1\" v-bind:style=\"spinnerStyle1\">\n    </div><div class=\"v-pacman v-pacman2\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay2]\">\n    </div><div class=\"v-pacman v-pacman3\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay3]\">\n    </div><div class=\"v-pacman v-pacman4\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay4]\">\n    </div><div class=\"v-pacman v-pacman5\" v-bind:style=\"[spinnerStyle,animationStyle,spinnerDelay5]\">\n    </div>\n</div>\n";
 
-/***/ },
+/***/ }),
 /* 48 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(49)
@@ -2428,7 +2430,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/SquareLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/SquareLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2436,9 +2438,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 49 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -2452,8 +2454,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5c782022&file=SquareLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SquareLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5c782022&file=SquareLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SquareLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-cb5e6b36&file=SquareLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SquareLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-cb5e6b36&file=SquareLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SquareLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2462,23 +2464,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 50 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-square\n{\n    -webkit-animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    -webkit-perspective: 100px;\n            perspective: 100px;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SquareLoader.vue.style"],"names":[],"mappings":";AAwCA;;IAEA,mBAAA;CACA;;AAEA;;IAEA,6EAAA;YACA,qEAAA;IACA,kCAAA;WACA,0BAAA;IACA,2BAAA;YAAA,mBAAA;IACA,sBAAA;CACA;;AAEA;;IAEA;;QAEA,8CAAA;gBACA,sCAAA;KACA;IACA;;QAEA,mDAAA;gBACA,2CAAA;KACA;IACA;;QAEA,8CAAA;gBACA,sCAAA;KACA;IACA;;QAEA,yCAAA;gBACA,iCAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,8CAAA;gBACA,sCAAA;KACA;IACA;;QAEA,mDAAA;gBACA,2CAAA;KACA;IACA;;QAEA,8CAAA;gBACA,sCAAA;KACA;IACA;;QAEA,yCAAA;gBACA,iCAAA;KACA;CACA","file":"SquareLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-square\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SquareLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '50px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t  width: this.size\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-square\n{\n    -webkit-animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    perspective: 100px;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-square\n{\n    animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n\t   animation-fill-mode: both;\n    perspective: 100px;\n    display: inline-block;\n}\n\n@keyframes v-squareDelay\n{\n    25%\n    {\n        transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        transform: rotateX(0) rotateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SquareLoader.vue.style"],"names":[],"mappings":";AAwCA;;IAEA,mBAAA;CACA;;AAEA;;IAGA,qEAAA;IAEA,0BAAA;IACA,mBAAA;IACA,sBAAA;CACA;;AA0BA;;IAEA;;QAGA,sCAAA;KACA;IACA;;QAGA,2CAAA;KACA;IACA;;QAGA,sCAAA;KACA;IACA;;QAGA,iCAAA;KACA;CACA","file":"SquareLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-square\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SquareLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '50px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t  width: this.size\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-square\n{\n    -webkit-animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-squareDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    perspective: 100px;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-squareDelay\n{\n    25%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(0);\n                transform: rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: rotateX(180deg) rotateY(180deg);\n                transform: rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: rotateX(0) rotateY(180deg);\n                transform: rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: rotateX(0) rotateY(0);\n                transform: rotateX(0) rotateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 51 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2589,15 +2591,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 52 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-square\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 53 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(54)
@@ -2610,7 +2612,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/ScaleLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/ScaleLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2618,9 +2620,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 54 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -2634,8 +2636,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d844fe4a&file=ScaleLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ScaleLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d844fe4a&file=ScaleLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ScaleLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0e15fb90&file=ScaleLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ScaleLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0e15fb90&file=ScaleLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ScaleLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2644,23 +2646,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 55 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n\n@-webkit-keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n", "", {"version":3,"sources":["/./src/ScaleLoader.vue.style"],"names":[],"mappings":";AAkFA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;;AAGA;;IAEA;;;QAGA,6BAAA;gBACA,qBAAA;KACA;IACA;;QAEA,+BAAA;gBACA,uBAAA;KACA;CACA;;AAEA;;IAEA;;;QAGA,6BAAA;gBACA,qBAAA;KACA;IACA;;QAEA,+BAAA;gBACA,uBAAA;KACA;CACA","file":"ScaleLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'ScaleLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \theight: {\n      type: String,\n      default: '35px'\n    },\n  \twidth: {\n      type: String,\n      default: '4px'\n    },\n  \tmargin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '2px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.height,\n     \t\twidth: this.width,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-scaleStretchDelay',\n        animationDuration: '1s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',\n        animationFillMode: 'both'\n      \t// TODO \n      \t// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),\n      \t// animationFillMode: \"both\"\n      },\n      spinnerDelay1: {\n        animationDelay: '0.1s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.2s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.3s'\n      },\n      spinnerDelay4: {\n        animationDelay: '0.4s'\n      },\n      spinnerDelay5: {\n        animationDelay: '0.5s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n\n@-webkit-keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        transform: scaleY(1);\n    }\n    50%\n    {\n        transform: scaleY(0.4);\n    }\n}\n", "", {"version":3,"sources":["/./src/ScaleLoader.vue.style"],"names":[],"mappings":";AAkFA;;AAEA;;;mBAGA;IACA,sBAAA;IACA,mBAAA;;CAEA;;AAkBA;;IAEA;;;QAIA,qBAAA;KACA;IACA;;QAGA,uBAAA;KACA;CACA","file":"ScaleLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'ScaleLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \theight: {\n      type: String,\n      default: '35px'\n    },\n  \twidth: {\n      type: String,\n      default: '4px'\n    },\n  \tmargin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '2px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.height,\n     \t\twidth: this.width,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-scaleStretchDelay',\n        animationDuration: '1s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',\n        animationFillMode: 'both'\n      \t// TODO \n      \t// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),\n      \t// animationFillMode: \"both\"\n      },\n      spinnerDelay1: {\n        animationDelay: '0.1s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.2s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.3s'\n      },\n      spinnerDelay4: {\n        animationDelay: '0.4s'\n      },\n      spinnerDelay5: {\n        animationDelay: '0.5s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n/*\t  font-size: 10px; \n\n    width: 60px;\n    height: 40px;*/\n    /*margin: 25px auto;*/\n    text-align: center;\n \n}\n\n\n@-webkit-keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n\n@keyframes v-scaleStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scaleY(1);\n                transform: scaleY(1);\n    }\n    50%\n    {\n        -webkit-transform: scaleY(0.4);\n                transform: scaleY(0.4);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 56 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2792,15 +2794,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 57 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-scale v-scale1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-scale v-scale2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-scale v-scale3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div><div class=\"v-scale v-scale4\" v-bind:style=\"[spinnerStyle,spinnerDelay4]\">\n    </div><div class=\"v-scale v-scale5\" v-bind:style=\"[spinnerStyle,spinnerDelay5]\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 58 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(59)
@@ -2813,7 +2815,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/SkewLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/SkewLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -2821,9 +2823,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 59 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -2837,8 +2839,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c730c362&file=SkewLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SkewLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c730c362&file=SkewLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SkewLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-65dbfd52&file=SkewLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SkewLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-65dbfd52&file=SkewLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./SkewLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2847,23 +2849,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 60 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-skew\n{\n    -webkit-animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SkewLoader.vue.style"],"names":[],"mappings":";AA0CA;;IAEA,mBAAA;CACA;;AAEA;;IAEA,2EAAA;YACA,mEAAA;IACA,kCAAA;WACA,0BAAA;IACA,sBAAA;CACA;;AAEA;;IAEA;;QAEA,iEAAA;gBACA,yDAAA;KACA;IACA;;QAEA,sEAAA;gBACA,8DAAA;KACA;IACA;;QAEA,iEAAA;gBACA,yDAAA;KACA;IACA;;QAEA,4DAAA;gBACA,oDAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,iEAAA;gBACA,yDAAA;KACA;IACA;;QAEA,sEAAA;gBACA,8DAAA;KACA;IACA;;QAEA,iEAAA;gBACA,yDAAA;KACA;IACA;;QAEA,4DAAA;gBACA,oDAAA;KACA;CACA","file":"SkewLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-skew\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SkewLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '20px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \theight: 0,\n     \t  width: 0,\n        borderLeft: this.size + ' solid transparent',\n        borderRight: this.size + ' solid transparent',\n        borderBottom: this.size + ' solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-skew\n{\n    -webkit-animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-skew\n{\n    animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n\t   animation-fill-mode: both;\n    display: inline-block;\n}\n\n@keyframes v-skewDelay\n{\n    25%\n    {\n        transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n", "", {"version":3,"sources":["/./src/SkewLoader.vue.style"],"names":[],"mappings":";AA0CA;;IAEA,mBAAA;CACA;;AAEA;;IAGA,mEAAA;IAEA,0BAAA;IACA,sBAAA;CACA;;AA0BA;;IAEA;;QAGA,yDAAA;KACA;IACA;;QAGA,8DAAA;KACA;IACA;;QAGA,yDAAA;KACA;IACA;;QAGA,oDAAA;KACA;CACA","file":"SkewLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-skew\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SkewLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n  \tcolor: { \n      type: String,\n      default: '#5dc596'\n    },\n  \tsize: {\n      type: String,\n      default: '20px'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \theight: 0,\n     \t  width: 0,\n        borderLeft: this.size + ' solid transparent',\n        borderRight: this.size + ' solid transparent',\n        borderBottom: this.size + ' solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n.v-spinner\n{\n    text-align: center;\n}\n\n.v-spinner .v-skew\n{\n    -webkit-animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n            animation: v-skewDelay 3s 0s infinite cubic-bezier(.09,.57,.49,.9);\n    -webkit-animation-fill-mode: both;\n\t          animation-fill-mode: both;\n    display: inline-block;\n}\n\n@-webkit-keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n\n@keyframes v-skewDelay\n{\n    25%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n                transform: perspective(100px) rotateX(180deg) rotateY(0);\n    }\n    50%\n    {\n        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n                transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n    }\n    75%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n                transform: perspective(100px) rotateX(0) rotateY(180deg);\n    }\n    100%\n    {\n        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n                transform: perspective(100px) rotateX(0) rotateY(0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 61 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2975,15 +2977,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 62 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-skew\" v-bind:style=\"spinnerStyle\">\n    </div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 63 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(64)
@@ -2996,7 +2998,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/MoonLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/MoonLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3004,9 +3006,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 64 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -3020,8 +3022,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1c272b86&file=MoonLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./MoonLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1c272b86&file=MoonLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./MoonLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-34c8eaee&file=MoonLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./MoonLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-34c8eaee&file=MoonLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./MoonLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3030,23 +3032,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 65 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n", "", {"version":3,"sources":["/./src/MoonLoader.vue.style"],"names":[],"mappings":";;AA0EA;;;IAGA,8DAAA;YACA,sDAAA;IACA,sCAAA;YACA,8BAAA;IACA,mBAAA;CACA;;AAEA;;IAEA,8DAAA;YACA,sDAAA;IACA,sCAAA;YACA,8BAAA;IACA,aAAA;IACA,mBAAA;CACA;;AAEA;;IAEA,aAAA;CACA;;AAEA;;IAEA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA","file":"MoonLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'MoonLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    moonSize() {\n      return parseFloat(this.size)/7\n    },\n    spinnerMoonStyle () {\n      return {\n        height: this.moonSize  + 'px',\n        width: this.moonSize  + 'px',\n        borderRadius: this.radius\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',\n        backgroundColor: this.color\n      }\n    },\n    animationStyle3 () {\n      return {\n        border: this.moonSize + 'px solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-moon1\n{\n    animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        transform: rotate(360deg);\n    }\n}\n", "", {"version":3,"sources":["/./src/MoonLoader.vue.style"],"names":[],"mappings":";;AA0EA;;IAIA,sDAAA;IAEA,8BAAA;IACA,mBAAA;CACA;;AAEA;;IAGA,sDAAA;IAEA,8BAAA;IACA,aAAA;IACA,mBAAA;CACA;;AAEA;;IAEA,aAAA;CACA;;AAWA;;IAEA;;QAGA,0BAAA;KACA;CACA","file":"MoonLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'MoonLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    moonSize() {\n      return parseFloat(this.size)/7\n    },\n    spinnerMoonStyle () {\n      return {\n        height: this.moonSize  + 'px',\n        width: this.moonSize  + 'px',\n        borderRadius: this.radius\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',\n        backgroundColor: this.color\n      }\n    },\n    animationStyle3 () {\n      return {\n        border: this.moonSize + 'px solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 66 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3122,66 +3124,66 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  //
+	  // .v-spinner .v-moon1
+	  // {
+	  //
+	  //     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
+	  //             animation: v-moonStretchDelay 0.6s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     position: relative;
+	  // }
+	  //
+	  // .v-spinner .v-moon2
+	  // {
+	  //     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
+	  //             animation: v-moonStretchDelay 0.6s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     opacity: 0.8;
+	  //     position: absolute;
+	  // }
+	  //
+	  // .v-spinner .v-moon3
+	  // {
+	  //     opacity: 0.1;
+	  // }
+	  //
+	  // @-webkit-keyframes v-moonStretchDelay
+	  // {
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg);
+	  //                 transform: rotate(360deg);
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-moonStretchDelay
+	  // {
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg);
+	  //                 transform: rotate(360deg);
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	//
-	// .v-spinner .v-moon1
-	// {
-	//
-	//     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
-	//             animation: v-moonStretchDelay 0.6s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     position: relative;
-	// }
-	//
-	// .v-spinner .v-moon2
-	// {
-	//     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
-	//             animation: v-moonStretchDelay 0.6s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     opacity: 0.8;
-	//     position: absolute;
-	// }
-	//
-	// .v-spinner .v-moon3
-	// {
-	//     opacity: 0.1;
-	// }
-	//
-	// @-webkit-keyframes v-moonStretchDelay
-	// {
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg);
-	//                 transform: rotate(360deg);
-	//     }
-	// }
-	//
-	// @keyframes v-moonStretchDelay
-	// {
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg);
-	//                 transform: rotate(360deg);
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 67 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 68 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(69)
@@ -3194,7 +3196,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/RingLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/RingLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3202,9 +3204,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 69 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -3218,8 +3220,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-57112816&file=RingLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RingLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-57112816&file=RingLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RingLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c4286a10&file=RingLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RingLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-c4286a10&file=RingLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./RingLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3228,23 +3230,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 70 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-ring\n{         \n}\n\n.v-spinner .v-ring1\n{      \n}\n\n.v-spinner .v-ring2\n{\n\n    -webkit-animation: v-ringRightRotate 2s 0s infinite linear;\n            animation: v-ringRightRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;  \n    position: absolute;          \n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n\n    -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;\n            animation: v-ringLeftRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-perspective: 800px;\n            perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@-webkit-keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@-webkit-keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n", "", {"version":3,"sources":["/./src/RingLoader.vue.style"],"names":[],"mappings":";;AA4DA;;CAEA;;AAEA;;CAEA;;AAEA;;;IAGA,2DAAA;YACA,mDAAA;IACA,sCAAA;YACA,8BAAA;IACA,2BAAA;YAAA,mBAAA;IACA,mBAAA;IACA,OAAA;IACA,QAAA;CACA;;AAEA;;;IAGA,0DAAA;YACA,kDAAA;IACA,sCAAA;YACA,8BAAA;IACA,2BAAA;YAAA,mBAAA;IACA,mBAAA;IACA,OAAA;IACA,QAAA;CACA;;AAEA;;IAEA;;QAEA,6DAAA;gBACA,qDAAA;KACA;IACA;;QAEA,mEAAA;gBACA,2DAAA;;KAEA;CACA;;AAEA;;IAEA;;QAEA,6DAAA;gBACA,qDAAA;KACA;IACA;;QAEA,mEAAA;gBACA,2DAAA;;KAEA;CACA;;AAEA;;IAEA;;QAEA,6DAAA;gBACA,qDAAA;KACA;IACA;;QAEA,mEAAA;gBACA,2DAAA;;KAEA;CACA;;AAEA;;IAEA;;QAEA,6DAAA;gBACA,qDAAA;KACA;IACA;;QAEA,mEAAA;gBACA,2DAAA;;KAEA;CACA","file":"RingLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-ring v-ring1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-ring v-ring2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-ring v-ring3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RingLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        border: parseFloat(this.size)/10 + 'px solid' + this.color,\n        opacity: 0.4,\n        borderRadius: this.radius\n      }\n    },\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-ring\n{         \n}\n\n.v-spinner .v-ring1\n{      \n}\n\n.v-spinner .v-ring2\n{\n\n    -webkit-animation: v-ringRightRotate 2s 0s infinite linear;\n            animation: v-ringRightRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    perspective: 800px;  \n    position: absolute;          \n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n\n    -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;\n            animation: v-ringLeftRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@-webkit-keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@-webkit-keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-ring\n{         \n}\n\n.v-spinner .v-ring1\n{      \n}\n\n.v-spinner .v-ring2\n{\n    animation: v-ringRightRotate 2s 0s infinite linear;\n    animation-fill-mode: forwards;\n    perspective: 800px;  \n    position: absolute;          \n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n    animation: v-ringLeftRotate 2s 0s infinite linear;\n    animation-fill-mode: forwards;\n    perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    {\n        transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    {\n        transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n", "", {"version":3,"sources":["/./src/RingLoader.vue.style"],"names":[],"mappings":";;AA4DA;;CAEA;;AAEA;;CAEA;;AAEA;;IAIA,mDAAA;IAEA,8BAAA;IACA,mBAAA;IACA,mBAAA;IACA,OAAA;IACA,QAAA;CACA;;AAEA;;IAIA,kDAAA;IAEA,8BAAA;IACA,mBAAA;IACA,mBAAA;IACA,OAAA;IACA,QAAA;CACA;;AAiBA;;IAEA;;QAGA,qDAAA;KACA;IACA;;QAGA,2DAAA;;KAEA;CACA;;AAiBA;;IAEA;;QAGA,qDAAA;KACA;IACA;;QAGA,2DAAA;;KAEA;CACA","file":"RingLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-ring v-ring1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-ring v-ring2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-ring v-ring3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'RingLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        border: parseFloat(this.size)/10 + 'px solid' + this.color,\n        opacity: 0.4,\n        borderRadius: this.radius\n      }\n    },\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-ring\n{         \n}\n\n.v-spinner .v-ring1\n{      \n}\n\n.v-spinner .v-ring2\n{\n\n    -webkit-animation: v-ringRightRotate 2s 0s infinite linear;\n            animation: v-ringRightRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    perspective: 800px;  \n    position: absolute;          \n    top: 0;\n    left: 0;\n}\n\n.v-spinner .v-ring3\n{\n\n    -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;\n            animation: v-ringLeftRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    perspective: 800px;            \n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n@-webkit-keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringRightRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n                transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);\n    \n    }\n}\n\n@-webkit-keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n\n@keyframes v-ringLeftRotate\n{\n    0%\n    {\n        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);\n    }\n    100%\n    { \n        -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n                transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);\n    \n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 71 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3305,117 +3307,117 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  //
+	  // .v-spinner .v-ring
+	  // {         
+	  // }
+	  //
+	  // .v-spinner .v-ring1
+	  // {      
+	  // }
+	  //
+	  // .v-spinner .v-ring2
+	  // {
+	  //
+	  //     -webkit-animation: v-ringRightRotate 2s 0s infinite linear;
+	  //             animation: v-ringRightRotate 2s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     perspective: 800px;  
+	  //     position: absolute;          
+	  //     top: 0;
+	  //     left: 0;
+	  // }
+	  //
+	  // .v-spinner .v-ring3
+	  // {
+	  //
+	  //     -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;
+	  //             animation: v-ringLeftRotate 2s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     perspective: 800px;            
+	  //     position: absolute;
+	  //     top: 0;
+	  //     left: 0;
+	  // }
+	  //
+	  // @-webkit-keyframes v-ringRightRotate
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //     }
+	  //     100%
+	  //     { 
+	  //         -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
+	  //                 transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
+	  //
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-ringRightRotate
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //     }
+	  //     100%
+	  //     { 
+	  //         -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
+	  //                 transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
+	  //
+	  //     }
+	  // }
+	  //
+	  // @-webkit-keyframes v-ringLeftRotate
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //     }
+	  //     100%
+	  //     { 
+	  //         -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+	  //                 transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+	  //
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-ringLeftRotate
+	  // {
+	  //     0%
+	  //     {
+	  //         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	  //     }
+	  //     100%
+	  //     { 
+	  //         -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+	  //                 transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+	  //
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	//
-	// .v-spinner .v-ring
-	// {         
-	// }
-	//
-	// .v-spinner .v-ring1
-	// {      
-	// }
-	//
-	// .v-spinner .v-ring2
-	// {
-	//
-	//     -webkit-animation: v-ringRightRotate 2s 0s infinite linear;
-	//             animation: v-ringRightRotate 2s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     perspective: 800px;  
-	//     position: absolute;          
-	//     top: 0;
-	//     left: 0;
-	// }
-	//
-	// .v-spinner .v-ring3
-	// {
-	//
-	//     -webkit-animation: v-ringLeftRotate 2s 0s infinite linear;
-	//             animation: v-ringLeftRotate 2s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     perspective: 800px;            
-	//     position: absolute;
-	//     top: 0;
-	//     left: 0;
-	// }
-	//
-	// @-webkit-keyframes v-ringRightRotate
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//     }
-	//     100%
-	//     { 
-	//         -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-	//                 transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-	//
-	//     }
-	// }
-	//
-	// @keyframes v-ringRightRotate
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//     }
-	//     100%
-	//     { 
-	//         -webkit-transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-	//                 transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-	//
-	//     }
-	// }
-	//
-	// @-webkit-keyframes v-ringLeftRotate
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//     }
-	//     100%
-	//     { 
-	//         -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-	//                 transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-	//
-	//     }
-	// }
-	//
-	// @keyframes v-ringLeftRotate
-	// {
-	//     0%
-	//     {
-	//         -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//                 transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	//     }
-	//     100%
-	//     { 
-	//         -webkit-transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-	//                 transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-	//
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 72 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-ring v-ring1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-ring v-ring2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-ring v-ring3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 73 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(74)
@@ -3428,7 +3430,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/BounceLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/BounceLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3436,9 +3438,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 74 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -3452,8 +3454,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-575033cd&file=BounceLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BounceLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-575033cd&file=BounceLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BounceLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d5ae43e0&file=BounceLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BounceLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d5ae43e0&file=BounceLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./BounceLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3462,23 +3464,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 75 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-bounce\n{\n          \n}\n\n.v-spinner .v-bounce1\n{\n}\n\n.v-spinner .v-bounce2\n{\n\n    -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n.v-spinner .v-bounce3\n{\n    -webkit-animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n@-webkit-keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n\n@keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n", "", {"version":3,"sources":["/./src/BounceLoader.vue.style"],"names":[],"mappings":";;AAiEA;;;CAGA;;AAEA;;CAEA;;AAEA;;;IAGA,mEAAA;YACA,2DAAA;IACA,kCAAA;YACA,0BAAA;CACA;;AAEA;;IAEA,mEAAA;YACA,2DAAA;IACA,kCAAA;YACA,0BAAA;CACA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;;KAEA;CACA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;;KAEA;CACA","file":"BounceLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-bounce v-bounce1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-bounce v-bounce2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-bounce v-bounce3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'BounceLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        backgroundColor: this.color,\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius,\n        opacity: 0.6,\n        position: 'absolute',\n        top: 0,\n        left: 0\n      }\n    }\n  },\n  computed: {\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-bounce\n{\n          \n}\n\n.v-spinner .v-bounce1\n{\n}\n\n.v-spinner .v-bounce2\n{\n\n    -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n.v-spinner .v-bounce3\n{\n    -webkit-animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n@-webkit-keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n\n@keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-bounce\n{\n          \n}\n\n.v-spinner .v-bounce1\n{\n}\n\n.v-spinner .v-bounce2\n{\n    animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n    animation-fill-mode: both;\n}\n\n.v-spinner .v-bounce3\n{\n    animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n    animation-fill-mode: both;\n}\n\n@keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        transform: scale(0);\n    }\n    50%\n    {\n        transform: scale(1.0);\n    \n    }\n}\n", "", {"version":3,"sources":["/./src/BounceLoader.vue.style"],"names":[],"mappings":";;AAiEA;;;CAGA;;AAEA;;CAEA;;AAEA;;IAIA,2DAAA;IAEA,0BAAA;CACA;;AAEA;;IAGA,2DAAA;IAEA,0BAAA;CACA;;AAkBA;;IAEA;;;QAIA,oBAAA;KACA;IACA;;QAGA,sBAAA;;KAEA;CACA","file":"BounceLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-bounce v-bounce1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-bounce v-bounce2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-bounce v-bounce3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'BounceLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        backgroundColor: this.color,\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius,\n        opacity: 0.6,\n        position: 'absolute',\n        top: 0,\n        left: 0\n      }\n    }\n  },\n  computed: {\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-bounce\n{\n          \n}\n\n.v-spinner .v-bounce1\n{\n}\n\n.v-spinner .v-bounce2\n{\n\n    -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n.v-spinner .v-bounce3\n{\n    -webkit-animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n            animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n@-webkit-keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n\n@keyframes v-bounceStretchDelay\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    { \n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    \n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 76 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3545,81 +3547,81 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  //
+	  // .v-spinner .v-bounce
+	  // {
+	  //
+	  // }
+	  //
+	  // .v-spinner .v-bounce1
+	  // {
+	  // }
+	  //
+	  // .v-spinner .v-bounce2
+	  // {
+	  //
+	  //     -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
+	  //             animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
+	  //     -webkit-animation-fill-mode: both;
+	  //             animation-fill-mode: both;
+	  // }
+	  //
+	  // .v-spinner .v-bounce3
+	  // {
+	  //     -webkit-animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;
+	  //             animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;
+	  //     -webkit-animation-fill-mode: both;
+	  //             animation-fill-mode: both;
+	  // }
+	  //
+	  // @-webkit-keyframes v-bounceStretchDelay
+	  // {
+	  //     0%,
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(0);
+	  //                 transform: scale(0);
+	  //     }
+	  //     50%
+	  //     { 
+	  //         -webkit-transform: scale(1.0);
+	  //                 transform: scale(1.0);
+	  //
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-bounceStretchDelay
+	  // {
+	  //     0%,
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(0);
+	  //                 transform: scale(0);
+	  //     }
+	  //     50%
+	  //     { 
+	  //         -webkit-transform: scale(1.0);
+	  //                 transform: scale(1.0);
+	  //
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	//
-	// .v-spinner .v-bounce
-	// {
-	//
-	// }
-	//
-	// .v-spinner .v-bounce1
-	// {
-	// }
-	//
-	// .v-spinner .v-bounce2
-	// {
-	//
-	//     -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
-	//             animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
-	//     -webkit-animation-fill-mode: both;
-	//             animation-fill-mode: both;
-	// }
-	//
-	// .v-spinner .v-bounce3
-	// {
-	//     -webkit-animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;
-	//             animation: v-bounceStretchDelay 2s 0s infinite ease-in-out;
-	//     -webkit-animation-fill-mode: both;
-	//             animation-fill-mode: both;
-	// }
-	//
-	// @-webkit-keyframes v-bounceStretchDelay
-	// {
-	//     0%,
-	//     100%
-	//     {
-	//         -webkit-transform: scale(0);
-	//                 transform: scale(0);
-	//     }
-	//     50%
-	//     { 
-	//         -webkit-transform: scale(1.0);
-	//                 transform: scale(1.0);
-	//
-	//     }
-	// }
-	//
-	// @keyframes v-bounceStretchDelay
-	// {
-	//     0%,
-	//     100%
-	//     {
-	//         -webkit-transform: scale(0);
-	//                 transform: scale(0);
-	//     }
-	//     50%
-	//     { 
-	//         -webkit-transform: scale(1.0);
-	//                 transform: scale(1.0);
-	//
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 77 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-bounce v-bounce1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-bounce v-bounce2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-bounce v-bounce3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n";
 
-/***/ },
+/***/ }),
 /* 78 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	__webpack_require__(79)
@@ -3632,7 +3634,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/greyby/Workspaces/tmp/javascript/vuejs/vue-spinner/src/DotLoader.vue"
+	  var id = "/Users/rgb/Desktop/vue-spinner/src/DotLoader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3640,9 +3642,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	})()}
 
-/***/ },
+/***/ }),
 /* 79 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
@@ -3656,8 +3658,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44cd439a&file=DotLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DotLoader.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-44cd439a&file=DotLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DotLoader.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d4c10f92&file=DotLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DotLoader.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d4c10f92&file=DotLoader.vue!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./DotLoader.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3666,23 +3668,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 80 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n\n.v-spinner .v-dot\n{\n          \n}\n\n.v-spinner .v-dot1\n{\n\n    -webkit-animation: v-dotRotate 2s 0s infinite linear;\n            animation: v-dotRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n\n.v-spinner .v-dot2\n{\n\n    -webkit-animation: v-dotBounce 2s 0s infinite linear;\n            animation: v-dotBounce 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: 0;\n    bottom: auto;\n}\n\n.v-spinner .v-dot3\n{\n    -webkit-animation: v-dotBounce 2s -1s infinite linear;\n            animation: v-dotBounce 2s -1s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: auto;\n    bottom: 0;            \n}\n\n@-webkit-keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@-webkit-keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n\n@keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n", "", {"version":3,"sources":["/./src/DotLoader.vue.style"],"names":[],"mappings":";;AA2DA;;;CAGA;;AAEA;;;IAGA,qDAAA;YACA,6CAAA;IACA,sCAAA;YACA,8BAAA;CACA;;AAEA;;;IAGA,qDAAA;YACA,6CAAA;IACA,sCAAA;YACA,8BAAA;IACA,qBAAA;IACA,OAAA;IACA,aAAA;CACA;;AAEA;;IAEA,sDAAA;YACA,8CAAA;IACA,sCAAA;YACA,8BAAA;IACA,qBAAA;IACA,UAAA;IACA,UAAA;CACA;;AAEA;;IAEA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA;;AAEA;;IAEA;;QAEA,kCAAA;gBACA,0BAAA;KACA;CACA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;CACA;;AAEA;;IAEA;;;QAGA,4BAAA;gBACA,oBAAA;KACA;IACA;;QAEA,8BAAA;gBACA,sBAAA;KACA;CACA","file":"DotLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-dot v-dot1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-dot v-dot2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-dot v-dot3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'DotLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        backgroundColor: this.color,\n        height: parseFloat(this.size)/2 + 'px',\n        width: parseFloat(this.size)/2 + 'px',\n        borderRadius: this.radius\n      }\n    },\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-dot\n{\n          \n}\n\n.v-spinner .v-dot1\n{\n\n    -webkit-animation: v-dotRotate 2s 0s infinite linear;\n            animation: v-dotRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n\n.v-spinner .v-dot2\n{\n\n    -webkit-animation: v-dotBounce 2s 0s infinite linear;\n            animation: v-dotBounce 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: 0;\n    bottom: auto;\n}\n\n.v-spinner .v-dot3\n{\n    -webkit-animation: v-dotBounce 2s -1s infinite linear;\n            animation: v-dotBounce 2s -1s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: auto;\n    bottom: 0;            \n}\n\n@-webkit-keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@-webkit-keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n\n@keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n.v-spinner .v-dot\n{\n          \n}\n\n.v-spinner .v-dot1\n{\n    animation: v-dotRotate 2s 0s infinite linear;\n    animation-fill-mode: forwards;\n}\n\n.v-spinner .v-dot2\n{\n    animation: v-dotBounce 2s 0s infinite linear;\n    animation-fill-mode: forwards;\n    position: 'absolute';\n    top: 0;\n    bottom: auto;\n}\n\n.v-spinner .v-dot3\n{\n    animation: v-dotBounce 2s -1s infinite linear;\n    animation-fill-mode: forwards;\n    position: 'absolute';\n    top: auto;\n    bottom: 0;            \n}\n\n@keyframes v-dotRotate\n{\n    100%\n    {\n        transform: rotate(360deg);\n    }\n}\n\n@keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        transform: scale(0);\n    }\n    50%\n    {\n        transform: scale(1.0);\n    }\n}\n", "", {"version":3,"sources":["/./src/DotLoader.vue.style"],"names":[],"mappings":";;AA2DA;;;CAGA;;AAEA;;IAIA,6CAAA;IAEA,8BAAA;CACA;;AAEA;;IAIA,6CAAA;IAEA,8BAAA;IACA,qBAAA;IACA,OAAA;IACA,aAAA;CACA;;AAEA;;IAGA,8CAAA;IAEA,8BAAA;IACA,qBAAA;IACA,UAAA;IACA,UAAA;CACA;;AAWA;;IAEA;;QAGA,0BAAA;KACA;CACA;;AAiBA;;IAEA;;;QAIA,oBAAA;KACA;IACA;;QAGA,sBAAA;KACA;CACA","file":"DotLoader.vue","sourcesContent":["<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-dot v-dot1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-dot v-dot2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-dot v-dot3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'DotLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  computed: {\n    spinnerStyle () {\n      return {\n        backgroundColor: this.color,\n        height: parseFloat(this.size)/2 + 'px',\n        width: parseFloat(this.size)/2 + 'px',\n        borderRadius: this.radius\n      }\n    },\n    spinnerBasicStyle () {\n      return {\n        height: this.size,\n        width: this.size,\n        position: 'relative'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-dot\n{\n          \n}\n\n.v-spinner .v-dot1\n{\n\n    -webkit-animation: v-dotRotate 2s 0s infinite linear;\n            animation: v-dotRotate 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n\n.v-spinner .v-dot2\n{\n\n    -webkit-animation: v-dotBounce 2s 0s infinite linear;\n            animation: v-dotBounce 2s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: 0;\n    bottom: auto;\n}\n\n.v-spinner .v-dot3\n{\n    -webkit-animation: v-dotBounce 2s -1s infinite linear;\n            animation: v-dotBounce 2s -1s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: 'absolute';\n    top: auto;\n    bottom: 0;            \n}\n\n@-webkit-keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-dotRotate\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@-webkit-keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n\n@keyframes v-dotBounce\n{\n    0%,\n    100%\n    {\n        -webkit-transform: scale(0);\n                transform: scale(0);\n    }\n    50%\n    {\n        -webkit-transform: scale(1.0);\n                transform: scale(1.0);\n    }\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 81 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3742,106 +3744,106 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 	    }
 	  }
+	  // </script>
+	  //
+	  // <style>
+	  //
+	  // .v-spinner .v-dot
+	  // {
+	  //
+	  // }
+	  //
+	  // .v-spinner .v-dot1
+	  // {
+	  //
+	  //     -webkit-animation: v-dotRotate 2s 0s infinite linear;
+	  //             animation: v-dotRotate 2s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  // }
+	  //
+	  // .v-spinner .v-dot2
+	  // {
+	  //
+	  //     -webkit-animation: v-dotBounce 2s 0s infinite linear;
+	  //             animation: v-dotBounce 2s 0s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     position: 'absolute';
+	  //     top: 0;
+	  //     bottom: auto;
+	  // }
+	  //
+	  // .v-spinner .v-dot3
+	  // {
+	  //     -webkit-animation: v-dotBounce 2s -1s infinite linear;
+	  //             animation: v-dotBounce 2s -1s infinite linear;
+	  //     -webkit-animation-fill-mode: forwards;
+	  //             animation-fill-mode: forwards;
+	  //     position: 'absolute';
+	  //     top: auto;
+	  //     bottom: 0;            
+	  // }
+	  //
+	  // @-webkit-keyframes v-dotRotate
+	  // {
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg);
+	  //                 transform: rotate(360deg);
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-dotRotate
+	  // {
+	  //     100%
+	  //     {
+	  //         -webkit-transform: rotate(360deg);
+	  //                 transform: rotate(360deg);
+	  //     }
+	  // }
+	  //
+	  // @-webkit-keyframes v-dotBounce
+	  // {
+	  //     0%,
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(0);
+	  //                 transform: scale(0);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: scale(1.0);
+	  //                 transform: scale(1.0);
+	  //     }
+	  // }
+	  //
+	  // @keyframes v-dotBounce
+	  // {
+	  //     0%,
+	  //     100%
+	  //     {
+	  //         -webkit-transform: scale(0);
+	  //                 transform: scale(0);
+	  //     }
+	  //     50%
+	  //     {
+	  //         -webkit-transform: scale(1.0);
+	  //                 transform: scale(1.0);
+	  //     }
+	  // }
+	  // </style>
+	  /* generated by vue-loader */
 	
 	};
-	// </script>
-	//
-	// <style>
-	//
-	// .v-spinner .v-dot
-	// {
-	//
-	// }
-	//
-	// .v-spinner .v-dot1
-	// {
-	//
-	//     -webkit-animation: v-dotRotate 2s 0s infinite linear;
-	//             animation: v-dotRotate 2s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	// }
-	//
-	// .v-spinner .v-dot2
-	// {
-	//
-	//     -webkit-animation: v-dotBounce 2s 0s infinite linear;
-	//             animation: v-dotBounce 2s 0s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     position: 'absolute';
-	//     top: 0;
-	//     bottom: auto;
-	// }
-	//
-	// .v-spinner .v-dot3
-	// {
-	//     -webkit-animation: v-dotBounce 2s -1s infinite linear;
-	//             animation: v-dotBounce 2s -1s infinite linear;
-	//     -webkit-animation-fill-mode: forwards;
-	//             animation-fill-mode: forwards;
-	//     position: 'absolute';
-	//     top: auto;
-	//     bottom: 0;            
-	// }
-	//
-	// @-webkit-keyframes v-dotRotate
-	// {
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg);
-	//                 transform: rotate(360deg);
-	//     }
-	// }
-	//
-	// @keyframes v-dotRotate
-	// {
-	//     100%
-	//     {
-	//         -webkit-transform: rotate(360deg);
-	//                 transform: rotate(360deg);
-	//     }
-	// }
-	//
-	// @-webkit-keyframes v-dotBounce
-	// {
-	//     0%,
-	//     100%
-	//     {
-	//         -webkit-transform: scale(0);
-	//                 transform: scale(0);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: scale(1.0);
-	//                 transform: scale(1.0);
-	//     }
-	// }
-	//
-	// @keyframes v-dotBounce
-	// {
-	//     0%,
-	//     100%
-	//     {
-	//         -webkit-transform: scale(0);
-	//                 transform: scale(0);
-	//     }
-	//     50%
-	//     {
-	//         -webkit-transform: scale(1.0);
-	//                 transform: scale(1.0);
-	//     }
-	// }
-	// </style>
-	/* generated by vue-loader */
 
-/***/ },
+/***/ }),
 /* 82 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = "\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-dot v-dot1\" v-bind:style=\"spinnerBasicStyle\">\n    <div class=\"v-dot v-dot2\" v-bind:style=\"spinnerStyle\">\n    </div><div class=\"v-dot v-dot3\" v-bind:style=\"spinnerStyle\">\n    </div></div>\n  </div>\n";
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
