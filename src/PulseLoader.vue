@@ -65,13 +65,6 @@ export default {
 </script>
 
 <style>
-/*.v-spinner
-{
-    margin: 100px auto;
-    text-align: center;
-}
-*/
-
 @-webkit-keyframes v-pulseStretchDelay
 {
     0%,
