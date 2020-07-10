@@ -75,7 +75,6 @@ export default {
       }
     }
   }
-
 }
 </script>
 
@@ -88,13 +87,17 @@ export default {
     height: 40px;*/
     /*margin: 25px auto;*/
     text-align: center;
- 
 }
-
 
 @-webkit-keyframes v-scaleStretchDelay
 {
-    0%,
+    0%
+    {
+       -webkit-animation-name: inherit;
+       -webkit-animation-duration: inherit;
+       -webkit-animation-iteration-count: inherit;
+       -webkit-animation-direction: inherit;
+    },
     100%
     {
         -webkit-transform: scaleY(1);
@@ -109,7 +112,13 @@ export default {
 
 @keyframes v-scaleStretchDelay
 {
-    0%,
+    0%
+    {
+       -webkit-animation-name: inherit;
+       -webkit-animation-duration: inherit;
+       -webkit-animation-iteration-count: inherit;
+       -webkit-animation-direction: inherit;
+    },
     100%
     {
         -webkit-transform: scaleY(1);
