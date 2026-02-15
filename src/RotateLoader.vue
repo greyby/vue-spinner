@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'RotateLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,22 +36,21 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	height: this.size,
-     		width: this.size,
-      	margin: this.margin,
-      	borderRadius: this.radius
-      }
-    }
-  }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.size,
+      width: props.size,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
 
-}
+    return { spinnerStyle }
+  }
+})
 </script>
 
-<style>
+<style scoped>
 
 .v-spinner .v-rotate1
 {
@@ -77,41 +78,19 @@ export default {
   left: 25px;
 }
 
-@-webkit-keyframes v-rotateStretchDelay
-{
-    0%
-    {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-    }
-    50%
-    {
-        -webkit-transform: rotate(180deg);
-                transform: rotate(180deg);
-    }
-    100%
-    {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-    }
-}
-
 @keyframes v-rotateStretchDelay
 {
     0%
     {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     50%
     {
-        -webkit-transform: rotate(180deg);
-                transform: rotate(180deg);
+        transform: rotate(180deg);
     }
     100%
     {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 </style>

@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'DotLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,37 +36,29 @@ export default {
       default: '100%'
     }
   },
-  computed: {
-    spinnerStyle () {
-      return {
-        backgroundColor: this.color,
-        height: parseFloat(this.size)/2 + 'px',
-        width: parseFloat(this.size)/2 + 'px',
-        borderRadius: this.radius
-      }
-    },
-    spinnerBasicStyle () {
-      return {
-        height: this.size,
-        width: this.size,
-        position: 'relative'
-      }
-    }
-  }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: parseFloat(props.size) / 2 + 'px',
+      width: parseFloat(props.size) / 2 + 'px',
+      borderRadius: props.radius
+    }))
 
-}
+    const spinnerBasicStyle = computed(() => ({
+      height: props.size,
+      width: props.size,
+      position: 'relative'
+    }))
+
+    return { spinnerStyle, spinnerBasicStyle }
+  }
+})
 </script>
 
-<style>
-
-.v-spinner .v-dot
-{
-          
-}
+<style scoped>
 
 .v-spinner .v-dot1
 {
-
     -webkit-animation: v-dotRotate 2s 0s infinite linear;
             animation: v-dotRotate 2s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
@@ -73,12 +67,11 @@ export default {
 
 .v-spinner .v-dot2
 {
-
     -webkit-animation: v-dotBounce 2s 0s infinite linear;
             animation: v-dotBounce 2s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-    position: 'absolute';
+    position: absolute;
     top: 0;
     bottom: auto;
 }
@@ -89,41 +82,16 @@ export default {
             animation: v-dotBounce 2s -1s infinite linear;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-    position: 'absolute';
+    position: absolute;
     top: auto;
-    bottom: 0;            
-}
-
-@-webkit-keyframes v-dotRotate
-{
-    100%
-    {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-    }
+    bottom: 0;
 }
 
 @keyframes v-dotRotate
 {
     100%
     {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes v-dotBounce
-{
-    0%,
-    100%
-    {
-        -webkit-transform: scale(0);
-                transform: scale(0);
-    }
-    50%
-    {
-        -webkit-transform: scale(1.0);
-                transform: scale(1.0);
+        transform: rotate(360deg);
     }
 }
 
@@ -132,13 +100,11 @@ export default {
     0%,
     100%
     {
-        -webkit-transform: scale(0);
-                transform: scale(0);
+        transform: scale(0);
     }
     50%
     {
-        -webkit-transform: scale(1.0);
-                transform: scale(1.0);
+        transform: scale(1.0);
     }
 }
 </style>

@@ -10,8 +10,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'ScaleLoader',
 
   props: {
@@ -19,19 +21,19 @@ export default {
       type: Boolean,
       default: true
     },
-  	color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
-  	height: {
+    height: {
       type: String,
       default: '35px'
     },
-  	width: {
+    width: {
       type: String,
       default: '4px'
     },
-  	margin: {
+    margin: {
       type: String,
       default: '2px'
     },
@@ -40,94 +42,54 @@ export default {
       default: '2px'
     }
   },
-  data () {
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.height,
+      width: props.width,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
+
+    const spinnerDelay1 = { animationDelay: '0.1s' }
+    const spinnerDelay2 = { animationDelay: '0.2s' }
+    const spinnerDelay3 = { animationDelay: '0.3s' }
+    const spinnerDelay4 = { animationDelay: '0.4s' }
+    const spinnerDelay5 = { animationDelay: '0.5s' }
+
     return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	height: this.height,
-     		width: this.width,
-      	margin: this.margin,
-      	borderRadius: this.radius,
-        display: 'inline-block',
-        animationName: 'v-scaleStretchDelay',
-        animationDuration: '1s',
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
-        animationFillMode: 'both'
-      	// TODO 
-      	// animation: ['sk-waveStretchDelay', '1s', 'infinite', 'cubic-bezier(.2,.68,.18,1.08)'].join(' '),
-      	// animationFillMode: "both"
-      },
-      spinnerDelay1: {
-        animationDelay: '0.1s'
-      },
-      spinnerDelay2: {
-        animationDelay: '0.2s'
-      },
-      spinnerDelay3: {
-        animationDelay: '0.3s'
-      },
-      spinnerDelay4: {
-        animationDelay: '0.4s'
-      },
-      spinnerDelay5: {
-        animationDelay: '0.5s'
-      }
+      spinnerStyle,
+      spinnerDelay1, spinnerDelay2, spinnerDelay3, spinnerDelay4, spinnerDelay5
     }
   }
-}
+})
 </script>
 
-<style>
+<style scoped>
 .v-spinner
 {
-/*	  font-size: 10px; 
-
-    width: 60px;
-    height: 40px;*/
-    /*margin: 25px auto;*/
     text-align: center;
 }
 
-@-webkit-keyframes v-scaleStretchDelay
+.v-spinner .v-scale
 {
-    0%
-    {
-       -webkit-animation-name: inherit;
-       -webkit-animation-duration: inherit;
-       -webkit-animation-iteration-count: inherit;
-       -webkit-animation-direction: inherit;
-    },
-    100%
-    {
-        -webkit-transform: scaleY(1);
-                transform: scaleY(1);
-    }
-    50%
-    {
-        -webkit-transform: scaleY(0.4);
-                transform: scaleY(0.4);
-    }
+    -webkit-animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
+            animation: v-scaleStretchDelay 1s infinite cubic-bezier(.2,.68,.18,1.08);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    display: inline-block;
 }
 
 @keyframes v-scaleStretchDelay
 {
-    0%
-    {
-       -webkit-animation-name: inherit;
-       -webkit-animation-duration: inherit;
-       -webkit-animation-iteration-count: inherit;
-       -webkit-animation-direction: inherit;
-    },
+    0%,
     100%
     {
-        -webkit-transform: scaleY(1);
-                transform: scaleY(1);
+        transform: scaleY(1);
     }
     50%
     {
-        -webkit-transform: scaleY(0.4);
-                transform: scaleY(0.4);
+        transform: scaleY(0.4);
     }
 }
 </style>

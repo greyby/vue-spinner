@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'SyncLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,73 +36,47 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	height: this.size,
-     		width: this.size,
-      	margin: this.margin,
-      	borderRadius: this.radius,
-        display: 'inline-block',
-        animationName: 'v-syncStretchDelay',
-        animationDuration: '0.6s',
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'ease-in-out',
-        animationFillMode: 'both'
-      },
-      spinnerDelay1: {
-        animationDelay: '0.07s'
-      },
-      spinnerDelay2: {
-        animationDelay: '0.14s'
-      },
-      spinnerDelay3: {
-        animationDelay: '0.21s'
-      }
-    }
-  }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.size,
+      width: props.size,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
 
-}
+    const spinnerDelay1 = { animationDelay: '0.07s' }
+    const spinnerDelay2 = { animationDelay: '0.14s' }
+    const spinnerDelay3 = { animationDelay: '0.21s' }
+
+    return { spinnerStyle, spinnerDelay1, spinnerDelay2, spinnerDelay3 }
+  }
+})
 </script>
 
-<style>
-
-@-webkit-keyframes v-syncStretchDelay
+<style scoped>
+.v-spinner .v-sync
 {
-    33%
-    {
-        -webkit-transform: translateY(10px);
-                transform: translateY(10px);
-    }
-    66%
-    {
-        -webkit-transform: translateY(-10px);
-                transform: translateY(-10px);
-    }
-    100%
-    {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-    }
+    -webkit-animation: v-syncStretchDelay 0.6s infinite ease-in-out;
+            animation: v-syncStretchDelay 0.6s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    display: inline-block;
 }
 
 @keyframes v-syncStretchDelay
 {
     33%
     {
-        -webkit-transform: translateY(10px);
-                transform: translateY(10px);
+        transform: translateY(10px);
     }
     66%
     {
-        -webkit-transform: translateY(-10px);
-                transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     100%
     {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
+        transform: translateY(0);
     }
 }
 </style>

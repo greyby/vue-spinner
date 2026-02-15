@@ -1,76 +1,66 @@
 # vue-spinner
 
-> Not support Vue 2.0.
+A collection of loading spinners with Vue.js 3. Based on [Halogen](https://github.com/yuanyan/halogen) by [yuanyan](https://github.com/yuanyan).
 
-A collection of loading spinners with Vue.js. Just convert yuanyan's React.js project [Halogen](https://github.com/yuanyan/halogen) to Vue.js components. Special thanks to [yuanyan](https://github.com/yuanyan) for the wonderful project.
+| vue-spinner version | Vue version |
+|---------------------|-------------|
+| 3.x | Vue 3.x |
+| 1.0.4 | Vue 1.x |
 
-## [Live demo](http://greyby.github.io/vue-spinner/)
+## [Live Demo](http://greyby.github.io/vue-spinner/)
 
 ## Installation
 
-### NPM
 ```bash
-$ npm install vue-spinner
-```
-
-### CommonJS
-```js
-var PulseLoader = require('vue-spinner/src/PulseLoader.vue');
-
-new Vue({
-  components: {
-    'PulseLoader': PulseLoader
-  }
-})
-```
-
-### ES6
-```js
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
-
-new Vue({
-  components: {
-    PulseLoader
-  }
-})
-```
-Or: 
-```js
-Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue'));
-```
-
-### For browserify
-If you use browserify + vueify, you may need to import vue-spinner like this:
-
-```js
-var PulseLoader= require('vue-spinner/dist/vue-spinner.min').PulseLoader;
-```
-
-```js
-import { PulseLoader } from 'vue-spinner/dist/vue-spinner.min.js'
-```
-
-[explain here](https://github.com/greyby/vue-spinner/issues/2)
-
-### Browser globals
-The `dist` folder contains `vue-spinner.js` and `vue-spinner.min.js` with all components exported in the <code>window.VueSpinner</code> object. These bundles are also available on NPM packages.
-
-```html
-<script src="path/to/vue.js"></script>
-<script src="path/to/vue-spinner.js"></script>
-<script>
-  var PulseLoader = VueSpinner.PulseLoader
-</script>
-```
-
-## Local setup
-
-```
-npm install
-npm run dev
+npm install vue-spinner
 ```
 
 ## Usage
+
+### ES Module (Recommended)
+
+```js
+import { PulseLoader } from 'vue-spinner'
+// or import individually
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+```
+
+```vue
+<template>
+  <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { PulseLoader } from 'vue-spinner'
+
+const loading = ref(true)
+const color = ref('#5dc596')
+const size = ref('15px')
+</script>
+```
+
+### Global Registration
+
+```js
+import { createApp } from 'vue'
+import { PulseLoader } from 'vue-spinner'
+
+const app = createApp(App)
+app.component('PulseLoader', PulseLoader)
+```
+
+### Browser (UMD)
+
+```html
+<script src="path/to/vue.global.js"></script>
+<script src="path/to/vue-spinner.umd.js"></script>
+<script>
+  const { PulseLoader, GridLoader } = VueSpinner
+</script>
+```
+
+## Available Spinners
 
 ```html
 <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
@@ -87,16 +77,39 @@ npm run dev
 <skew-loader :loading="loading" :color="color" :size="size"></skew-loader>
 <moon-loader :loading="loading" :color="color" :size="size"></moon-loader>
 <ring-loader :loading="loading" :color="color" :size="size"></ring-loader>
-<bounce-loader :loading="loading" :color="color" :size="size"></bounce-loader>          
+<bounce-loader :loading="loading" :color="color" :size="size"></bounce-loader>
 <dot-loader :loading="loading" :color="color" :size="size"></dot-loader>
 ```
 
-You can customize the color and size with setting the props. All props have default value. You can control the spinner show/hidden with setting the loading prop.
+## Props
 
-## TODO
+All spinners accept the following props (with defaults):
 
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `loading` | Boolean | `true` | Show/hide the spinner |
+| `color` | String | `'#5dc596'` | Spinner color |
+| `size` | String | varies | Spinner size (most spinners) |
+| `margin` | String | `'2px'` | Margin between elements |
+| `radius` | String | varies | Border radius |
 
+Some spinners use `height` and `width` instead of `size` (e.g., `FadeLoader`, `ScaleLoader`).
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+Output: `dist/vue-spinner.es.js` (ESM) + `dist/vue-spinner.umd.js` (UMD) + `dist/vue-spinner.css`
 
 ## License
 
- vue-spinner is licensed under [The MIT License](LICENSE).
+vue-spinner is licensed under [The MIT License](LICENSE).

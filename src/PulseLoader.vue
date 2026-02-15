@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'PulseLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,61 +36,32 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	width: this.size,
-        height: this.size,
-      	margin: this.margin,
-      	borderRadius: this.radius,
-        display: 'inline-block',
-        animationName: 'v-pulseStretchDelay',
-        animationDuration: '0.75s',
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'cubic-bezier(.2,.68,.18,1.08)',
-        animationFillMode: 'both'
-      },
-      spinnerDelay1: {
-        animationDelay: '0.12s'
-      },
-      spinnerDelay2: {
-        animationDelay: '0.24s'
-      },
-      spinnerDelay3: {
-        animationDelay: '0.36s'
-      }
-    }
-  }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      width: props.size,
+      height: props.size,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
 
-}
+    const spinnerDelay1 = { animationDelay: '0.12s' }
+    const spinnerDelay2 = { animationDelay: '0.24s' }
+    const spinnerDelay3 = { animationDelay: '0.36s' }
+
+    return { spinnerStyle, spinnerDelay1, spinnerDelay2, spinnerDelay3 }
+  }
+})
 </script>
 
-<style>
-/*.v-spinner
+<style scoped>
+.v-spinner .v-pulse
 {
-    margin: 100px auto;
-    text-align: center;
-}
-*/
-
-@-webkit-keyframes v-pulseStretchDelay
-{
-    0%,
-    80%
-    {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-opacity: 1;             
-                opacity: 1;
-    }
-    45%
-    {
-        -webkit-transform: scale(0.1);
-                transform: scale(0.1);
-        -webkit-opacity: 0.7;             
-                opacity: 0.7;
-    }
+    -webkit-animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
+            animation: v-pulseStretchDelay 0.75s infinite cubic-bezier(.2,.68,.18,1.08);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    display: inline-block;
 }
 
 @keyframes v-pulseStretchDelay
@@ -96,17 +69,13 @@ export default {
     0%,
     80%
     {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-opacity: 1;             
-                opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
     45%
     {
-        -webkit-transform: scale(0.1);
-                transform: scale(0.1);
-        -webkit-opacity: 0.7;             
-                opacity: 0.7;
+        transform: scale(0.1);
+        opacity: 0.7;
     }
 }
 </style>

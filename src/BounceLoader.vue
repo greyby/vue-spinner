@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'BounceLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,47 +36,33 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-        backgroundColor: this.color,
-        height: this.size,
-        width: this.size,
-        borderRadius: this.radius,
-        opacity: 0.6,
-        position: 'absolute',
-        top: 0,
-        left: 0
-      }
-    }
-  },
-  computed: {
-    spinnerBasicStyle () {
-      return {
-        height: this.size,
-        width: this.size,
-        position: 'relative'
-      }
-    }
-  }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.size,
+      width: props.size,
+      borderRadius: props.radius,
+      opacity: 0.6,
+      position: 'absolute',
+      top: 0,
+      left: 0
+    }))
 
-}
+    const spinnerBasicStyle = computed(() => ({
+      height: props.size,
+      width: props.size,
+      position: 'relative'
+    }))
+
+    return { spinnerStyle, spinnerBasicStyle }
+  }
+})
 </script>
 
-<style>
-
-.v-spinner .v-bounce
-{
-          
-}
-
-.v-spinner .v-bounce1
-{
-}
+<style scoped>
 
 .v-spinner .v-bounce2
 {
-
     -webkit-animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
             animation: v-bounceStretchDelay 2s 1s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
@@ -89,35 +77,16 @@ export default {
             animation-fill-mode: both;
 }
 
-@-webkit-keyframes v-bounceStretchDelay
-{
-    0%,
-    100%
-    {
-        -webkit-transform: scale(0);
-                transform: scale(0);
-    }
-    50%
-    { 
-        -webkit-transform: scale(1.0);
-                transform: scale(1.0);
-    
-    }
-}
-
 @keyframes v-bounceStretchDelay
 {
     0%,
     100%
     {
-        -webkit-transform: scale(0);
-                transform: scale(0);
+        transform: scale(0);
     }
     50%
-    { 
-        -webkit-transform: scale(1.0);
-                transform: scale(1.0);
-    
+    {
+        transform: scale(1.0);
     }
 }
 </style>

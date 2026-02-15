@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'BeatLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,30 +36,28 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	height: this.size,
-     		width: this.size,
-      	margin: this.margin,
-      	borderRadius: this.radius
-      }
-    }
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.size,
+      width: props.size,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
+    return { spinnerStyle }
   }
-
-}
+})
 </script>
 
-<style>
+<style scoped>
 
 .v-spinner .v-beat
 {
     -webkit-animation: v-beatStretchDelay 0.7s infinite linear;
             animation: v-beatStretchDelay 0.7s infinite linear;
     -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
-    display: inline-block;         
+            animation-fill-mode: both;
+    display: inline-block;
 }
 
 .v-spinner .v-beat-odd
@@ -69,39 +69,17 @@ export default {
   animation-delay: 0.35s;
 }
 
-@-webkit-keyframes v-beatStretchDelay
-{
-    50%
-    {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
-        -webkit-opacity: 0.2;             
-                opacity: 0.2;
-    }
-    100%
-    {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-opacity: 1;             
-                opacity: 1;
-    }
-}
-
 @keyframes v-beatStretchDelay
 {
     50%
     {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
-        -webkit-opacity: 0.2;             
-                opacity: 0.2;
+        transform: scale(0.75);
+        opacity: 0.2;
     }
     100%
     {
-        -webkit-transform: scale(1);
-                transform: scale(1);
-        -webkit-opacity: 1;             
-                opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
 }
 </style>

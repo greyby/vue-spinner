@@ -8,8 +8,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'MoonLoader',
 
   props: {
@@ -17,7 +19,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -34,47 +36,40 @@ export default {
       default: '100%'
     }
   },
-  data () {
-    return {
-      spinnerStyle: {
-        height: this.size,
-        width: this.size,
-        borderRadius: this.radius
-      }
-    }
-  },
-  computed: {
-    moonSize() {
-      return parseFloat(this.size)/7
-    },
-    spinnerMoonStyle () {
-      return {
-        height: this.moonSize  + 'px',
-        width: this.moonSize  + 'px',
-        borderRadius: this.radius
-      }
-    },
-    animationStyle2 () {
-      return {
-        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',
-        backgroundColor: this.color
-      }
-    },
-    animationStyle3 () {
-      return {
-        border: this.moonSize + 'px solid ' + this.color
-      }
-    }
-  }
+  setup(props) {
+    const moonSize = computed(() => parseFloat(props.size) / 7)
 
-}
+    const spinnerStyle = computed(() => ({
+      height: props.size,
+      width: props.size,
+      borderRadius: props.radius,
+      margin: props.margin
+    }))
+
+    const spinnerMoonStyle = computed(() => ({
+      height: moonSize.value + 'px',
+      width: moonSize.value + 'px',
+      borderRadius: props.radius
+    }))
+
+    const animationStyle2 = computed(() => ({
+      top: parseFloat(props.size) / 2 - moonSize.value / 2 + 'px',
+      backgroundColor: props.color
+    }))
+
+    const animationStyle3 = computed(() => ({
+      border: moonSize.value + 'px solid ' + props.color
+    }))
+
+    return { spinnerStyle, spinnerMoonStyle, animationStyle2, animationStyle3 }
+  }
+})
 </script>
 
-<style>
+<style scoped>
 
 .v-spinner .v-moon1
 {
-
     -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;
             animation: v-moonStretchDelay 0.6s 0s infinite linear;
     -webkit-animation-fill-mode: forwards;
@@ -94,24 +89,15 @@ export default {
 
 .v-spinner .v-moon3
 {
+    box-sizing: border-box;
     opacity: 0.1;
-}
-
-@-webkit-keyframes v-moonStretchDelay
-{
-    100%
-    {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-    }
 }
 
 @keyframes v-moonStretchDelay
 {
     100%
     {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 </style>

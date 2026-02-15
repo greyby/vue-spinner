@@ -1,6 +1,5 @@
 <template>
   <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
-  <!-- <div class="v-spinner" v-bind:style="containerStyle"> -->
     <div class="v-fade v-fade1" v-bind:style="[spinnerStyle,animationStyle1]">
     </div><div class="v-fade v-fade2" v-bind:style="[spinnerStyle,animationStyle2]">
     </div><div class="v-fade v-fade3" v-bind:style="[spinnerStyle,animationStyle3]">
@@ -14,8 +13,10 @@
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'FadeLoader',
 
   props: {
@@ -23,7 +24,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -44,130 +45,106 @@ export default {
       default: '20px'
     }
   },
-  data () {
+  setup(props) {
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      height: props.height,
+      width: props.width,
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
+
+    const ngRadius = computed(() => '-' + props.radius)
+
+    const quarter = computed(() =>
+      (parseFloat(props.radius) / 2 + parseFloat(props.radius) / 5.5) + 'px'
+    )
+
+    const ngQuarter = computed(() => '-' + quarter.value)
+
+    const animationStyle1 = computed(() => ({
+      top: props.radius,
+      left: 0,
+      animationDelay: '0.12s'
+    }))
+
+    const animationStyle2 = computed(() => ({
+      top: quarter.value,
+      left: quarter.value,
+      animationDelay: '0.24s',
+      transform: 'rotate(-45deg)'
+    }))
+
+    const animationStyle3 = computed(() => ({
+      top: 0,
+      left: props.radius,
+      animationDelay: '0.36s',
+      transform: 'rotate(90deg)'
+    }))
+
+    const animationStyle4 = computed(() => ({
+      top: ngQuarter.value,
+      left: quarter.value,
+      animationDelay: '0.48s',
+      transform: 'rotate(45deg)'
+    }))
+
+    const animationStyle5 = computed(() => ({
+      top: ngRadius.value,
+      left: 0,
+      animationDelay: '0.60s'
+    }))
+
+    const animationStyle6 = computed(() => ({
+      top: ngQuarter.value,
+      left: ngQuarter.value,
+      animationDelay: '0.72s',
+      transform: 'rotate(-45deg)'
+    }))
+
+    const animationStyle7 = computed(() => ({
+      top: 0,
+      left: ngRadius.value,
+      animationDelay: '0.84s',
+      transform: 'rotate(90deg)'
+    }))
+
+    const animationStyle8 = computed(() => ({
+      top: quarter.value,
+      left: ngQuarter.value,
+      animationDelay: '0.96s',
+      transform: 'rotate(45deg)'
+    }))
+
     return {
-      spinnerStyle: {
-      	backgroundColor: this.color,
-      	height: this.height,
-     		width: this.width,
-      	margin: this.margin,
-      	borderRadius: this.radius
-      }
-    }
-  },
-  computed: {
-    ngRadius () {
-      return '-' + this.radius
-    },
-    quarter () {
-      return (parseFloat(this.radius)/2 + parseFloat(this.radius)/5.5) + 'px'
-    },
-    ngQuarter () {
-      return '-' + this.quarter
-    },
-    animationStyle1 () {
-      return {
-        top: this.radius,
-        left: 0,
-        animationDelay: '0.12s'
-      }
-    },
-    animationStyle2 () {
-      return {
-        top: this.quarter,
-        left: this.quarter,
-        animationDelay: '0.24s',
-        transform: 'rotate(-45deg)'
-      }
-    },
-    animationStyle3 () {
-      return {
-        top: 0,
-        left: this.radius,
-        animationDelay: '0.36s',
-        transform: 'rotate(90deg)'
-      }
-    },
-    animationStyle4 () {
-      return {
-        top: this.ngQuarter,
-        left: this.quarter,
-        animationDelay: '0.48s',
-        transform: 'rotate(45deg)'
-      }
-    },
-    animationStyle5 () {
-      return {
-        top: this.ngRadius,
-        left: 0,
-        animationDelay: '0.60s'
-      }
-    },
-    animationStyle6 () {
-      return {
-        top: this.ngQuarter,
-        left: this.ngQuarter,
-        animationDelay: '0.72s',
-        transform: 'rotate(-45deg)'
-      }
-    },
-    animationStyle7 () {
-      return {
-        top: 0,
-        left: this.ngRadius,
-        animationDelay: '0.84s',
-        transform: 'rotate(90deg)'
-      }
-    },
-    animationStyle8 () {
-      return {
-        top: this.quarter,
-        left: this.ngQuarter,
-        animationDelay: '0.96s',
-        transform: 'rotate(45deg)'
-      }
+      spinnerStyle,
+      animationStyle1, animationStyle2, animationStyle3, animationStyle4,
+      animationStyle5, animationStyle6, animationStyle7, animationStyle8
     }
   }
-
-}
+})
 </script>
 
-<style>
+<style scoped>
 
 .v-spinner .v-fade
 {
     -webkit-animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
             animation: v-fadeStretchDelay 1.2s infinite ease-in-out;
     -webkit-animation-fill-mode: both;
-	          animation-fill-mode: both;
-    position: absolute;               
-}
-
-@-webkit-keyframes v-fadeStretchDelay
-{
-    50%
-    {
-        -webkit-opacity: 0.3;             
-                opacity: 0.3;
-    }
-    100%
-    {
-        -webkit-opacity: 1;             
-                opacity: 1;
-    }
+            animation-fill-mode: both;
+    position: absolute;
 }
 
 @keyframes v-fadeStretchDelay
 {
     50%
     {
-        -webkit-opacity: 0.3;             
-                opacity: 0.3;
+        opacity: 0.3;
     }
     100%
     {
-        -webkit-opacity: 1;             
-                opacity: 1;
+        opacity: 1;
     }
 }
 </style>

@@ -1,39 +1,43 @@
 {
   "name": "vue-spinner",
-  "version": "1.0.4",
+  "version": "3.0.0",
   "description": "Spinners of Vue Components",
   "keywords": [
     "spinner",
     "vuejs",
+    "vue3",
     "loading"
   ],
-  "main": "src/app.js",
+  "main": "dist/vue-spinner.umd.js",
+  "module": "dist/vue-spinner.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-spinner.es.js",
+      "require": "./dist/vue-spinner.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --quiet",
-    "build": "NODE_ENV=production webpack --progress --hide-modules",
-    "dist": "webpack --progress --hide-modules --config  webpack.build.js && NODE_ENV=production webpack --progress --hide-modules --config  webpack.build.min.js"
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "vite build --config vite.demo.config.js",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/greyby/vue-spinner.git"
   },
   "author": "greyby",
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
   "devDependencies": {
-    "vue": "^1.0.12",
-    "babel-core": "^6.1.21",
-    "babel-loader": "^6.1.0",
-    "babel-plugin-transform-runtime": "^6.1.18",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-runtime": "^5.8.0",
-    "css-loader": "^0.21.0",
-    "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.0",
-    "vue-hot-reload-api": "^1.2.0",
-    "vue-html-loader": "^1.0.0",
-    "vue-loader": "^7.2.0",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0",
-    "extract-text-webpack-plugin": "^0.8.2"
+    "@vitejs/plugin-vue": "^6.0.4",
+    "vite": "^7.3.1",
+    "vue": "^3.5.28"
   },
   "license": "MIT"
 }

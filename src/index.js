@@ -15,7 +15,7 @@ import RingLoader from './RingLoader.vue'
 import BounceLoader from './BounceLoader.vue'
 import DotLoader from './DotLoader.vue'
 
-const VueSpinner = {
+export {
   PulseLoader,
   GridLoader,
   ClipLoader,
@@ -34,5 +34,21 @@ const VueSpinner = {
   DotLoader
 }
 
-module.exports = VueSpinner
-
+export default {
+  PulseLoader,
+  GridLoader,
+  ClipLoader,
+  RiseLoader,
+  BeatLoader,
+  SyncLoader,
+  RotateLoader,
+  FadeLoader,
+  PacmanLoader,
+  SquareLoader,
+  ScaleLoader,
+  SkewLoader,
+  MoonLoader,
+  RingLoader,
+  BounceLoader,
+  DotLoader
+}

@@ -1,17 +1,19 @@
 <template>
 <div class="v-spinner" v-bind:style="{position: 'relative', fontSize: 0}" v-show="loading">
     <div class="v-pacman v-pacman1" v-bind:style="spinnerStyle1">
-    </div><div class="v-pacman v-pacman2" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay2]">
-    </div><div class="v-pacman v-pacman3" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay3]">
-    </div><div class="v-pacman v-pacman4" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay4]">
-    </div><div class="v-pacman v-pacman5" v-bind:style="[spinnerStyle,animationStyle,spinnerDelay5]">
+    </div><div class="v-pacman v-pacman-ball" v-bind:style="[spinnerStyle,ballPositionStyle,spinnerDelay2]">
+    </div><div class="v-pacman v-pacman-ball" v-bind:style="[spinnerStyle,ballPositionStyle,spinnerDelay3]">
+    </div><div class="v-pacman v-pacman-ball" v-bind:style="[spinnerStyle,ballPositionStyle,spinnerDelay4]">
+    </div><div class="v-pacman v-pacman-ball" v-bind:style="[spinnerStyle,ballPositionStyle,spinnerDelay5]">
     </div>
 </div>
 </template>
 
 <script>
-export default {
-  
+import { defineComponent, computed } from 'vue'
+
+export default defineComponent({
+
   name: 'PacmanLoader',
 
   props: {
@@ -19,7 +21,7 @@ export default {
       type: Boolean,
       default: true
     },
-    color: { 
+    color: {
       type: String,
       default: '#5dc596'
     },
@@ -36,101 +38,71 @@ export default {
       default: '100%'
     }
   },
-  data () {
+  setup(props) {
+    const spinnerDelay2 = { animationDelay: '0.25s' }
+    const spinnerDelay3 = { animationDelay: '0.50s' }
+    const spinnerDelay4 = { animationDelay: '0.75s' }
+    const spinnerDelay5 = { animationDelay: '1s' }
+
+    const spinnerStyle = computed(() => ({
+      backgroundColor: props.color,
+      width: '10px',
+      height: '10px',
+      margin: props.margin,
+      borderRadius: props.radius
+    }))
+
+    const border1 = computed(() => props.size + ' solid transparent')
+    const border2 = computed(() => props.size + ' solid ' + props.color)
+
+    const spinnerStyle1 = computed(() => ({
+      width: 0,
+      height: 0,
+      borderTop: border2.value,
+      borderRight: border1.value,
+      borderBottom: border2.value,
+      borderLeft: border2.value,
+      borderRadius: props.size
+    }))
+
+    const ballPositionStyle = computed(() => ({
+      transform: 'translate(0, ' + (-parseFloat(props.size) / 4) + 'px)',
+      position: 'absolute',
+      top: '25px',
+      left: '100px'
+    }))
+
     return {
-      spinnerDelay2: {
-        animationDelay: '0.25s'
-      },
-      spinnerDelay3: {
-        animationDelay: '0.50s'
-      },
-      spinnerDelay4: {
-        animationDelay: '0.75s'
-      },
-      spinnerDelay5: {
-        animationDelay: '1s'
-      }
-    }
-  },
-  computed: {
-    spinnerStyle () {
-      return {
-        backgroundColor: this.color,
-        width: this.size,
-        height: this.size,
-        margin: this.margin,
-        borderRadius: this.radius,
-      }
-    },
-    border1 () {
-      return this.size + ' solid transparent'
-    },
-    border2 () {
-      return this.size + ' solid ' + this.color
-    },
-    spinnerStyle1 () {
-      return {
-        width: 0,
-        height: 0,
-        borderTop: this.border2,
-        borderRight: this.border1,
-        borderBottom: this.border2,
-        borderLeft: this.border2,
-        borderRadius: this.size
-      }
-    },
-    animationStyle () {
-      return {
-        width: '10px',
-        height: '10px',
-        transform: 'translate(0, '+ -parseFloat(this.size)/4 + 'px)',
-        position: 'absolute',
-        top: '25px',
-        left: '100px',
-        animationName: 'v-pacmanStretchDelay',
-        animationDuration: '1s',
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'linear',
-        animationFillMode: 'both'
-      }
+      spinnerStyle, spinnerStyle1, ballPositionStyle,
+      spinnerDelay2, spinnerDelay3, spinnerDelay4, spinnerDelay5
     }
   }
-
-}
+})
 </script>
 
-<style>
+<style scoped>
 .v-spinner
 {
     text-align: center;
 }
 
-/*TODO computed transform */
-@-webkit-keyframes v-pacmanStretchDelay
+.v-spinner .v-pacman-ball
 {
-    75%
-    {
-        -webkit-opacity: 0.7;             
-        opacity: 0.7;
-    }
-    100%
-    {
-        -webkit-transform: translate(-100px, -6.25px);
-                transform: translate(-100px, -6.25px);
-    }
+    -webkit-animation: v-pacmanStretchDelay 1s infinite linear;
+            animation: v-pacmanStretchDelay 1s infinite linear;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
 }
 
 @keyframes v-pacmanStretchDelay
 {
     75%
     {
-        -webkit-opacity: 0.7;             
         opacity: 0.7;
     }
     100%
     {
-        -webkit-transform: translate(-100px, -6.25px);
-                transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
     }
 }
 </style>
