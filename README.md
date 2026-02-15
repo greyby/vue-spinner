@@ -5,7 +5,7 @@ A collection of loading spinners with Vue.js 3. Based on [Halogen](https://githu
 | vue-spinner version | Vue version |
 |---------------------|-------------|
 | 3.x | Vue 3.x |
-| 1.0.4 | Vue 1.x |
+| 1.0.4 | Vue 1.x / 2.x |
 
 ## [Live Demo](http://greyby.github.io/vue-spinner/)
 
