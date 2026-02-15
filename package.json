@@ -10,6 +10,7 @@
   ],
   "main": "dist/vue-spinner.umd.js",
   "module": "dist/vue-spinner.es.js",
+  "types": "types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue-spinner.es.js",
@@ -18,13 +19,16 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "types"
   ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:demo": "vite build --config vite.demo.config.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -36,7 +40,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.6.1",
     "vite": "^7.3.1",
+    "vitest": "^4.0.18",
     "vue": "^3.5.28"
   },
   "license": "MIT"
