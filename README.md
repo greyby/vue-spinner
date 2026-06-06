@@ -21,8 +21,7 @@ npm install vue-spinner
 
 ```js
 import { PulseLoader } from 'vue-spinner'
-// or import individually
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+import 'vue-spinner/style.css'
 ```
 
 ```vue
@@ -33,6 +32,7 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 <script setup>
 import { ref } from 'vue'
 import { PulseLoader } from 'vue-spinner'
+import 'vue-spinner/style.css'
 
 const loading = ref(true)
 const color = ref('#5dc596')
@@ -45,9 +45,19 @@ const size = ref('15px')
 ```js
 import { createApp } from 'vue'
 import { PulseLoader } from 'vue-spinner'
+import 'vue-spinner/style.css'
 
 const app = createApp(App)
 app.component('PulseLoader', PulseLoader)
+```
+
+### Compatibility Imports
+
+If you are upgrading existing code, these imports remain available:
+
+```js
+import 'vue-spinner/dist/vue-spinner.css'
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 ```
 
 ### Browser (UMD)

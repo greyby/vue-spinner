@@ -1,6 +1,6 @@
 {
   "name": "vue-spinner",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Spinners of Vue Components",
   "keywords": [
     "spinner",
@@ -10,12 +10,17 @@
   ],
   "main": "dist/vue-spinner.umd.js",
   "module": "dist/vue-spinner.es.js",
+  "style": "dist/vue-spinner.css",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/vue-spinner.es.js",
       "require": "./dist/vue-spinner.umd.js"
-    }
+    },
+    "./style.css": "./dist/vue-spinner.css",
+    "./dist/vue-spinner.css": "./dist/vue-spinner.css",
+    "./src/*": "./src/*"
   },
   "files": [
     "dist",
